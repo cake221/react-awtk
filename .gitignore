@@ -11,5 +11,5 @@
 *.exe
 node_modules
 
-test
+test/other
 .idea
