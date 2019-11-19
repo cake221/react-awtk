@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import {applicationInit} from "./button";
+import './polyfill'
+import AwtkRender from "./renderer";
 
-applicationInit();
+const Button = "BUTTON"
+const Window = "WINDOW"
+const Root = "ROOT"
 
-// class Button extends Component {
-//   render() {
-
-//     return null;
-//   }
-// }
-
-// render(<Button/>, window.document.getElementById('app'));
+export {
+    Button,
+    Window,
+    Root,
+    AwtkRender
+}

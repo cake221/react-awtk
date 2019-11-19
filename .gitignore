@@ -2,11 +2,14 @@
 *.a
 *.so
 *.swp
-*.pdb 
-*.ilk 
+*.pdb
+*.ilk
 *.idb
 *.obj
 *.lib
 *.exp
 *.exe
 node_modules
+
+test
+.idea

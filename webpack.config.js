@@ -1,9 +1,11 @@
 const path = require("path");
 
 module.exports = {
-	entry:"./src/index.js",
+	entry:{
+		window:"./demo/window.js"
+	},
 	output:{
-		filename:"bundle.js",
+		filename:"[name].js",
 		path:path.resolve(__dirname, "./dist"),
 	},
 	module: {
@@ -17,5 +19,6 @@ module.exports = {
 		]
 	},
 	devtool: 'source-map', // 输出 source-map 方便直接调试 ES6 源码,
-	mode: 'development'	
+	mode: 'development',
+	// externals: ['os']
 }
