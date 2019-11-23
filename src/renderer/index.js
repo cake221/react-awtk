@@ -1,6 +1,6 @@
 import Reconciler from 'react-reconciler'
 import hostConfig from "./hostConfig"
-import { createInstance } from "./createInstance"
+import { createInstance } from "./instance"
 import { Root } from ".."
 
 

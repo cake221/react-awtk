@@ -125,9 +125,13 @@ function (_Component) {
   _inherits(App, _Component);
 
   function App(props) {
+    var _this;
+
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+    _this.winRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
+    return _this;
   }
 
   _createClass(App, [{
@@ -138,7 +142,19 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src__WEBPACK_IMPORTED_MODULE_1__["Window"], null);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src__WEBPACK_IMPORTED_MODULE_1__["Window"], {
+        ref: this.winRef,
+        x: 0,
+        y: 0,
+        w: 0,
+        h: 0
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        parent: this.winRef.current,
+        x: 0,
+        y: 0,
+        w: 0,
+        h: 0
+      }));
     }
   }]);
 
@@ -21541,15 +21557,8 @@ if (false) {} else {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Node__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Node */ "./src/components/Node.js");
-/* harmony import */ var _components_native__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components_native */ "./src/components_native/index.js");
+/* harmony import */ var _Widget__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Widget */ "./src/components/Widget.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -21569,35 +21578,111 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
 var Button =
 /*#__PURE__*/
-function (_Node) {
-  _inherits(Button, _Node);
+function (_Widget) {
+  _inherits(Button, _Widget);
 
-  function Button(props) {
-    var _this;
-
+  function Button(nativeObj) {
     _classCallCheck(this, Button);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Button).call(this));
-    _this.props = _objectSpread({}, props);
-
-    _this.newInstance();
-
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(Button).call(this, nativeObj));
   }
 
   _createClass(Button, [{
-    key: "newInstance",
-    value: function newInstance() {// this.element = TButton.create(win, 0, 0, 0, 0);
+    key: "setRepeat",
+    value: function setRepeat(repeat) {
+      return button_set_repeat(this.nativeObj, repeat);
+    }
+  }, {
+    key: "setEnableLongPress",
+    value: function setEnableLongPress(enable_long_press) {
+      return button_set_enable_long_press(this.nativeObj, enable_long_press);
+    }
+  }, {
+    key: "repeat",
+    get: function get() {
+      return button_t_get_prop_repeat(this.nativeObj);
+    }
+  }, {
+    key: "enableLongPress",
+    get: function get() {
+      return button_t_get_prop_enable_long_press(this.nativeObj);
+    }
+  }], [{
+    key: "create",
+    value: function create(_ref) {
+      var parent = _ref.parent,
+          x = _ref.x,
+          y = _ref.y,
+          w = _ref.w,
+          h = _ref.h;
+      return new Button(button_create(parent ? parent.nativeObj : null, x, y, w, h));
+    }
+  }, {
+    key: "cast",
+    value: function cast(widget) {
+      return new Button(button_cast(widget ? widget.nativeObj || widget : null));
     }
   }]);
 
   return Button;
-}(_Node__WEBPACK_IMPORTED_MODULE_0__["default"]);
+}(_Widget__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Button);
+
+/***/ }),
+
+/***/ "./src/components/Global.js":
+/*!**********************************!*\
+  !*** ./src/components/Global.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Global =
+/*#__PURE__*/
+function () {
+  function Global(nativeObj) {
+    _classCallCheck(this, Global);
+
+    this.nativeObj = nativeObj;
+  }
+
+  _createClass(Global, null, [{
+    key: "quit",
+    value: function quit() {
+      return tk_quit();
+    }
+  }, {
+    key: "getPointerX",
+    value: function getPointerX() {
+      return tk_get_pointer_x();
+    }
+  }, {
+    key: "getPointerY",
+    value: function getPointerY() {
+      return tk_get_pointer_y();
+    }
+  }, {
+    key: "isPointerPressed",
+    value: function isPointerPressed() {
+      return tk_is_pointer_pressed();
+    }
+  }]);
+
+  return Global;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Global);
 
 /***/ }),
 
@@ -21624,6 +21709,14 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+/**
+
+ reateInstance,
+ createTextInstance,
+ appendChild,
+ insertBefore,
+ removeChild,
+ * */
 var Node =
 /*#__PURE__*/
 function () {
@@ -21643,8 +21736,8 @@ function () {
       }
     }
   }, {
-    key: "appendChildBefore",
-    value: function appendChildBefore(child, beforeChild) {
+    key: "insertBefore",
+    value: function insertBefore(child, beforeChild) {
       var index = this.children.indexOf(beforeChild);
 
       if (index !== -1 && child) {
@@ -21750,9 +21843,28 @@ function (_Node) {
 
 /***/ }),
 
-/***/ "./src/components/Window.js":
+/***/ "./src/components/Text.js":
+/*!********************************!*\
+  !*** ./src/components/Text.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Text = function Text(nativeObj) {
+  _classCallCheck(this, Text);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Text);
+
+/***/ }),
+
+/***/ "./src/components/Widget.js":
 /*!**********************************!*\
-  !*** ./src/components/Window.js ***!
+  !*** ./src/components/Widget.js ***!
   \**********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -21762,11 +21874,446 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Node__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Node */ "./src/components/Node.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var Widget =
+/*#__PURE__*/
+function (_Node) {
+  _inherits(Widget, _Node);
+
+  function Widget(nativeObj) {
+    var _this;
+
+    _classCallCheck(this, Widget);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Widget).call(this));
+    _this.nativeObj = nativeObj;
+    return _this;
+  }
+
+  _createClass(Widget, [{
+    key: "countChildren",
+    value: function countChildren() {
+      return widget_count_children(this.nativeObj);
+    }
+  }, {
+    key: "getChild",
+    value: function getChild(index) {
+      return new Widget(widget_get_child(this.nativeObj, index));
+    }
+  }, {
+    key: "indexOf",
+    value: function indexOf() {
+      return widget_index_of(this.nativeObj);
+    }
+  }, {
+    key: "move",
+    value: function move(x, y) {
+      return widget_move(this.nativeObj, x, y);
+    }
+  }, {
+    key: "resize",
+    value: function resize(w, h) {
+      return widget_resize(this.nativeObj, w, h);
+    }
+  }, {
+    key: "moveResize",
+    value: function moveResize(x, y, w, h) {
+      return widget_move_resize(this.nativeObj, x, y, w, h);
+    }
+  }, {
+    key: "setValue",
+    value: function setValue(value) {
+      return widget_set_value(this.nativeObj, value);
+    }
+  }, {
+    key: "animateValueTo",
+    value: function animateValueTo(value, duration) {
+      return widget_animate_value_to(this.nativeObj, value, duration);
+    }
+  }, {
+    key: "addValue",
+    value: function addValue(delta) {
+      return widget_add_value(this.nativeObj, delta);
+    }
+  }, {
+    key: "useStyle",
+    value: function useStyle(style) {
+      return widget_use_style(this.nativeObj, style);
+    }
+  }, {
+    key: "setText",
+    value: function setText(text) {
+      return widget_set_text_utf8(this.nativeObj, text);
+    }
+  }, {
+    key: "setTrText",
+    value: function setTrText(text) {
+      return widget_set_tr_text(this.nativeObj, text);
+    }
+  }, {
+    key: "getValue",
+    value: function getValue() {
+      return widget_get_value(this.nativeObj);
+    }
+  }, {
+    key: "getText",
+    value: function getText() {
+      return widget_get_text(this.nativeObj);
+    }
+  }, {
+    key: "setName",
+    value: function setName(name) {
+      return widget_set_name(this.nativeObj, name);
+    }
+  }, {
+    key: "setCursor",
+    value: function setCursor(cursor) {
+      return widget_set_cursor(this.nativeObj, cursor);
+    }
+  }, {
+    key: "setAnimation",
+    value: function setAnimation(animation) {
+      return widget_set_animation(this.nativeObj, animation);
+    }
+  }, {
+    key: "createAnimator",
+    value: function createAnimator(animation) {
+      return widget_create_animator(this.nativeObj, animation);
+    }
+  }, {
+    key: "startAnimator",
+    value: function startAnimator(name) {
+      return widget_start_animator(this.nativeObj, name);
+    }
+  }, {
+    key: "setAnimatorTimeScale",
+    value: function setAnimatorTimeScale(name, time_scale) {
+      return widget_set_animator_time_scale(this.nativeObj, name, time_scale);
+    }
+  }, {
+    key: "pauseAnimator",
+    value: function pauseAnimator(name) {
+      return widget_pause_animator(this.nativeObj, name);
+    }
+  }, {
+    key: "findAnimator",
+    value: function findAnimator(name) {
+      return widget_find_animator(this.nativeObj, name);
+    }
+  }, {
+    key: "stopAnimator",
+    value: function stopAnimator(name) {
+      return widget_stop_animator(this.nativeObj, name);
+    }
+  }, {
+    key: "destroyAnimator",
+    value: function destroyAnimator(name) {
+      return widget_destroy_animator(this.nativeObj, name);
+    }
+  }, {
+    key: "setEnable",
+    value: function setEnable(enable) {
+      return widget_set_enable(this.nativeObj, enable);
+    }
+  }, {
+    key: "setFloating",
+    value: function setFloating(floating) {
+      return widget_set_floating(this.nativeObj, floating);
+    }
+  }, {
+    key: "setFocused",
+    value: function setFocused(focused) {
+      return widget_set_focused(this.nativeObj, focused);
+    }
+  }, {
+    key: "child",
+    value: function child(name) {
+      return new Widget(widget_child(this.nativeObj, name));
+    }
+  }, {
+    key: "lookup",
+    value: function lookup(name, recursive) {
+      return new Widget(widget_lookup(this.nativeObj, name, recursive));
+    }
+  }, {
+    key: "lookupByType",
+    value: function lookupByType(type, recursive) {
+      return new Widget(widget_lookup_by_type(this.nativeObj, type, recursive));
+    }
+  }, {
+    key: "setVisible",
+    value: function setVisible(visible, recursive) {
+      return widget_set_visible(this.nativeObj, visible, recursive);
+    }
+  }, {
+    key: "setVisibleOnly",
+    value: function setVisibleOnly(visible) {
+      return widget_set_visible_only(this.nativeObj, visible);
+    }
+  }, {
+    key: "setSensitive",
+    value: function setSensitive(sensitive) {
+      return widget_set_sensitive(this.nativeObj, sensitive);
+    }
+  }, {
+    key: "on",
+    value: function on(type, on_event, ctx) {
+      return widget_on(this.nativeObj, type, on_event, ctx);
+    }
+  }, {
+    key: "off",
+    value: function off(id) {
+      return widget_off(this.nativeObj, id);
+    }
+  }, {
+    key: "invalidateForce",
+    value: function invalidateForce(r) {
+      return widget_invalidate_force(this.nativeObj, r ? r.nativeObj : null);
+    }
+  }, {
+    key: "setPropStr",
+    value: function setPropStr(name, v) {
+      return widget_set_prop_str(this.nativeObj, name, v);
+    }
+  }, {
+    key: "getPropStr",
+    value: function getPropStr(name, defval) {
+      return widget_get_prop_str(this.nativeObj, name, defval);
+    }
+  }, {
+    key: "setPropInt",
+    value: function setPropInt(name, v) {
+      return widget_set_prop_int(this.nativeObj, name, v);
+    }
+  }, {
+    key: "getPropInt",
+    value: function getPropInt(name, defval) {
+      return widget_get_prop_int(this.nativeObj, name, defval);
+    }
+  }, {
+    key: "setPropBool",
+    value: function setPropBool(name, v) {
+      return widget_set_prop_bool(this.nativeObj, name, v);
+    }
+  }, {
+    key: "getPropBool",
+    value: function getPropBool(name, defval) {
+      return widget_get_prop_bool(this.nativeObj, name, defval);
+    }
+  }, {
+    key: "isWindowOpened",
+    value: function isWindowOpened() {
+      return widget_is_window_opened(this.nativeObj);
+    }
+  }, {
+    key: "isWindow",
+    value: function isWindow() {
+      return widget_is_window(this.nativeObj);
+    }
+  }, {
+    key: "isDesigningWindow",
+    value: function isDesigningWindow() {
+      return widget_is_designing_window(this.nativeObj);
+    }
+  }, {
+    key: "isWindowManager",
+    value: function isWindowManager() {
+      return widget_is_window_manager(this.nativeObj);
+    }
+  }, {
+    key: "foreach",
+    value: function foreach(visit, ctx) {
+      return widget_foreach(this.nativeObj, visit, ctx);
+    }
+  }, {
+    key: "getWindow",
+    value: function getWindow() {
+      return new Widget(widget_get_window(this.nativeObj));
+    }
+  }, {
+    key: "getWindowManager",
+    value: function getWindowManager() {
+      return new Widget(widget_get_window_manager(this.nativeObj));
+    }
+  }, {
+    key: "getType",
+    value: function getType() {
+      return widget_get_type(this.nativeObj);
+    }
+  }, {
+    key: "clone",
+    value: function clone(parent) {
+      return new Widget(widget_clone(this.nativeObj, parent ? parent.nativeObj : null));
+    }
+  }, {
+    key: "equal",
+    value: function equal(other) {
+      return widget_equal(this.nativeObj, other ? other.nativeObj : null);
+    }
+  }, {
+    key: "destroy",
+    value: function destroy() {
+      return widget_destroy(this.nativeObj);
+    }
+  }, {
+    key: "layout",
+    value: function layout() {
+      return widget_layout(this.nativeObj);
+    }
+  }, {
+    key: "setSelfLayout",
+    value: function setSelfLayout(params) {
+      return widget_set_self_layout(this.nativeObj, params);
+    }
+  }, {
+    key: "setChildrenLayout",
+    value: function setChildrenLayout(params) {
+      return widget_set_children_layout(this.nativeObj, params);
+    }
+  }, {
+    key: "setSelfLayoutParams",
+    value: function setSelfLayoutParams(x, y, w, h) {
+      return widget_set_self_layout_params(this.nativeObj, x, y, w, h);
+    }
+  }, {
+    key: "setStyleInt",
+    value: function setStyleInt(state_and_name, value) {
+      return widget_set_style_int(this.nativeObj, state_and_name, value);
+    }
+  }, {
+    key: "setStyleStr",
+    value: function setStyleStr(state_and_name, value) {
+      return widget_set_style_str(this.nativeObj, state_and_name, value);
+    }
+  }, {
+    key: "setStyleColor",
+    value: function setStyleColor(state_and_name, value) {
+      return widget_set_style_color(this.nativeObj, state_and_name, value);
+    }
+  }, {
+    key: "x",
+    get: function get() {
+      return widget_t_get_prop_x(this.nativeObj);
+    }
+  }, {
+    key: "y",
+    get: function get() {
+      return widget_t_get_prop_y(this.nativeObj);
+    }
+  }, {
+    key: "w",
+    get: function get() {
+      return widget_t_get_prop_w(this.nativeObj);
+    }
+  }, {
+    key: "h",
+    get: function get() {
+      return widget_t_get_prop_h(this.nativeObj);
+    }
+  }, {
+    key: "name",
+    get: function get() {
+      return widget_t_get_prop_name(this.nativeObj);
+    }
+  }, {
+    key: "trText",
+    get: function get() {
+      return widget_t_get_prop_tr_text(this.nativeObj);
+    }
+  }, {
+    key: "style",
+    get: function get() {
+      return widget_t_get_prop_style(this.nativeObj);
+    }
+  }, {
+    key: "animation",
+    get: function get() {
+      return widget_t_get_prop_animation(this.nativeObj);
+    }
+  }, {
+    key: "enable",
+    get: function get() {
+      return widget_t_get_prop_enable(this.nativeObj);
+    }
+  }, {
+    key: "visible",
+    get: function get() {
+      return widget_t_get_prop_visible(this.nativeObj);
+    },
+    set: function set(value) {
+      widget_t_set_prop_visible(this.nativeObj, value);
+    }
+  }, {
+    key: "floating",
+    get: function get() {
+      return widget_t_get_prop_floating(this.nativeObj);
+    }
+  }, {
+    key: "sensitive",
+    get: function get() {
+      return widget_t_get_prop_sensitive(this.nativeObj);
+    },
+    set: function set(value) {
+      widget_t_set_prop_sensitive(this.nativeObj, value);
+    }
+  }, {
+    key: "focusable",
+    get: function get() {
+      return widget_t_get_prop_focusable(this.nativeObj);
+    },
+    set: function set(value) {
+      widget_t_set_prop_focusable(this.nativeObj, value);
+    }
+  }, {
+    key: "withFocusState",
+    get: function get() {
+      return widget_t_get_prop_with_focus_state(this.nativeObj);
+    },
+    set: function set(value) {
+      widget_t_set_prop_with_focus_state(this.nativeObj, value);
+    }
+  }], [{
+    key: "cast",
+    value: function cast(widget) {
+      return new Widget(widget_cast(widget ? widget.nativeObj || widget : null));
+    }
+  }]);
+
+  return Widget;
+}(_Node__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Widget);
+
+/***/ }),
+
+/***/ "./src/components/Window.js":
+/*!**********************************!*\
+  !*** ./src/components/Window.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Widget__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Widget */ "./src/components/Widget.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -21788,32 +22335,64 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 var Window =
 /*#__PURE__*/
-function (_Node) {
-  _inherits(Window, _Node);
+function (_Widget) {
+  _inherits(Window, _Widget);
 
-  function Window(props) {
-    var _this;
-
+  function Window(nativeObj) {
     _classCallCheck(this, Window);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Window).call(this));
-    _this.props = _objectSpread({}, props);
-
-    _this.newInstance();
-
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(Window).call(this, nativeObj));
   }
 
   _createClass(Window, [{
-    key: "newInstance",
-    value: function newInstance() {
-      this.instance = TWindow.create(null, 0, 0, 0, 0);
-      this.instance.layout();
+    key: "setFullscreen",
+    value: function setFullscreen(fullscreen) {
+      return window_set_fullscreen(this.nativeObj, fullscreen);
+    }
+  }, {
+    key: "close",
+    value: function close() {
+      return window_close(this.nativeObj);
+    }
+  }, {
+    key: "closeForce",
+    value: function closeForce() {
+      return window_close_force(this.nativeObj);
+    }
+  }, {
+    key: "fullscreen",
+    get: function get() {
+      return window_t_get_prop_fullscreen(this.nativeObj);
+    }
+  }], [{
+    key: "create",
+    value: function create(_ref) {
+      var parent = _ref.parent,
+          x = _ref.x,
+          y = _ref.y,
+          w = _ref.w,
+          h = _ref.h;
+      return new Window(window_create(parent ? parent.nativeObj : null, x, y, w, h));
+    }
+  }, {
+    key: "open",
+    value: function open(name) {
+      return new Window(window_open(name));
+    }
+  }, {
+    key: "openAndClose",
+    value: function openAndClose(name, to_close) {
+      return new Window(window_open_and_close(name, to_close ? to_close.nativeObj : null));
+    }
+  }, {
+    key: "cast",
+    value: function cast(widget) {
+      return new Window(window_cast(widget ? widget.nativeObj || widget : null));
     }
   }]);
 
   return Window;
-}(_Node__WEBPACK_IMPORTED_MODULE_0__["default"]);
+}(_Widget__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Window);
 
@@ -21823,7 +22402,7 @@ function (_Node) {
 /*!*********************************!*\
   !*** ./src/components/index.js ***!
   \*********************************/
-/*! exports provided: Button, Window, Node, Root */
+/*! exports provided: Button, Window, Node, Root, Global, Text */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21840,27 +22419,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Root */ "./src/components/Root.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Root", function() { return _Root__WEBPACK_IMPORTED_MODULE_3__["default"]; });
 
+/* harmony import */ var _Global__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Global */ "./src/components/Global.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Global", function() { return _Global__WEBPACK_IMPORTED_MODULE_4__["default"]; });
+
+/* harmony import */ var _Text__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Text */ "./src/components/Text.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Text", function() { return _Text__WEBPACK_IMPORTED_MODULE_5__["default"]; });
 
 
 
 
 
 
-/***/ }),
 
-/***/ "./src/components_native/index.js":
-/*!****************************************!*\
-  !*** ./src/components_native/index.js ***!
-  \****************************************/
-/*! exports provided: TButton, TWindow */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TButton", function() { return TButton; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TWindow", function() { return TWindow; });
-var TButton = TButton;
-var TWindow = TWindow;
 
 
 /***/ }),
@@ -21916,39 +22486,6 @@ globalThis.console.error = function () {};
 
 /***/ }),
 
-/***/ "./src/renderer/createInstance.js":
-/*!****************************************!*\
-  !*** ./src/renderer/createInstance.js ***!
-  \****************************************/
-/*! exports provided: createInstance */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createInstance", function() { return createInstance; });
-/* harmony import */ var _components___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/ */ "./src/components/index.js");
- // Creates an element with an element type, props and a root instance
-
-function createInstance(type, newProps, rootContainerInstance, currentHostContext, workInProgress) {
-  var COMPONENTS = {
-    ROOT: function ROOT() {
-      return new _components___WEBPACK_IMPORTED_MODULE_0__["Root"]();
-    },
-    WINDOW: function WINDOW() {
-      return new _components___WEBPACK_IMPORTED_MODULE_0__["Window"](newProps);
-    },
-    BUTTON: function BUTTON() {
-      return new _components___WEBPACK_IMPORTED_MODULE_0__["Button"](newProps);
-    },
-    "default": undefined
-  };
-  return COMPONENTS[type]() || COMPONENTS["default"];
-}
-
-
-
-/***/ }),
-
 /***/ "./src/renderer/hostConfig.js":
 /*!************************************!*\
   !*** ./src/renderer/hostConfig.js ***!
@@ -21958,7 +22495,7 @@ function createInstance(type, newProps, rootContainerInstance, currentHostContex
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _createInstance__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createInstance */ "./src/renderer/createInstance.js");
+/* harmony import */ var _instance__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./instance */ "./src/renderer/instance.js");
 var SHOW_RECONCILER_CALLS = true;
 
 var log = function log() {
@@ -21968,18 +22505,36 @@ var log = function log() {
 };
 
 
+var rootHostContext = {};
+var childHostContext = {};
 /* harmony default export */ __webpack_exports__["default"] = ({
-  // Methods for first-time rendering
-  // --------------------------------
-  appendInitialChild: function appendInitialChild(parent, stateNode) {
-    log('appendInitialChild');
+  getPublicInstance: function getPublicInstance(instance) {
+    log('getPublicInstance', Array.prototype.slice.call(arguments));
+    return instance;
   },
-  appendChildToContainer: function appendChildToContainer(container, child) {
-    log('appendChildToContainer');
-    container.appendChild(child);
+  getRootHostContext: function getRootHostContext(rootContainerInstance) {
+    log('getRootHostContext', Array.prototype.slice.call(arguments));
+    return rootHostContext;
   },
-  appendChild: function appendChild(parent, stateNode) {
-    log('appendChild');
+
+  /**
+   * parentHostContext  从上一级节点传递过来的上下文
+   * type   当前节点的 nodeType
+   * rootContainerInstance  根节点
+   */
+  // 从上一层fiber节点获取上下文，并且向下一层传递
+  getChildHostContext: function getChildHostContext(parentHostContext, type, rootContainerInstance) {
+    // context, fiber.type, rootInstance
+    log('getChildHostContext', Array.prototype.slice.call(arguments));
+    return childHostContext;
+  },
+  prepareForCommit: function prepareForCommit(containerInfo) {
+    log('prepareForCommit', Array.prototype.slice.call(arguments));
+  },
+  resetAfterCommit: function resetAfterCommit(containerInfo) {
+    // todo
+    // 大部分什么都没做。 除了 ink
+    log('resetAfterCommit', Array.prototype.slice.call(arguments));
   },
 
   /**
@@ -21987,55 +22542,79 @@ var log = function log() {
    *  newProps 传递给当前节点的属性
    *  rootContainerInstance  根节点
    *  currentHostContext  从上级节点传递下来的上下文
-   *  workInProgress   当前这个dom节点对应的fiber节点
+   *  workInProgress   当前这个 dom 节点对应的 fiber 节点
    */
   createInstance: function createInstance(type, newProps, rootContainerInstance, currentHostContext, workInProgress) {
-    log('createInstance', type);
-    return Object(_createInstance__WEBPACK_IMPORTED_MODULE_0__["createInstance"])(type, newProps, rootContainerInstance, currentHostContext, workInProgress);
+    log('createInstance', Array.prototype.slice.call(arguments)); // todo
+    // 都是建立了一个树结点。 各有各的不同。
+
+    return Object(_instance__WEBPACK_IMPORTED_MODULE_0__["createInstance"])(type, newProps, rootContainerInstance, currentHostContext, workInProgress);
   },
-  finalizeInitialChildren: function finalizeInitialChildren(wordElement, type, props) {
-    log('finalizeInitialChildren');
+  appendInitialChild: function appendInitialChild(parentInstance, child) {
+    log('appendInitialChild', Array.prototype.slice.call(arguments));
+    parentInstance.appendChild(child);
+  },
+  finalizeInitialChildren: function finalizeInitialChildren(parentInstance, type, props, rootContainerInstance, hostContext) {
+    log('finalizeInitialChildren', Array.prototype.slice.call(arguments));
     return false;
   },
-  now: Date.now,
-  prepareForCommit: function prepareForCommit() {
-    log('prepareForCommit');
-  },
-  prepareUpdate: function prepareUpdate(wordElement, type, oldProps, newProps) {
-    log('prepareUpdate');
+  prepareUpdate: function prepareUpdate(instance, type, oldProps, newProps, rootContainerInstance, hostContext) {
+    log('prepareUpdate', Array.prototype.slice.call(arguments)); // todo
+
     return true;
   },
-  resetAfterCommit: function resetAfterCommit() {
-    log('resetAfterCommit');
-  },
-  resetTextContent: function resetTextContent(wordElement) {
-    log('resetTextContent');
-  },
-  getRootHostContext: function getRootHostContext(instance) {
-    log('getRootHostContext', instance);
-    return {};
-  },
-  getChildHostContext: function getChildHostContext(instance) {
-    log('getChildHostContext');
-    return {};
-  },
   shouldSetTextContent: function shouldSetTextContent(type, props) {
-    log('shouldSetTextContent');
+    log('shouldSetTextContent', Array.prototype.slice.call(arguments)); // todo
+    // 大部分是， false。除了 ink
+
     return false;
   },
-  // Methods for updating state
-  // --------------------------
+  createTextInstance: function createTextInstance(text, rootContainerInstance, hostContext, internalInstanceHandle) {
+    log('createTextInstance', Array.prototype.slice.call(arguments)); // todo
+    // 大部分 建立了文本节点
+
+    return Object(_instance__WEBPACK_IMPORTED_MODULE_0__["createTextInstance"])(text, rootContainerInstance, hostContext, internalInstanceHandle);
+  },
+  now: Date.now,
+  supportsMutation: true,
+  appendChild: function appendChild(parentInstance, child) {
+    log('appendChild', Array.prototype.slice.call(arguments));
+    parentInstance.appendChild(child);
+  },
+  appendChildToContainer: function appendChildToContainer(container, child) {
+    log('appendChildToContainer', Array.prototype.slice.call(arguments));
+    container.appendChild(child);
+  },
   commitTextUpdate: function commitTextUpdate(textInstance, oldText, newText) {
-    log('commitTextUpdate');
+    log('commitTextUpdate', Array.prototype.slice.call(arguments)); // todo
+    // 利用节点更新
+
+    textInstance.update(textInstance, oldText, newText);
   },
-  commitUpdate: function commitUpdate(instance, updatePayload, type, oldProps, newProps, finishedWork) {
-    log('commitUpdate');
+  commitUpdate: function commitUpdate(instance, updatePayload, type, oldProps, newProps, internalInstanceHandle) {
+    log('commitUpdate', Array.prototype.slice.call(arguments)); // todo
+    // 利用节点更新
+
+    instance.update(instance, updatePayload, type, oldProps, newProps, internalInstanceHandle);
   },
-  removeChildFromContainer: function removeChildFromContainer(parent, stateNode) {
-    log('removeChildFromContainer');
+  insertBefore: function insertBefore(parentInstance, child, beforeChild) {
+    log('insertBefore', Array.prototype.slice.call(arguments)); // todo
+
+    parentInstance.insertChild(child, beforeChild);
   },
-  useSyncScheduling: true,
-  supportsMutation: true
+  removeChild: function removeChild(parentInstance, child) {
+    log('removeChild', Array.prototype.slice.call(arguments));
+    parentInstance.removeChild(child);
+  },
+  removeChildFromContainer: function removeChildFromContainer(container, child) {
+    log('removeChildFromContainer', Array.prototype.slice.call(arguments));
+    container.removeChild(child);
+  } // todo :
+  // resetTextContent : proton-native react-pdf
+  // commitMount : proton-native
+  // insertInContainerBefore : remax
+  // schedulePassiveEffects, cancelPassiveEffects , shouldYield,scheduleDeferredCallbackcancelDeferredCallback,useSyncScheduling
+
 });
 
 /***/ }),
@@ -22052,7 +22631,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_reconciler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-reconciler */ "./node_modules/react-reconciler/index.js");
 /* harmony import */ var react_reconciler__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_reconciler__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _hostConfig__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hostConfig */ "./src/renderer/hostConfig.js");
-/* harmony import */ var _createInstance__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./createInstance */ "./src/renderer/createInstance.js");
+/* harmony import */ var _instance__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./instance */ "./src/renderer/instance.js");
 /* harmony import */ var ___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! .. */ "./src/index.js");
 
 
@@ -22061,12 +22640,52 @@ __webpack_require__.r(__webpack_exports__);
 
 function AwtkRender(element, callBack) {
   var reconciler = react_reconciler__WEBPACK_IMPORTED_MODULE_0___default()(_hostConfig__WEBPACK_IMPORTED_MODULE_1__["default"]);
-  var node = reconciler.createContainer(Object(_createInstance__WEBPACK_IMPORTED_MODULE_2__["createInstance"])(___WEBPACK_IMPORTED_MODULE_3__["Root"]), false);
+  var node = reconciler.createContainer(Object(_instance__WEBPACK_IMPORTED_MODULE_2__["createInstance"])(___WEBPACK_IMPORTED_MODULE_3__["Root"]), false);
   reconciler.updateContainer(element, node, null);
   callBack();
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (AwtkRender);
+
+/***/ }),
+
+/***/ "./src/renderer/instance.js":
+/*!**********************************!*\
+  !*** ./src/renderer/instance.js ***!
+  \**********************************/
+/*! exports provided: createInstance, createTextInstance */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createInstance", function() { return createInstance; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createTextInstance", function() { return createTextInstance; });
+/* harmony import */ var _components___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/ */ "./src/components/index.js");
+ // Creates an element with an element type, props and a root instance
+
+function createInstance(type, newProps, rootContainerInstance, currentHostContext, workInProgress) {
+  var COMPONENTS = {
+    ROOT: function ROOT() {
+      return new _components___WEBPACK_IMPORTED_MODULE_0__["Root"]();
+    },
+    WINDOW: function WINDOW() {
+      return _components___WEBPACK_IMPORTED_MODULE_0__["Window"].create(newProps);
+    },
+    BUTTON: function BUTTON() {
+      return _components___WEBPACK_IMPORTED_MODULE_0__["Button"].create(newProps);
+    },
+    "default": undefined
+  };
+  return COMPONENTS[type]() || COMPONENTS["default"];
+}
+
+function createTextInstance(type, newProps, rootContainerInstance, currentHostContext, workInProgress) {
+  // 暂时不支持。
+  // type：是 文字的内容。
+  return new _components___WEBPACK_IMPORTED_MODULE_0__["Text"](type);
+}
+
+
 
 /***/ })
 

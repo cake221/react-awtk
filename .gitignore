@@ -11,5 +11,7 @@
 *.exe
 node_modules
 
-test/other
+test
 .idea
+./webpack.dev.config.js
+./index.html

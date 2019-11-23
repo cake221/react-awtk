@@ -1,3 +1,12 @@
+/**
+
+ reateInstance,
+ createTextInstance,
+ appendChild,
+ insertBefore,
+ removeChild,
+ * */
+
 class Node {
 
   constructor() {
@@ -12,7 +21,7 @@ class Node {
     }
   }
 
-  appendChildBefore(child, beforeChild) {
+  insertBefore(child, beforeChild) {
     const index = this.children.indexOf(beforeChild);
 
     if (index !== -1 && child) {

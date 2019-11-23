@@ -1,18 +1,34 @@
-import Node from "./Node"
-import { TButton } from  "../components_native"
+import Widget from "./Widget"
 
+class Button extends Widget{
 
-class Button extends Node {
+    constructor(nativeObj){
+        super(nativeObj);
+    }
 
-	constructor(props) {
-		super();
-		this.props = { ...props };
-		this.newInstance();
-	}
+    static create({parent, x, y, w, h}) {
+        return new Button(button_create(parent ? parent.nativeObj : null, x, y, w, h));
+    };
 
-	newInstance() {
-		// this.element = TButton.create(win, 0, 0, 0, 0);
-	}
+    static cast(widget) {
+        return new Button(button_cast(widget ? (widget.nativeObj || widget) : null));
+    };
+
+    setRepeat(repeat) {
+        return button_set_repeat(this.nativeObj, repeat);
+    };
+    setEnableLongPress(enable_long_press) {
+        return button_set_enable_long_press(this.nativeObj, enable_long_press);
+    };
+
+    get repeat() {
+        return button_t_get_prop_repeat(this.nativeObj);
+    }
+
+    get enableLongPress() {
+        return button_t_get_prop_enable_long_press(this.nativeObj);
+    }
+
 }
 
 export default Button;

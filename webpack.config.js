@@ -2,8 +2,7 @@ const path = require("path");
 
 module.exports = {
 	entry:{
-		// window:"./demo/window.js",
-		test_native:"./test/native/index.js"
+		window:"./demo/window.js",
 	},
 	output:{
 		filename:"[name].js",

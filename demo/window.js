@@ -1,17 +1,33 @@
 import React, { Component } from 'react';
-import { Window, AwtkRender } from "../src"
+import { Window, Button, AwtkRender } from "../src"
 
 class App extends Component {
     constructor(props){
         super(props);
+        this.winRef = React.createRef();
     }
 
     componentDidMount () {
         console.log('APP DID MOUNT!');
     }
+
     render() {
         return (
-            <Window/>
+            <Window
+                ref = { this.winRef }
+                x = { 0 }
+                y = { 0 }
+                w = { 0 }
+                h = { 0 }
+            >
+                <Button
+                    parent = { this.winRef.current }
+                    x = { 0 }
+                    y = { 0 }
+                    w = { 0 }
+                    h = { 0 }
+                />
+            </Window>
         )
     }
 }
