@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
 	entry:{
-		window:"./demo/window.js",
+		target_1:"./demo/target_1.js",
 	},
 	output:{
 		filename:"[name].js",

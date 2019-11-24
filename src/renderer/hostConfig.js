@@ -1,6 +1,7 @@
 const SHOW_RECONCILER_CALLS = true
 const log = (...args) => SHOW_RECONCILER_CALLS && console.log(...args)
 import { createInstance, createTextInstance } from "./instance"
+import { isArray } from "lodash"
 
 
 const rootHostContext = {};
@@ -49,9 +50,14 @@ export default  {
         // 都是建立了一个树结点。 各有各的不同。
         return createInstance(type, newProps, rootContainerInstance, currentHostContext, workInProgress)
     },
+
     appendInitialChild (parentInstance, child) {
         log('appendInitialChild',[...arguments]);
-        parentInstance.appendChild(child);
+        try{
+            parentInstance.appendChild(child);
+        }catch (e) {
+            console.log("温宇飞",e)
+        }
     },
     finalizeInitialChildren (parentInstance,type,props,rootContainerInstance,hostContext) {
         log('finalizeInitialChildren',[...arguments]);

@@ -1,4 +1,5 @@
 import Widget from "./Widget"
+import {isArray, isFunction} from "lodash"
 
 class Window extends Widget{
 
@@ -6,12 +7,37 @@ class Window extends Widget{
         super(nativeObj);
     }
 
-    static create({parent, x, y, w, h}) {
-        return new Window(window_create(parent ? parent.nativeObj : null, x, y, w, h));
+    static create(props) {
+        const {parent, x, y, w, h, fullscreen, ...widget_props} = props;
+
+        const win =  new Window(window_create(parent ? parent.nativeObj : null, x, y, w, h));
+        Widget.widgetSetProps(win, widget_props);
+
+        const other = { fullscreen };
+        for(const item in other){
+            if(other.hasOwnProperty(item)){
+                if( isFunction(other[item]) ){
+
+                }else {
+                    win[item] = other[item];
+                }
+            }
+        }
+        win.layout();
+        return win;
     };
 
-    setFullscreen(fullscreen) {
-        return window_set_fullscreen(this.nativeObj, fullscreen);
+    static cast(widget) {
+        return new Window(window_cast(widget ? (widget.nativeObj || widget) : null));
+    };
+
+    // 属性
+    get fullscreen () {
+        return window_t_get_prop_fullscreen(this.nativeObj);
+    }
+
+    set fullscreen(fullscreen) {
+        this.checkWidgetTRet( window_set_fullscreen(this.nativeObj, fullscreen) );
     };
 
     static open(name) {
@@ -28,13 +54,6 @@ class Window extends Widget{
         return window_close_force(this.nativeObj);
     };
 
-    static cast(widget) {
-        return new Window(window_cast(widget ? (widget.nativeObj || widget) : null));
-    };
-
-    get fullscreen () {
-        return window_t_get_prop_fullscreen(this.nativeObj);
-    }
 }
 
 export default Window;

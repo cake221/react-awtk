@@ -1,4 +1,5 @@
 import Widget from "./Widget"
+import {isArray, isFunction} from "lodash"
 
 class Button extends Widget{
 
@@ -6,28 +7,48 @@ class Button extends Widget{
         super(nativeObj);
     }
 
-    static create({parent, x, y, w, h}) {
-        return new Button(button_create(parent ? parent.nativeObj : null, x, y, w, h));
+    static create(props) {
+
+        const {parent, x, y, w, h, repeat, enable_long_press, ...widget_props} = props;
+        const btn =  new Button(button_create(parent ? parent.nativeObj : null, x, y, w, h));
+        Widget.widgetSetProps(btn, widget_props);
+
+        const other = { repeat, enable_long_press };
+        for(const item in other){
+            if(other.hasOwnProperty(item)){
+                if( isFunction(other[item]) ){
+
+                }else {
+                    btn[item] = other[item];
+                }
+            }
+        }
+
+        btn.layout();
+        return btn;
     };
 
     static cast(widget) {
         return new Button(button_cast(widget ? (widget.nativeObj || widget) : null));
     };
 
-    setRepeat(repeat) {
-        return button_set_repeat(this.nativeObj, repeat);
-    };
-    setEnableLongPress(enable_long_press) {
-        return button_set_enable_long_press(this.nativeObj, enable_long_press);
-    };
 
     get repeat() {
         return button_t_get_prop_repeat(this.nativeObj);
     }
 
-    get enableLongPress() {
+    set repeat(repeat) {
+        this.checkWidgetTRet( button_set_repeat(this.nativeObj, repeat) );
+    };
+
+    // 将 enableLongPress 改成了 enable_long_press
+    get enable_long_press() {
         return button_t_get_prop_enable_long_press(this.nativeObj);
     }
+
+    set enable_long_press(enable_long_press) {
+        this.checkWidgetTRet( button_set_enable_long_press(this.nativeObj, enable_long_press) );
+    };
 
 }
 

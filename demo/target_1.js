@@ -14,18 +14,21 @@ class App extends Component {
     render() {
         return (
             <Window
-                ref = { this.winRef }
-                x = { 0 }
-                y = { 0 }
-                w = { 0 }
-                h = { 0 }
+                // ref = { this.winRef }
+                x="0" y="0" w="0" h="0"
             >
                 <Button
-                    parent = { this.winRef.current }
-                    x = { 0 }
-                    y = { 0 }
-                    w = { 0 }
-                    h = { 0 }
+                    // parent = {this.winRef.current}
+                    text = { "wenyufei" }
+                    x="0" y="0" w="0" h="0"
+                    tk_style = {{
+                        selfLayoutParams:{
+                            x:"center",
+                            y:"middle",
+                            w:"50%",
+                            h:"30"
+                        },
+                    }}
                 />
             </Window>
         )
