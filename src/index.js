@@ -1,6 +1,7 @@
 import './polyfill'
 import AwtkRender from "./renderer";
-import { setParentWidget } from "./util/parentWidget"
+import { setParentWidget } from "./util/parentWidget";
+import {TEventType} from "./native/TEventType"
 
 const Button = "BUTTON"
 const Window = "WINDOW"
@@ -11,5 +12,6 @@ export {
     Window,
     Root,
     AwtkRender,
-    setParentWidget
+    setParentWidget,
+    TEventType
 }

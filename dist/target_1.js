@@ -125,13 +125,9 @@ function (_Component) {
   _inherits(App, _Component);
 
   function App(props) {
-    var _this;
-
     _classCallCheck(this, App);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
-    _this.winRef = react__WEBPACK_IMPORTED_MODULE_0___default.a.createRef();
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
   }
 
   _createClass(App, [{
@@ -152,7 +148,7 @@ function (_Component) {
         h: "0"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src__WEBPACK_IMPORTED_MODULE_1__["Button"], {
         parent: "win1",
-        text: "wenyufei",
+        text: "按钮1",
         x: "0",
         y: "0",
         w: "0",
@@ -164,6 +160,28 @@ function (_Component) {
             w: "50%",
             h: "30"
           }
+        },
+        onClick: function onClick(e) {
+          console.log("按钮1", e);
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        parent: "win1",
+        name: "open:dialog1",
+        x: "0",
+        y: "0",
+        w: "0",
+        h: "0",
+        tk_style: {
+          selfLayoutParams: {
+            x: "10",
+            y: "10",
+            w: "50%",
+            h: "30"
+          }
+        },
+        text: "\u6309\u94AE2",
+        onClick: function onClick(e) {
+          console.log("按钮2", e);
         }
       }));
     }
@@ -39151,6 +39169,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _util_parentWidget__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/parentWidget */ "./src/util/parentWidget.js");
+/* harmony import */ var _native_TEventType__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../native/TEventType */ "./src/native/TEventType.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -39172,6 +39191,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -39220,170 +39240,18 @@ function (_Node) {
     // 用于添加子控间
     value: function addWidgetChild(child_widget) {
       this.checkWidgetTRet(widget_add_child(this.nativeObj, child_widget.nativeObj));
-    } // todo 修饰
-    // countChildren  () {
-    //     return widget_count_children(this.nativeObj);
-    // };
-    // getChild  (index) {
-    //     return new Widget(widget_get_child(this.nativeObj, index));
-    // };
-    // indexOf  () {
-    //     return widget_index_of(this.nativeObj);
-    // };
-    // move  (x, y) {
-    //     return widget_move(this.nativeObj, x, y);
-    // };
-    // resize  (w, h) {
-    //     return widget_resize(this.nativeObj, w, h);
-    // };
-    // moveResize  (x, y, w, h) {
-    //     return widget_move_resize(this.nativeObj, x, y, w, h);
-    // };
-    // setValue  (value) {
-    //     return widget_set_value(this.nativeObj, value);
-    // };
-    // animateValueTo  (value, duration) {
-    //     return widget_animate_value_to(this.nativeObj, value, duration);
-    // };
-    // addValue  (delta) {
-    //     return widget_add_value(this.nativeObj, delta);
-    // };
-    //
-    // getValue  () {
-    //     return widget_get_value(this.nativeObj);
-    // };
-    //
-    // setCursor  (cursor) {
-    //     return widget_set_cursor(this.nativeObj, cursor);
-    // };
-    // setAnimation  (animation) {
-    //     return widget_set_animation(this.nativeObj, animation);
-    // };
-    // createAnimator  (animation) {
-    //     return widget_create_animator(this.nativeObj, animation);
-    // };
-    // startAnimator  (name) {
-    //     return widget_start_animator(this.nativeObj, name);
-    // };
-    // setAnimatorTimeScale  (name, time_scale) {
-    //     return widget_set_animator_time_scale(this.nativeObj, name, time_scale);
-    // };
-    // pauseAnimator  (name) {
-    //     return widget_pause_animator(this.nativeObj, name);
-    // };
-    // findAnimator  (name) {
-    //     return widget_find_animator(this.nativeObj, name);
-    // };
-    // stopAnimator  (name) {
-    //     return widget_stop_animator(this.nativeObj, name);
-    // };
-    // destroyAnimator  (name) {
-    //     return widget_destroy_animator(this.nativeObj, name);
-    // };
-    // setEnable  (enable) {
-    //     return widget_set_enable(this.nativeObj, enable);
-    // };
-    // setFloating  (floating) {
-    //     return widget_set_floating(this.nativeObj, floating);
-    // };
-    // setFocused  (focused) {
-    //     return widget_set_focused(this.nativeObj, focused);
-    // };
-    // child  (name) {
-    //     return new Widget(widget_child(this.nativeObj, name));
-    // };
-    // lookup  (name, recursive) {
-    //     return new Widget(widget_lookup(this.nativeObj, name, recursive));
-    // };
-    // lookupByType  (type, recursive) {
-    //     return new Widget(widget_lookup_by_type(this.nativeObj, type, recursive));
-    // };
-    // setVisible  (visible, recursive) {
-    //     return widget_set_visible(this.nativeObj, visible, recursive);
-    // };
-    // setVisibleOnly  (visible) {
-    //     return widget_set_visible_only(this.nativeObj, visible);
-    // };
-    // setSensitive  (sensitive) {
-    //     return widget_set_sensitive(this.nativeObj, sensitive);
-    // };
-    // on  (type, on_event, ctx) {
-    //     return widget_on(this.nativeObj, type, on_event, ctx);
-    // };
-    // off  (id) {
-    //     return widget_off(this.nativeObj, id);
-    // };
-    // invalidateForce  (r) {
-    //     return widget_invalidate_force(this.nativeObj, r ? r.nativeObj : null);
-    // };
-    // setPropStr  (name, v) {
-    //     return widget_set_prop_str(this.nativeObj, name, v);
-    // };
-    // getPropStr  (name, defval) {
-    //     return widget_get_prop_str(this.nativeObj, name, defval);
-    // };
-    // setPropInt  (name, v) {
-    //     return widget_set_prop_int(this.nativeObj, name, v);
-    // };
-    // getPropInt  (name, defval) {
-    //     return widget_get_prop_int(this.nativeObj, name, defval);
-    // };
-    // setPropBool  (name, v) {
-    //     return widget_set_prop_bool(this.nativeObj, name, v);
-    // };
-    // getPropBool  (name, defval) {
-    //     return widget_get_prop_bool(this.nativeObj, name, defval);
-    // };
-    // isWindowOpened  () {
-    //     return widget_is_window_opened(this.nativeObj);
-    // };
-    // isWindow  () {
-    //     return widget_is_window(this.nativeObj);
-    // };
-    // isDesigningWindow  () {
-    //     return widget_is_designing_window(this.nativeObj);
-    // };
-    // isWindowManager  () {
-    //     return widget_is_window_manager(this.nativeObj);
-    // };
-    // foreach  (visit, ctx) {
-    //     return widget_foreach(this.nativeObj, visit, ctx);
-    // };
-    // getWindow  () {
-    //     return new Widget(widget_get_window(this.nativeObj));
-    // };
-    // getWindowManager  () {
-    //     return new Widget(widget_get_window_manager(this.nativeObj));
-    // };
-    // clone  (parent) {
-    //     return new Widget(widget_clone(this.nativeObj, parent ? parent.nativeObj : null));
-    // };
-    // equal  (other) {
-    //     return widget_equal(this.nativeObj, other ? other.nativeObj : null);
-    // };
-    // static cast  (widget) {
-    //     return new Widget(widget_cast(widget ? (widget.nativeObj || widget) : null));
-    // };
-    // destroy  () {
-    //     return widget_destroy(this.nativeObj);
-    // };
-    // setSelfLayout  (params) {
-    //     return widget_set_self_layout(this.nativeObj, params);
-    // };
-    // setChildrenLayout  (params) {
-    //     return widget_set_children_layout(this.nativeObj, params);
-    // };
-    // setStyleInt  (state_and_name, value) {
-    //     return widget_set_style_int(this.nativeObj, state_and_name, value);
-    // };
-    // setStyleStr  (state_and_name, value) {
-    //     return widget_set_style_str(this.nativeObj, state_and_name, value);
-    // };
-    // setStyleColor  (state_and_name, value) {
-    //     return widget_set_style_color(this.nativeObj, state_and_name, value);
-    // };
-    //
+    } // 事件
 
+  }, {
+    key: "on",
+    value: function on(type, on_event, ctx) {
+      return widget_on(this.nativeObj, type, on_event, ctx);
+    }
+  }, {
+    key: "off",
+    value: function off(id) {
+      return widget_off(this.nativeObj, id);
+    }
   }, {
     key: "x",
     // 属性
@@ -39500,7 +39368,11 @@ function (_Node) {
 
       for (var item in other) {
         if (other.hasOwnProperty(item)) {
-          if (Object(lodash__WEBPACK_IMPORTED_MODULE_2__["isFunction"])(other[item])) {} else {
+          if (Object(lodash__WEBPACK_IMPORTED_MODULE_2__["isFunction"])(other[item])) {
+            if (other[item].name === "onClick") {
+              var event_id = widget_child.on(_native_TEventType__WEBPACK_IMPORTED_MODULE_4__["TEventType"].CLICK, other[item]);
+            }
+          } else {
             widget_child[item] = other[item];
           }
         }
@@ -39679,7 +39551,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! exports provided: Button, Window, Root, AwtkRender, setParentWidget */
+/*! exports provided: Button, Window, Root, AwtkRender, setParentWidget, TEventType */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39695,12 +39567,97 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_parentWidget__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/parentWidget */ "./src/util/parentWidget.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setParentWidget", function() { return _util_parentWidget__WEBPACK_IMPORTED_MODULE_2__["setParentWidget"]; });
 
+/* harmony import */ var _native_TEventType__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./native/TEventType */ "./src/native/TEventType.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TEventType", function() { return _native_TEventType__WEBPACK_IMPORTED_MODULE_3__["TEventType"]; });
+
+
 
 
 
 var Button = "BUTTON";
 var Window = "WINDOW";
 var Root = "ROOT";
+
+
+/***/ }),
+
+/***/ "./src/native/TEventType.js":
+/*!**********************************!*\
+  !*** ./src/native/TEventType.js ***!
+  \**********************************/
+/*! exports provided: TEventType */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TEventType", function() { return TEventType; });
+var TEventType = {};
+
+(function (TEventType) {
+  TEventType[TEventType["POINTER_DOWN"] = EVT_POINTER_DOWN()] = "POINTER_DOWN";
+  TEventType[TEventType["POINTER_DOWN_BEFORE_CHILDREN"] = EVT_POINTER_DOWN_BEFORE_CHILDREN()] = "POINTER_DOWN_BEFORE_CHILDREN";
+  TEventType[TEventType["POINTER_MOVE"] = EVT_POINTER_MOVE()] = "POINTER_MOVE";
+  TEventType[TEventType["POINTER_MOVE_BEFORE_CHILDREN"] = EVT_POINTER_MOVE_BEFORE_CHILDREN()] = "POINTER_MOVE_BEFORE_CHILDREN";
+  TEventType[TEventType["POINTER_UP"] = EVT_POINTER_UP()] = "POINTER_UP";
+  TEventType[TEventType["POINTER_UP_BEFORE_CHILDREN"] = EVT_POINTER_UP_BEFORE_CHILDREN()] = "POINTER_UP_BEFORE_CHILDREN";
+  TEventType[TEventType["WHEEL"] = EVT_WHEEL()] = "WHEEL";
+  TEventType[TEventType["POINTER_DOWN_ABORT"] = EVT_POINTER_DOWN_ABORT()] = "POINTER_DOWN_ABORT";
+  TEventType[TEventType["CONTEXT_MENU"] = EVT_CONTEXT_MENU()] = "CONTEXT_MENU";
+  TEventType[TEventType["POINTER_ENTER"] = EVT_POINTER_ENTER()] = "POINTER_ENTER";
+  TEventType[TEventType["POINTER_LEAVE"] = EVT_POINTER_LEAVE()] = "POINTER_LEAVE";
+  TEventType[TEventType["LONG_PRESS"] = EVT_LONG_PRESS()] = "LONG_PRESS";
+  TEventType[TEventType["CLICK"] = EVT_CLICK()] = "CLICK";
+  TEventType[TEventType["FOCUS"] = EVT_FOCUS()] = "FOCUS";
+  TEventType[TEventType["BLUR"] = EVT_BLUR()] = "BLUR";
+  TEventType[TEventType["KEY_DOWN"] = EVT_KEY_DOWN()] = "KEY_DOWN";
+  TEventType[TEventType["KEY_DOWN_BEFORE_CHILDREN"] = EVT_KEY_DOWN_BEFORE_CHILDREN()] = "KEY_DOWN_BEFORE_CHILDREN";
+  TEventType[TEventType["KEY_REPEAT"] = EVT_KEY_REPEAT()] = "KEY_REPEAT";
+  TEventType[TEventType["KEY_UP"] = EVT_KEY_UP()] = "KEY_UP";
+  TEventType[TEventType["KEY_UP_BEFORE_CHILDREN"] = EVT_KEY_UP_BEFORE_CHILDREN()] = "KEY_UP_BEFORE_CHILDREN";
+  TEventType[TEventType["WILL_MOVE"] = EVT_WILL_MOVE()] = "WILL_MOVE";
+  TEventType[TEventType["MOVE"] = EVT_MOVE()] = "MOVE";
+  TEventType[TEventType["WILL_RESIZE"] = EVT_WILL_RESIZE()] = "WILL_RESIZE";
+  TEventType[TEventType["RESIZE"] = EVT_RESIZE()] = "RESIZE";
+  TEventType[TEventType["WILL_MOVE_RESIZE"] = EVT_WILL_MOVE_RESIZE()] = "WILL_MOVE_RESIZE";
+  TEventType[TEventType["MOVE_RESIZE"] = EVT_MOVE_RESIZE()] = "MOVE_RESIZE";
+  TEventType[TEventType["VALUE_WILL_CHANGE"] = EVT_VALUE_WILL_CHANGE()] = "VALUE_WILL_CHANGE";
+  TEventType[TEventType["VALUE_CHANGED"] = EVT_VALUE_CHANGED()] = "VALUE_CHANGED";
+  TEventType[TEventType["VALUE_CHANGING"] = EVT_VALUE_CHANGING()] = "VALUE_CHANGING";
+  TEventType[TEventType["PAINT"] = EVT_PAINT()] = "PAINT";
+  TEventType[TEventType["BEFORE_PAINT"] = EVT_BEFORE_PAINT()] = "BEFORE_PAINT";
+  TEventType[TEventType["AFTER_PAINT"] = EVT_AFTER_PAINT()] = "AFTER_PAINT";
+  TEventType[TEventType["PAINT_DONE"] = EVT_PAINT_DONE()] = "PAINT_DONE";
+  TEventType[TEventType["LOCALE_CHANGED"] = EVT_LOCALE_CHANGED()] = "LOCALE_CHANGED";
+  TEventType[TEventType["ANIM_START"] = EVT_ANIM_START()] = "ANIM_START";
+  TEventType[TEventType["ANIM_STOP"] = EVT_ANIM_STOP()] = "ANIM_STOP";
+  TEventType[TEventType["ANIM_PAUSE"] = EVT_ANIM_PAUSE()] = "ANIM_PAUSE";
+  TEventType[TEventType["ANIM_ONCE"] = EVT_ANIM_ONCE()] = "ANIM_ONCE";
+  TEventType[TEventType["ANIM_END"] = EVT_ANIM_END()] = "ANIM_END";
+  TEventType[TEventType["WINDOW_LOAD"] = EVT_WINDOW_LOAD()] = "WINDOW_LOAD";
+  TEventType[TEventType["WINDOW_WILL_OPEN"] = EVT_WINDOW_WILL_OPEN()] = "WINDOW_WILL_OPEN";
+  TEventType[TEventType["WINDOW_OPEN"] = EVT_WINDOW_OPEN()] = "WINDOW_OPEN";
+  TEventType[TEventType["WINDOW_TO_BACKGROUND"] = EVT_WINDOW_TO_BACKGROUND()] = "WINDOW_TO_BACKGROUND";
+  TEventType[TEventType["WINDOW_TO_FOREGROUND"] = EVT_WINDOW_TO_FOREGROUND()] = "WINDOW_TO_FOREGROUND";
+  TEventType[TEventType["WINDOW_CLOSE"] = EVT_WINDOW_CLOSE()] = "WINDOW_CLOSE";
+  TEventType[TEventType["REQUEST_CLOSE_WINDOW"] = EVT_REQUEST_CLOSE_WINDOW()] = "REQUEST_CLOSE_WINDOW";
+  TEventType[TEventType["TOP_WINDOW_CHANGED"] = EVT_TOP_WINDOW_CHANGED()] = "TOP_WINDOW_CHANGED";
+  TEventType[TEventType["IM_COMMIT"] = EVT_IM_COMMIT()] = "IM_COMMIT";
+  TEventType[TEventType["IM_SHOW_CANDIDATES"] = EVT_IM_SHOW_CANDIDATES()] = "IM_SHOW_CANDIDATES";
+  TEventType[TEventType["IM_ACTION"] = EVT_IM_ACTION()] = "IM_ACTION";
+  TEventType[TEventType["IM_ACTION_INFO"] = EVT_IM_ACTION_INFO()] = "IM_ACTION_INFO";
+  TEventType[TEventType["DRAG_START"] = EVT_DRAG_START()] = "DRAG_START";
+  TEventType[TEventType["DRAG"] = EVT_DRAG()] = "DRAG";
+  TEventType[TEventType["DRAG_END"] = EVT_DRAG_END()] = "DRAG_END";
+  TEventType[TEventType["SCREEN_SAVER"] = EVT_SCREEN_SAVER()] = "SCREEN_SAVER";
+  TEventType[TEventType["LOW_MEMORY"] = EVT_LOW_MEMORY()] = "LOW_MEMORY";
+  TEventType[TEventType["OUT_OF_MEMORY"] = EVT_OUT_OF_MEMORY()] = "OUT_OF_MEMORY";
+  TEventType[TEventType["ORIENTATION_WILL_CHANGED"] = EVT_ORIENTATION_WILL_CHANGED()] = "ORIENTATION_WILL_CHANGED";
+  TEventType[TEventType["ORIENTATION_CHANGED"] = EVT_ORIENTATION_CHANGED()] = "ORIENTATION_CHANGED";
+  TEventType[TEventType["WIDGET_CREATED"] = EVT_WIDGET_CREATED()] = "WIDGET_CREATED";
+  TEventType[TEventType["REQ_START"] = EVT_REQ_START()] = "REQ_START";
+  TEventType[TEventType["USER_START"] = EVT_USER_START()] = "USER_START";
+})(TEventType);
+
 
 
 /***/ }),

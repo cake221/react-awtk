@@ -2,6 +2,7 @@ import Node from "./Node"
 import { checkTRet } from "../native/TRet"
 import {isFunction, isEmpty} from "lodash"
 import { setChildWidget } from "../util/parentWidget"
+import {TEventType} from "../native/TEventType"
 
 class Widget extends Node{
 
@@ -23,7 +24,9 @@ class Widget extends Node{
         for(const item in other){
             if(other.hasOwnProperty(item)){
                 if( isFunction(other[item]) ){
-
+                    if(other[item].name === "onClick"){
+                        const event_id = widget_child.on(TEventType.CLICK, other[item]);
+                    }
                 }else {
                     widget_child[item] = other[item];
                 }
@@ -143,6 +146,15 @@ class Widget extends Node{
         this.checkWidgetTRet( widget_add_child(this.nativeObj, child_widget.nativeObj) );
     }
 
+    // 事件
+    on  (type, on_event, ctx) {
+        return widget_on(this.nativeObj, type, on_event, ctx);
+    };
+
+    off  (id) {
+        return widget_off(this.nativeObj, id);
+    };
+
     // todo 修饰
     // countChildren  () {
     //     return widget_count_children(this.nativeObj);
@@ -230,12 +242,7 @@ class Widget extends Node{
     // setSensitive  (sensitive) {
     //     return widget_set_sensitive(this.nativeObj, sensitive);
     // };
-    // on  (type, on_event, ctx) {
-    //     return widget_on(this.nativeObj, type, on_event, ctx);
-    // };
-    // off  (id) {
-    //     return widget_off(this.nativeObj, id);
-    // };
+
     // invalidateForce  (r) {
     //     return widget_invalidate_force(this.nativeObj, r ? r.nativeObj : null);
     // };

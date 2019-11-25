@@ -4,7 +4,6 @@ import { Window, Button, AwtkRender, setParentWidget } from "../src"
 class App extends Component {
     constructor(props){
         super(props);
-        this.winRef = React.createRef();
     }
 
     componentDidMount () {
@@ -21,7 +20,7 @@ class App extends Component {
             >
                 <Button
                     parent = { "win1" }
-                    text = { "wenyufei" }
+                    text = { "按钮1" }
                     x="0" y="0" w="0" h="0"
                     tk_style = {{
                         selfLayoutParams:{
@@ -31,6 +30,30 @@ class App extends Component {
                             h:"30"
                         },
                     }}
+                    onClick = {
+                        (e)=>{
+                            console.log("按钮1",e);
+                        }
+                    }
+                />
+                <Button
+                    parent = { "win1" }
+                    name="open:dialog1"
+                    x="0" y="0" w="0" h="0"
+                    tk_style = {{
+                        selfLayoutParams:{
+                            x:"10",
+                            y:"10",
+                            w:"50%",
+                            h:"30"
+                        },
+                    }}
+                    text="按钮2"
+                    onClick = {
+                        (e)=>{
+                            console.log("按钮2",e)
+                        }
+                    }
                 />
             </Window>
         )
