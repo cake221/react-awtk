@@ -1,5 +1,6 @@
 import './polyfill'
 import AwtkRender from "./renderer";
+import { setParentWidget } from "./util/parentWidget"
 
 const Button = "BUTTON"
 const Window = "WINDOW"
@@ -9,5 +10,6 @@ export {
     Button,
     Window,
     Root,
-    AwtkRender
+    AwtkRender,
+    setParentWidget
 }

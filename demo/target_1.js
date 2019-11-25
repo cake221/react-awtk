@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Window, Button, AwtkRender } from "../src"
+import { Window, Button, AwtkRender, setParentWidget } from "../src"
 
 class App extends Component {
     constructor(props){
@@ -14,11 +14,13 @@ class App extends Component {
     render() {
         return (
             <Window
-                // ref = { this.winRef }
+                ref = {
+                    (ref) => setParentWidget(ref, "win1")
+                }
                 x="0" y="0" w="0" h="0"
             >
                 <Button
-                    // parent = {this.winRef.current}
+                    parent = { "win1" }
                     text = { "wenyufei" }
                     x="0" y="0" w="0" h="0"
                     tk_style = {{

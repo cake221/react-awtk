@@ -142,8 +142,16 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src__WEBPACK_IMPORTED_MODULE_1__["Button"] // parent = {this.winRef.current}
-      , {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src__WEBPACK_IMPORTED_MODULE_1__["Window"], {
+        ref: function ref(_ref) {
+          return Object(_src__WEBPACK_IMPORTED_MODULE_1__["setParentWidget"])(_ref, "win1");
+        },
+        x: "0",
+        y: "0",
+        w: "0",
+        h: "0"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+        parent: "win1",
         text: "wenyufei",
         x: "0",
         y: "0",
@@ -157,7 +165,7 @@ function (_Component) {
             h: "30"
           }
         }
-      });
+      }));
     }
   }]);
 
@@ -38799,16 +38807,15 @@ function (_Widget) {
   }], [{
     key: "create",
     value: function create(props) {
-      var parent = props.parent,
-          x = props.x,
+      var x = props.x,
           y = props.y,
           w = props.w,
           h = props.h,
           repeat = props.repeat,
           enable_long_press = props.enable_long_press,
-          widget_props = _objectWithoutProperties(props, ["parent", "x", "y", "w", "h", "repeat", "enable_long_press"]);
+          widget_props = _objectWithoutProperties(props, ["x", "y", "w", "h", "repeat", "enable_long_press"]);
 
-      var btn = new Button(button_create(parent ? parent.nativeObj : null, x, y, w, h));
+      var btn = new Button(button_create(null, x, y, w, h));
       _Widget__WEBPACK_IMPORTED_MODULE_0__["default"].widgetSetProps(btn, widget_props);
       var other = {
         repeat: repeat,
@@ -39143,6 +39150,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _native_TRet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../native/TRet */ "./src/native/TRet.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _util_parentWidget__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/parentWidget */ "./src/util/parentWidget.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -39164,6 +39172,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -39206,6 +39215,175 @@ function (_Node) {
     value: function layout() {
       return widget_layout(this.nativeObj);
     }
+  }, {
+    key: "addWidgetChild",
+    // 用于添加子控间
+    value: function addWidgetChild(child_widget) {
+      this.checkWidgetTRet(widget_add_child(this.nativeObj, child_widget.nativeObj));
+    } // todo 修饰
+    // countChildren  () {
+    //     return widget_count_children(this.nativeObj);
+    // };
+    // getChild  (index) {
+    //     return new Widget(widget_get_child(this.nativeObj, index));
+    // };
+    // indexOf  () {
+    //     return widget_index_of(this.nativeObj);
+    // };
+    // move  (x, y) {
+    //     return widget_move(this.nativeObj, x, y);
+    // };
+    // resize  (w, h) {
+    //     return widget_resize(this.nativeObj, w, h);
+    // };
+    // moveResize  (x, y, w, h) {
+    //     return widget_move_resize(this.nativeObj, x, y, w, h);
+    // };
+    // setValue  (value) {
+    //     return widget_set_value(this.nativeObj, value);
+    // };
+    // animateValueTo  (value, duration) {
+    //     return widget_animate_value_to(this.nativeObj, value, duration);
+    // };
+    // addValue  (delta) {
+    //     return widget_add_value(this.nativeObj, delta);
+    // };
+    //
+    // getValue  () {
+    //     return widget_get_value(this.nativeObj);
+    // };
+    //
+    // setCursor  (cursor) {
+    //     return widget_set_cursor(this.nativeObj, cursor);
+    // };
+    // setAnimation  (animation) {
+    //     return widget_set_animation(this.nativeObj, animation);
+    // };
+    // createAnimator  (animation) {
+    //     return widget_create_animator(this.nativeObj, animation);
+    // };
+    // startAnimator  (name) {
+    //     return widget_start_animator(this.nativeObj, name);
+    // };
+    // setAnimatorTimeScale  (name, time_scale) {
+    //     return widget_set_animator_time_scale(this.nativeObj, name, time_scale);
+    // };
+    // pauseAnimator  (name) {
+    //     return widget_pause_animator(this.nativeObj, name);
+    // };
+    // findAnimator  (name) {
+    //     return widget_find_animator(this.nativeObj, name);
+    // };
+    // stopAnimator  (name) {
+    //     return widget_stop_animator(this.nativeObj, name);
+    // };
+    // destroyAnimator  (name) {
+    //     return widget_destroy_animator(this.nativeObj, name);
+    // };
+    // setEnable  (enable) {
+    //     return widget_set_enable(this.nativeObj, enable);
+    // };
+    // setFloating  (floating) {
+    //     return widget_set_floating(this.nativeObj, floating);
+    // };
+    // setFocused  (focused) {
+    //     return widget_set_focused(this.nativeObj, focused);
+    // };
+    // child  (name) {
+    //     return new Widget(widget_child(this.nativeObj, name));
+    // };
+    // lookup  (name, recursive) {
+    //     return new Widget(widget_lookup(this.nativeObj, name, recursive));
+    // };
+    // lookupByType  (type, recursive) {
+    //     return new Widget(widget_lookup_by_type(this.nativeObj, type, recursive));
+    // };
+    // setVisible  (visible, recursive) {
+    //     return widget_set_visible(this.nativeObj, visible, recursive);
+    // };
+    // setVisibleOnly  (visible) {
+    //     return widget_set_visible_only(this.nativeObj, visible);
+    // };
+    // setSensitive  (sensitive) {
+    //     return widget_set_sensitive(this.nativeObj, sensitive);
+    // };
+    // on  (type, on_event, ctx) {
+    //     return widget_on(this.nativeObj, type, on_event, ctx);
+    // };
+    // off  (id) {
+    //     return widget_off(this.nativeObj, id);
+    // };
+    // invalidateForce  (r) {
+    //     return widget_invalidate_force(this.nativeObj, r ? r.nativeObj : null);
+    // };
+    // setPropStr  (name, v) {
+    //     return widget_set_prop_str(this.nativeObj, name, v);
+    // };
+    // getPropStr  (name, defval) {
+    //     return widget_get_prop_str(this.nativeObj, name, defval);
+    // };
+    // setPropInt  (name, v) {
+    //     return widget_set_prop_int(this.nativeObj, name, v);
+    // };
+    // getPropInt  (name, defval) {
+    //     return widget_get_prop_int(this.nativeObj, name, defval);
+    // };
+    // setPropBool  (name, v) {
+    //     return widget_set_prop_bool(this.nativeObj, name, v);
+    // };
+    // getPropBool  (name, defval) {
+    //     return widget_get_prop_bool(this.nativeObj, name, defval);
+    // };
+    // isWindowOpened  () {
+    //     return widget_is_window_opened(this.nativeObj);
+    // };
+    // isWindow  () {
+    //     return widget_is_window(this.nativeObj);
+    // };
+    // isDesigningWindow  () {
+    //     return widget_is_designing_window(this.nativeObj);
+    // };
+    // isWindowManager  () {
+    //     return widget_is_window_manager(this.nativeObj);
+    // };
+    // foreach  (visit, ctx) {
+    //     return widget_foreach(this.nativeObj, visit, ctx);
+    // };
+    // getWindow  () {
+    //     return new Widget(widget_get_window(this.nativeObj));
+    // };
+    // getWindowManager  () {
+    //     return new Widget(widget_get_window_manager(this.nativeObj));
+    // };
+    // clone  (parent) {
+    //     return new Widget(widget_clone(this.nativeObj, parent ? parent.nativeObj : null));
+    // };
+    // equal  (other) {
+    //     return widget_equal(this.nativeObj, other ? other.nativeObj : null);
+    // };
+    // static cast  (widget) {
+    //     return new Widget(widget_cast(widget ? (widget.nativeObj || widget) : null));
+    // };
+    // destroy  () {
+    //     return widget_destroy(this.nativeObj);
+    // };
+    // setSelfLayout  (params) {
+    //     return widget_set_self_layout(this.nativeObj, params);
+    // };
+    // setChildrenLayout  (params) {
+    //     return widget_set_children_layout(this.nativeObj, params);
+    // };
+    // setStyleInt  (state_and_name, value) {
+    //     return widget_set_style_int(this.nativeObj, state_and_name, value);
+    // };
+    // setStyleStr  (state_and_name, value) {
+    //     return widget_set_style_str(this.nativeObj, state_and_name, value);
+    // };
+    // setStyleColor  (state_and_name, value) {
+    //     return widget_set_style_color(this.nativeObj, state_and_name, value);
+    // };
+    //
+
   }, {
     key: "x",
     // 属性
@@ -39315,7 +39493,10 @@ function (_Node) {
     key: "widgetSetProps",
     value: function widgetSetProps(widget_child, widget_props) {
       var tk_style = widget_props.tk_style,
-          other = _objectWithoutProperties(widget_props, ["tk_style"]);
+          parent = widget_props.parent,
+          other = _objectWithoutProperties(widget_props, ["tk_style", "parent"]);
+
+      parent && Object(_util_parentWidget__WEBPACK_IMPORTED_MODULE_3__["setChildWidget"])(widget_child, parent);
 
       for (var item in other) {
         if (other.hasOwnProperty(item)) {
@@ -39409,15 +39590,14 @@ function (_Widget) {
   }], [{
     key: "create",
     value: function create(props) {
-      var parent = props.parent,
-          x = props.x,
+      var x = props.x,
           y = props.y,
           w = props.w,
           h = props.h,
           fullscreen = props.fullscreen,
-          widget_props = _objectWithoutProperties(props, ["parent", "x", "y", "w", "h", "fullscreen"]);
+          widget_props = _objectWithoutProperties(props, ["x", "y", "w", "h", "fullscreen"]);
 
-      var win = new Window(window_create(parent ? parent.nativeObj : null, x, y, w, h));
+      var win = new Window(window_create(null, x, y, w, h));
       _Widget__WEBPACK_IMPORTED_MODULE_0__["default"].widgetSetProps(win, widget_props);
       var other = {
         fullscreen: fullscreen
@@ -39499,7 +39679,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! exports provided: Button, Window, Root, AwtkRender */
+/*! exports provided: Button, Window, Root, AwtkRender, setParentWidget */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39511,6 +39691,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _polyfill__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_polyfill__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _renderer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./renderer */ "./src/renderer/index.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AwtkRender", function() { return _renderer__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
+/* harmony import */ var _util_parentWidget__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/parentWidget */ "./src/util/parentWidget.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "setParentWidget", function() { return _util_parentWidget__WEBPACK_IMPORTED_MODULE_2__["setParentWidget"]; });
+
 
 
 
@@ -39798,6 +39982,64 @@ function createTextInstance(type, newProps, rootContainerInstance, currentHostCo
   // 暂时不支持。
   // type：是 文字的内容。
   return new _components___WEBPACK_IMPORTED_MODULE_0__["Text"](type);
+}
+
+
+
+/***/ }),
+
+/***/ "./src/util/parentWidget.js":
+/*!**********************************!*\
+  !*** ./src/util/parentWidget.js ***!
+  \**********************************/
+/*! exports provided: setParentWidget, setChildWidget */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setParentWidget", function() { return setParentWidget; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setChildWidget", function() { return setChildWidget; });
+var parentWidgets = {};
+
+function setParentWidget(ref, id) {
+  var _console;
+
+  (_console = console).log.apply(_console, ["测试 setParentWidget()"].concat(Array.prototype.slice.call(arguments)));
+
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = parentWidgets[id][Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var child = _step.value;
+      ref.addWidgetChild(child);
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+        _iterator["return"]();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+
+  ref.layout();
+}
+
+function setChildWidget(ref, id) {
+  var _console2;
+
+  (_console2 = console).log.apply(_console2, ["测试, setChildWidget()"].concat(Array.prototype.slice.call(arguments)));
+
+  !parentWidgets[id] && (parentWidgets[id] = []);
+  parentWidgets[id].push(ref);
 }
 
 

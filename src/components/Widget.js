@@ -1,6 +1,7 @@
 import Node from "./Node"
 import { checkTRet } from "../native/TRet"
 import {isFunction, isEmpty} from "lodash"
+import { setChildWidget } from "../util/parentWidget"
 
 class Widget extends Node{
 
@@ -15,7 +16,10 @@ class Widget extends Node{
     }
 
     static widgetSetProps(widget_child, widget_props){
-        const {tk_style, ...other} = widget_props;
+        const {tk_style, parent, ...other} = widget_props;
+
+        parent && setChildWidget(widget_child, parent);
+
         for(const item in other){
             if(other.hasOwnProperty(item)){
                 if( isFunction(other[item]) ){
@@ -133,6 +137,11 @@ class Widget extends Node{
     layout  () {
         return widget_layout(this.nativeObj);
     };
+
+    // 用于添加子控间
+    addWidgetChild(child_widget){
+        this.checkWidgetTRet( widget_add_child(this.nativeObj, child_widget.nativeObj) );
+    }
 
     // todo 修饰
     // countChildren  () {

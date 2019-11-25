@@ -8,9 +8,9 @@ class Window extends Widget{
     }
 
     static create(props) {
-        const {parent, x, y, w, h, fullscreen, ...widget_props} = props;
+        const { x, y, w, h, fullscreen, ...widget_props} = props;
 
-        const win =  new Window(window_create(parent ? parent.nativeObj : null, x, y, w, h));
+        const win =  new Window(window_create( null, x, y, w, h));
         Widget.widgetSetProps(win, widget_props);
 
         const other = { fullscreen };

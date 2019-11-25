@@ -9,8 +9,8 @@ class Button extends Widget{
 
     static create(props) {
 
-        const {parent, x, y, w, h, repeat, enable_long_press, ...widget_props} = props;
-        const btn =  new Button(button_create(parent ? parent.nativeObj : null, x, y, w, h));
+        const { x, y, w, h, repeat, enable_long_press, ...widget_props} = props;
+        const btn =  new Button(button_create( null, x, y, w, h));
         Widget.widgetSetProps(btn, widget_props);
 
         const other = { repeat, enable_long_press };
