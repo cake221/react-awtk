@@ -1,0 +1,14 @@
+.idea
+demo
+dist
+node_modules
+src
+test
+.babelrc
+.gitignore
+.npmignore
+index.html
+package-lock.json
+README.md
+webpack.config.js
+webpack.dev.config.js
