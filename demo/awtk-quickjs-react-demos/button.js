@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Window, Button, AwtkRender, setParentWidget } from "../src"
+import { Window, Button, AwtkRender, setParentWidget } from "../../src"
 
 class App extends Component {
   constructor(props){
@@ -31,9 +31,13 @@ class App extends Component {
           }}
           onClick = {
             (evt)=>{
-              const e = TPointerEvent.cast(evt)
+              const e = TPointerEvent.cast(evt);
+              const target = TButton.cast(e.target);
+
+              console.log("click at " + e.x + " " + e.y + " on " + target.name);
               console.log("global: " + TGlobal.getPointerX() + " " + TGlobal.getPointerY() + " " + TGlobal.isPointerPressed());
-              console.log("on click: " + e.x + " " + e.y);
+
+              return TRet.OK;
             }
           }
         />
