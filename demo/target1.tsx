@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Window, Button, AwtkRender, setParentWidget } from "../src"
+import { AwtkRender, setParentWidget } from "../src"
 
 class App extends Component {
   constructor(props){
@@ -12,18 +12,16 @@ class App extends Component {
   
   render() {
     return (
-      <Window
+      <t_window
         ref = {
           (ref) => setParentWidget(ref, "win1")
         }
-        x="0" y="0" w="0" h="0"
       >
-        <Button
+        <t_button
           parent = { "win1" }
           text = { "按钮1" }
-          x="0" y="0" w="0" h="0"
-          tk_style = {{
-            selfLayoutParams:{
+          style = {{
+            selfLayout:{
               x:"center",
               y:"middle",
               w:"50%",
@@ -36,12 +34,11 @@ class App extends Component {
             }
           }
         />
-        <Button
+        <t_button
           parent = { "win1" }
           name="open:dialog1"
-          x="0" y="0" w="0" h="0"
-          tk_style = {{
-            selfLayoutParams:{
+          style = {{
+            selfLayout:{
               x:"10",
               y:"10",
               w:"50%",
@@ -55,7 +52,7 @@ class App extends Component {
             }
           }
         />
-      </Window>
+      </t_window>
     )
   }
 }
