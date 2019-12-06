@@ -1,27 +1,15 @@
 {
   "name": "react-awtk",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "./node_modules/.bin/webpack --config webpack.config.js",
-    "dev": "./node_modules/.bin/webpack-dev-server --hot --config webpack.dev.config.js"
-  },
+  "description": "基于 awtk 的 React 渲染器",
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.15",
-    "react": "^16.12.0",
-    "react-reconciler": "^0.24.0"
+
   },
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.1",
-    "@babel/preset-react": "^7.7.0",
-    "babel-loader": "^8.0.6",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+
   }
 }
