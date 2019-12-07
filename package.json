@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "基于 awtk 的 React 渲染器",
   "scripts": {
-    "build": "./node_modules/.bin/tsc "
+    "build": "./node_modules/.bin/webpack --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,10 @@
     "lodash": "^4.17.15",
     "react": "16.8.6",
     "react-reconciler": "0.20.4",
-    "typescript": "^3.7.3"
+    "ts-loader": "^6.2.1",
+    "typescript": "3.7.3",
+    "webpack": "4.39.3",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   }
 }

@@ -4,8 +4,7 @@
 declare class os{
   static setTimeout
 }
-
-globalThis.process = { env: { NODE_ENV: 'development' } };
+// todo 考虑是不是换成 awtk.timer
 globalThis.setTimeout = os.setTimeout;
 // globalThis.setTimeout = function(callback, after, arg1, arg2, arg3){ callback() }
 globalThis.console.warn = console.log;
