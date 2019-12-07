@@ -1,0 +1,22 @@
+{
+  "name": "webpack_ts_react",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "./node_modules/.bin/webpack --config webpack.config.js",
+    "dev": "./node_modules/.bin/webpack-dev-server --hot --config webpack.config.js"
+  },
+  "dependencies": {
+    "@types/lodash": "4.14.149",
+    "@types/react": "16.9.15",
+    "@types/react-reconciler": "0.18.0",
+    "lodash": "4.17.15",
+    "react": "16.8.6",
+    "react-reconciler": "0.20.4",
+    "ts-loader": "^6.2.1",
+    "typescript": "3.7.3",
+    "webpack": "4.39.3",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  }
+}
