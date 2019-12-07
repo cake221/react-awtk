@@ -10,12 +10,8 @@ export function applyMixins(derivedCtor: any, baseCtors: any[]) {
 
 
 export class Node{
-  public tk_children:Node[];
-  public tk_parent:Node;
-  constructor() {
-    this.tk_children = [];
-    this.tk_parent = null;
-  }
+  public tk_children:Node[] = [];
+  public tk_parent:Node = null;
 
   appendChild(child) {
     if (child) {
@@ -54,10 +50,10 @@ export class Node{
 
 }
 
-export function nodeMixins( parent: typeof TWidget){
-  class tmpClass extends parent implements Node{
-    tk_children: Node[];
-    tk_parent: Node;
+export function nodeMixins( Parent: typeof TWidget){
+  class tmpClass extends Parent implements Node{
+    tk_children: Node[] = [];
+    tk_parent: Node = null;
   
     appendChild(child): void {
     }

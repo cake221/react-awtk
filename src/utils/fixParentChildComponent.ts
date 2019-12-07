@@ -1,6 +1,8 @@
 import { TWidget }from "../native/awtk"
 
-export const parentWidgets = {};
+// parentWidgets 外部不可以更改
+// todo 后期重构成类
+const parentWidgets = {};
 
 
 export interface setParentWidgetFun {

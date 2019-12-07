@@ -10,6 +10,8 @@ export interface WindowProps extends TWindowBaseProps{
 class t_window_base extends TWindow{
   constructor(props:WindowProps){
     super(window_create(null,0,0,0,0));
+    // todo 处理 props
+    const { style } = props;
   }
 }
 

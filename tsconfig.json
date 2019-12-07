@@ -6,7 +6,8 @@
     "jsx": "react",
     "outDir": "./dist",
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "allowJs": true
   },
   "exclude": [
     "node_modules","test","dist"
