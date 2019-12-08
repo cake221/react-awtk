@@ -1,6 +1,7 @@
 import { TButton, button_create } from "../native/awtk"
 import { nodeMixins } from "../utils/nodeMixins"
-import { fixWidgetProps, fixParentProps, fixOtherProps, WidgetProps, ParentChildProps, eventFun } from "../utils/fixProps"
+import { fixWidgetProps, fixParentProps, fixOtherProps, WidgetProps, ParentChildProps } from "../utils/fixProps"
+import {eventFun} from "../native/react_awtk"
 
 
 export interface ButtonProps extends WidgetProps, ParentChildProps {

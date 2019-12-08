@@ -5,7 +5,7 @@ import { t_root } from "./Root"
 
 
 // Renders the input component
-function AwtkRender(element, callBack) {
+export function AwtkRender(element, callBack) {
   
   const reconciler = Reconciler(hostConfig);
   
@@ -16,4 +16,3 @@ function AwtkRender(element, callBack) {
   callBack();
 }
 
-export default AwtkRender;

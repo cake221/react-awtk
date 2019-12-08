@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
-import { Window, Button, AwtkRender, setParentWidget } from "../../src"
+import { AwtkRender, setParentWidget, TGlobal, TRet, TButton, TPointerEvent } from "../src"
 
 class App extends Component {
   constructor(props){
     super(props);
   }
-
+  
   componentDidMount () {
     console.log('APP DID MOUNT!');
     console.log("global: " + TGlobal.getPointerX() + " " + TGlobal.getPointerY() + " " + TGlobal.isPointerPressed());
   }
-
+  
   render() {
     return (
-      <Window
+      <t_window
         ref = {
           (ref) => setParentWidget(ref, "win1")
         }
       >
-        <Button
+        <t_button
           parent = { "win1" }
           text = { "ok" }
           style = {{
@@ -33,15 +33,15 @@ class App extends Component {
             (evt)=>{
               const e = TPointerEvent.cast(evt);
               const target = TButton.cast(e.target);
-
+              
               console.log("click at " + e.x + " " + e.y + " on " + target.name);
               console.log("global: " + TGlobal.getPointerX() + " " + TGlobal.getPointerY() + " " + TGlobal.isPointerPressed());
-
+              
               return TRet.OK;
             }
           }
         />
-      </Window>
+      </t_window>
     )
   }
 }

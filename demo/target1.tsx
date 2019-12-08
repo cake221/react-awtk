@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AwtkRender, setParentWidget } from "../src"
+import { AwtkRender, setParentWidget, TRet } from "../src"
 
 class App extends Component {
   constructor(props){
@@ -31,6 +31,7 @@ class App extends Component {
           onClick = {
             (e)=>{
               console.log("按钮1",e);
+              return TRet.OK;
             }
           }
         />
@@ -48,7 +49,8 @@ class App extends Component {
           text="按钮2"
           onClick = {
             (e)=>{
-              console.log("按钮2",e)
+              console.log("按钮2",e);
+              return TRet.OK;
             }
           }
         />
