@@ -9,9 +9,11 @@ export interface WindowProps extends TWindowBaseProps{
 
 class t_window_base extends TWindow{
   constructor(props:WindowProps){
-    super(window_create(null,0,0,0,0));
     // todo 处理 props
-    const { fullscreen, ...widgetProps } = props;
+    const { fullscreen, name, ...widgetProps } = props;
+    // todo 有 name 得特殊处理
+    super(window_create(null,0,0,0,0));
+    
     fixWidgetProps(this, widgetProps);
     const windowProps = { fullscreen };
     fixOtherProps(windowProps);

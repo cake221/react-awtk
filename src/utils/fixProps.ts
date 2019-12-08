@@ -1,7 +1,8 @@
-import { TWidget } from "../native/awtk"
+import {TWidget, TWindow} from "../native/awtk"
 import {  eventFunName } from "../native/react_awtk"
 import { isFunction } from "lodash"
 import { setChildWidget } from "./fixParentChildComponent"
+import React from "react";
 
 
 export interface ParentChildProps {

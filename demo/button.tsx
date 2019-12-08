@@ -13,6 +13,7 @@ class App extends Component {
   
   render() {
     return (
+      // todo children 只能有一个错误
       <t_window
         ref = {
           (ref) => setParentWidget(ref, "win1")

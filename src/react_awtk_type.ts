@@ -1,4 +1,4 @@
-import { ButtonProps, WindowProps }from "./components"
+import { ButtonProps, WindowProps, CheckButtonProps }from "./components"
 
 
 declare global{
@@ -7,6 +7,7 @@ declare global{
       // todo 只能用小写，不知道为什么
       t_button:ButtonProps;
       t_window:WindowProps;
+      t_check_button:CheckButtonProps;
     }
   }
 }
