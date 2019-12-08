@@ -1,5 +1,5 @@
 import { TWindow, window_create } from "../native/awtk"
-import { TWindowBaseProps } from "./baseTypes"
+import { TWindowBaseProps } from "../utils/fixProps"
 import { nodeMixins } from "../utils/nodeMixins"
 
 export interface WindowProps extends TWindowBaseProps{

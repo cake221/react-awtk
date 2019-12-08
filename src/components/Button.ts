@@ -1,23 +1,29 @@
 import { TButton, button_create } from "../native/awtk"
-import { WidgetProps, childWidgetProps } from "./baseTypes"
 import { nodeMixins } from "../utils/nodeMixins"
-import { setChildWidget } from "../utils/fixParentChildComponent"
+import { fixWidgetProps, fixParentProps, fixOtherProps, WidgetProps, ParentChildProps, eventFun } from "../utils/fixProps"
 
-export interface ButtonProps extends WidgetProps, childWidgetProps {
+
+export interface ButtonProps extends WidgetProps, ParentChildProps {
   // 重复按的时间
   repeat? :number;
   // 是否允许长按
   enableLongPress?:boolean;
-  // 下按 时间
-  onClick?:any;
+  // 下按事件
+  onClick?:eventFun;
+  // 长按事件
+  onLongClick?:eventFun;
 }
 
 class t_button_base extends TButton{
   constructor(props:ButtonProps){
     super(button_create(null,0,0,0,0));
     // todo 处理 props
-    const { parent, style, ...other } = props;
-    parent && setChildWidget(this, parent);
+    const { repeat, enableLongPress, onClick, onLongClick, parent, ...widgetProps } = props;
+    fixWidgetProps(this, widgetProps);
+    const buttonProps = { repeat, enableLongPress, onClick, onLongClick };
+    fixOtherProps(buttonProps);
+    const parentChildProps = { parent };
+    fixParentProps(this, parentChildProps);
   }
 }
 
