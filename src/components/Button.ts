@@ -1,4 +1,4 @@
-import { TButton, button_create } from "../native/awtk"
+import { TButton } from "../native/awtk"
 import { nodeMixins } from "../utils/nodeMixins"
 import { fixWidgetProps, fixParentProps, fixOtherProps, WidgetProps, ParentChildProps } from "../utils/fixProps"
 import {eventFun} from "../native/react_awtk"

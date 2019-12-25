@@ -13,7 +13,7 @@ export class Node{
   public tk_children:Node[] = [];
   public tk_parent:Node = null;
 
-  appendChild(child) {
+  appendNodeChild(child) {
     if (child) {
       child.tk_parent = this;
       this.tk_children.push(child);
@@ -29,7 +29,7 @@ export class Node{
     }
   }
 
-  removeChild(child) {
+  removeNodeChild(child) {
     const index = this.tk_children.indexOf(child);
 
     if (index !== -1) {
@@ -45,7 +45,7 @@ export class Node{
   }
   
   removeAllChilds() {
-    this.tk_children.forEach(c => this.removeChild(c));
+    this.tk_children.forEach(c => this.removeNodeChild(c));
   }
 
 }
@@ -55,7 +55,7 @@ export function nodeMixins( Parent: typeof TWidget){
     tk_children: Node[] = [];
     tk_parent: Node = null;
   
-    appendChild(child): void {
+    appendNodeChild(child): void {
     }
   
     insertBefore(child, beforeChild): void {
@@ -68,7 +68,7 @@ export function nodeMixins( Parent: typeof TWidget){
     removeAllChilds(): void {
     }
   
-    removeChild(child): void {
+    removeNodeChild(child): void {
     }
   }
   

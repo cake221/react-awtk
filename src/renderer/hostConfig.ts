@@ -59,7 +59,7 @@ export const hostConfig :Created =  {
   
   appendInitialChild (parentInstance, child) {
     log('appendInitialChild');
-      parentInstance.appendChild(child);
+      parentInstance.appendNodeChild(child);
   },
   finalizeInitialChildren (parentInstance,type,props,rootContainerInstance,hostContext) {
     log('finalizeInitialChildren');
@@ -89,13 +89,13 @@ export const hostConfig :Created =  {
   
   
   appendChild (parentInstance, child) {
-    log('appendChild');
-    parentInstance.appendChild(child);
+    log('appendNodeChild');
+    parentInstance.appendNodeChild(child);
   },
   
   appendChildToContainer(container, child){
-    log('appendChildToContainer');
-    container.appendChild(child)
+    log('appendNodeChild');
+    container.appendNodeChild(child)
   },
   
   commitTextUpdate (textInstance, oldText, newText) {
@@ -119,13 +119,13 @@ export const hostConfig :Created =  {
   },
   
   removeChild(parentInstance, child){
-    log('removeChild');
-    parentInstance.removeChild(child);
+    log('removeNodeChild');
+    parentInstance.removeNodeChild(child);
   },
   
   removeChildFromContainer(container, child){
-    log('removeChildFromContainer');
-    container.removeChild(child);
+    log('removeNodeChildFromContainer');
+    container.removeNodeChild(child);
   }
   
   // todo :

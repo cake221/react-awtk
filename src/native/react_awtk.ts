@@ -1,5 +1,3 @@
-import {TEventType, TRet} from "./awtk";
-
 export interface eventFun {
   (evt?:any):TRet;
 }

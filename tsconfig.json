@@ -3,13 +3,14 @@
     "module": "es6",
     "target": "es5",
     "sourceMap": true,
+    "lib": ["ES5"],
     "jsx": "react",
     "outDir": "./dist",
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
-    "allowJs": true
+    "allowJs": true,
   },
   "exclude": [
-    "node_modules","test","dist","demo/awtk-quickjs-react-demos","webMapping"
+    "node_modules","test","dist","demo/awtk-quickjs-react-demos",
   ]
 }
