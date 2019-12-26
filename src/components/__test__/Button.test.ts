@@ -1,4 +1,6 @@
+import "../../native/native_polyfill"
 import { t_button } from ".."
+
 
 describe("test t_button component", ()=>{
 

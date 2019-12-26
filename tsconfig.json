@@ -11,6 +11,6 @@
     "allowJs": true,
   },
   "exclude": [
-    "node_modules","test","dist","demo/awtk-quickjs-react-demos",
+    "node_modules","bak","dist","demo/awtk-quickjs-react-demos","src/native/native_polyfill.ts"
   ]
 }
