@@ -3,7 +3,11 @@ import { IntrinsicElementsTypes } from "../react_awtk_type"
 import { Node } from "../utils/nodeMixins"
 
 const SHOW_RECONCILER_CALLS = true;
-const log = (...args) => SHOW_RECONCILER_CALLS && console.log(...args);
+const log = (args:string) => {
+  if(SHOW_RECONCILER_CALLS){
+    __AwtkSnapshotArr[__AwtkSnapshotArrCount++] = args;
+  }
+}
 import { createInstance, createTextInstance, commitTextUpdate, commitUpdate } from "./instance"
 
 

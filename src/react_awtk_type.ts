@@ -9,6 +9,9 @@ declare global{
       t_check_button:CheckButtonProps;
     }
   }
+
+  let __AwtkSnapshotArr
+  let __AwtkSnapshotArrCount
 }
 
 export type IntrinsicElementsTypes = "t_button" | "t_window"
