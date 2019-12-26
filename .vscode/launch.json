@@ -10,8 +10,28 @@
       "request": "launch",
       "program": "${workspaceFolder}/node_modules/jest/bin/jest",
       "args": [
-        "--runInBand"
+        "${file}",
+        "--runInBand",
       ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true
+    },
+    {
+      "type": "node",
+      "name": "jest-current-file",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/jest/bin/jest",
+      "args": [
+        "${fileBasename}", "--runInBand", "--detectOpenHandles"
+      ],
+      "runtimeArgs": [
+        "--nolazy"
+      ],
+      "env": {
+        "NODE_ENV": "development"
+      },
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",

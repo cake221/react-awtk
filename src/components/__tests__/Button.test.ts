@@ -1,4 +1,3 @@
-import "../../native/native_polyfill"
 import { t_button } from ".."
 
 

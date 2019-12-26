@@ -1,4 +1,4 @@
-import { TCheckButton, check_button_create, check_button_create_radio } from "../native/awtk"
+import { TCheckButton } from "../native/awtk"
 import { nodeMixins } from "../utils/nodeMixins"
 import { fixWidgetProps, fixParentProps, fixOtherProps, WidgetProps, ParentChildProps } from "../utils/fixProps"
 import {eventFun} from "../native/react_awtk"
