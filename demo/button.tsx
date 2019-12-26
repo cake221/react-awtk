@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AwtkRender, setParentWidget, TGlobal, TRet, TButton, TPointerEvent } from "../src"
+import { AwtkRender, setParentWidget, TGlobal, TButton, TPointerEvent } from "../src"
 
 class App extends Component {
   constructor(props){
@@ -13,7 +13,6 @@ class App extends Component {
   
   render() {
     return (
-      // todo children 只能有一个错误
       <t_window
         ref = {
           (ref) => setParentWidget(ref, "win1")

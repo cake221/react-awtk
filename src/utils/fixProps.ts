@@ -46,7 +46,7 @@ export interface WidgetProps {
 }
 
 export interface TWindowBaseProps extends WidgetProps{
-  children?:any[];
+  children?:any[]|any;
 }
 
 function fixStyleProps(instance:TWidget, styleProps:StyleProps) {

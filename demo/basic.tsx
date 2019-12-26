@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  AwtkRender, TEventType, TWindowManager, TWindow } from "../src"
+import {  AwtkRender, TWindowManager, TWindow } from "../src"
 
 class App extends Component {
   private winRef: React.RefObject<TWindow> = React.createRef();
