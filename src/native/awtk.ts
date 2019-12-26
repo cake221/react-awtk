@@ -801,6 +801,10 @@ export class TWidget {
    this.nativeObj = nativeObj;
  }
 
+ addWidgetChild(child):TRet{
+  return widget_add_child(this.nativeObj, child);
+ }
+
  countChildren() : number  {
    return widget_count_children(this.nativeObj);
  }

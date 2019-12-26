@@ -1,4 +1,4 @@
-import {button_create, TWindow, window_create} from "../native/awtk"
+import {TWindow} from "../native/awtk"
 import {fixOtherProps, fixParentProps, fixWidgetProps, TWindowBaseProps} from "../utils/fixProps"
 import { nodeMixins } from "../utils/nodeMixins"
 
