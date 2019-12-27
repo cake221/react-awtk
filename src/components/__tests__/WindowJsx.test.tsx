@@ -15,12 +15,12 @@ describe("button jsx", ()=>{
     expect(__AwtkSnapshotArr).toMatchSnapshot()
   })
 
-  // it("jsx test2", ()=>{
-  //   AwtkRender(<t_window
-  //       ref = {
-  //         (ref) => setParentWidget(ref, "win1")
-  //       }
-  //     />)
-  //   expect(__AwtkSnapshotArr).toMatchSnapshot()
-  // })
+  it("jsx test2", ()=>{
+    AwtkRender(<t_window
+        ref = {
+          (ref) => setParentWidget(ref, "win1")
+        }
+      />)
+    expect(__AwtkSnapshotArr).toMatchSnapshot()
+  })
 })

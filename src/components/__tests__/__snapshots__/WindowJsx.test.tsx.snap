@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`button jsx jsx test 1`] = `
+Object {
+  "0": "getRootHostContext",
+  "1": "getChildHostContext",
+  "2": "shouldSetTextContent",
+  "3": "createInstance",
+  "4": "funtion  window_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "5": "finalizeInitialChildren",
+  "6": "prepareForCommit",
+  "7": "appendNodeChild",
+  "8": "resetAfterCommit",
+  "9": "getPublicInstance",
+}
+`;
+
+exports[`button jsx jsx test2 1`] = `
+Object {
+  "0": "getRootHostContext",
+  "1": "getChildHostContext",
+  "10": "getPublicInstance",
+  "2": "shouldSetTextContent",
+  "3": "createInstance",
+  "4": "funtion  window_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "5": "finalizeInitialChildren",
+  "6": "prepareForCommit",
+  "7": "appendNodeChild",
+  "8": "resetAfterCommit",
+  "9": "getPublicInstance",
+}
+`;

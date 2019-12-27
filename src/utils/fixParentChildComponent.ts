@@ -1,8 +1,11 @@
 import { TWidget }from "../native/awtk"
 
-// parentWidgets 外部不可以更改
-// todo 后期重构成类
-const parentWidgets = {};
+// __parentWidgets 外部不可以更改
+// TODO: 后期重构成类
+interface IParentWidgets {
+  [propName: string]: TWidget[];
+}
+const __parentWidgets:IParentWidgets = {};
 
 
 export interface setParentWidgetFun {
@@ -11,10 +14,13 @@ export interface setParentWidgetFun {
 
 export const setParentWidget:setParentWidgetFun = function(parentInstance:TWidget, parentId:string){
   
-  for(const child of parentWidgets[parentId]){
-    parentInstance.addWidgetChild(child);
+  if( __parentWidgets[parentId] ){
+    for(const child of __parentWidgets[parentId]){
+      parentInstance.addWidgetChild(child);
+    }
+    parentInstance.layout();
   }
-  parentInstance.layout();
+
 };
 
 export interface setChildWidgetFun {
@@ -22,8 +28,8 @@ export interface setChildWidgetFun {
 }
 
 export const setChildWidget:setChildWidgetFun = function(childInstance:TWidget, parentId:string) {
-  !parentWidgets[parentId] && (parentWidgets[parentId] = []);
-  parentWidgets[parentId].push(childInstance)
+  !__parentWidgets[parentId] && (__parentWidgets[parentId] = []);
+  __parentWidgets[parentId].push(childInstance)
 };
 
 
