@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { AwtkRender, setParentWidget, TEventType, TWindow, TPaintEvent, TCanvas } from "../src"
+import * as React from 'react';
+import { AwtkRender, t_window_base, TPaintEvent, TCanvas } from "../src"
 
-class App extends Component {
-  private winRef: React.RefObject<TWindow> = React.createRef();
+class App extends React.Component {
+  private winRef: React.RefObject<t_window_base> = React.createRef();
   constructor(props){
     super(props);
   }

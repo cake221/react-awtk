@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import {AwtkRender, setParentWidget, TRet, TCheckButton} from "../src"
+import * as React from 'react';
+import {AwtkRender, setParentWidget, TCheckButton} from "../src"
 
-class App extends Component {
+class App extends React.Component {
   constructor(props){
     super(props);
   }
@@ -32,10 +32,9 @@ class App extends Component {
           }}
           onValueChanged = {
             (evt)=>{
-              // todo 需要检测是否正确
+              // TODO: 需要检测是否正确
               const btn = TCheckButton.cast(evt.target);
-              // todo 待确定 cast 返回的类型
-              // console.log(btn.name + ' changed. ' + (btn.value));
+              console.log(btn.name + ' changed. ' + (btn.value));
               return TRet.OK;
             }
           }
@@ -55,8 +54,8 @@ class App extends Component {
           }}
           onValueChanged = {
             (evt)=>{
-              // todo 得指定 btn
-              // console.log(btn.name + ' changed. ' + (btn.value))
+              const btn = TCheckButton.cast(evt.target);
+              console.log(btn.name + ' changed. ' + (btn.value));
               return TRet.OK;
             }
           }
@@ -76,8 +75,8 @@ class App extends Component {
           }}
           onValueChanged = {
             (evt)=>{
-              // todo 得指定 btn
-              // console.log(btn.name + ' changed. ' + (btn.value))
+              const btn = TCheckButton.cast(evt.target);
+              console.log(btn.name + ' changed. ' + (btn.value));
               return TRet.OK;
             }
           }
@@ -97,8 +96,8 @@ class App extends Component {
           }}
           onValueChanged = {
             (evt)=>{
-              // todo 得指定 btn
-              // console.log(btn.name + ' changed. ' + (btn.value))
+              const btn = TCheckButton.cast(evt.target);
+              console.log(btn.name + ' changed. ' + (btn.value));
               return TRet.OK;
             }
           }
@@ -118,8 +117,8 @@ class App extends Component {
           }}
           onValueChanged = {
             (evt)=>{
-              // todo 得指定 btn
-              // console.log(btn.name + ' changed. ' + (btn.value))
+              const btn = TCheckButton.cast(evt.target);
+              console.log(btn.name + ' changed. ' + (btn.value));
               return TRet.OK;
             }
           }
@@ -139,8 +138,8 @@ class App extends Component {
           }}
           onValueChanged = {
             (evt)=>{
-              // todo 得指定 btn
-              // console.log(btn.name + ' changed. ' + (btn.value))
+              const btn = TCheckButton.cast(evt.target);
+              console.log(btn.name + ' changed. ' + (btn.value));
               return TRet.OK;
             }
           }
@@ -160,8 +159,8 @@ class App extends Component {
           }}
           onValueChanged = {
             (evt)=>{
-              // todo 得指定 btn
-              // console.log(btn.name + ' changed. ' + (btn.value))
+              const btn = TCheckButton.cast(evt.target);
+              console.log(btn.name + ' changed. ' + (btn.value));
               return TRet.OK;
             }
           }

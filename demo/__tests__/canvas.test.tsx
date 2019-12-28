@@ -1,9 +1,8 @@
-import "../target1"
+import "../canvas"
 
-describe("test target1", ()=>{
+describe("test canvas", ()=>{
 
   it("toMatchSnapshot", ()=>{
     expect(__AwtkSnapshot).toMatchSnapshot()
   })
 })
-

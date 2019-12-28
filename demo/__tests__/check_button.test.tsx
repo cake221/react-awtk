@@ -1,9 +1,8 @@
-import "../target1"
+import "../check_button"
 
-describe("test target1", ()=>{
+describe("test check_button", ()=>{
 
   it("toMatchSnapshot", ()=>{
     expect(__AwtkSnapshot).toMatchSnapshot()
   })
 })
-

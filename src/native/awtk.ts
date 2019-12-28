@@ -4466,7 +4466,7 @@ export class TCheckButton extends TWidget {
    return check_button_set_value(this.nativeObj, value);
  }
 
- static cast(widget : TWidget) : TWidget  {
+ static cast(widget : TWidget) : TCheckButton  {
    return new TCheckButton(check_button_cast(widget != null ? (widget.nativeObj || widget) : null));
  }
 

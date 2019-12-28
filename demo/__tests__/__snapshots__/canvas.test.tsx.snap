@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test canvas toMatchSnapshot 1`] = `
+Array [
+  "getRootHostContext",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  window_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "finalizeInitialChildren",
+  "prepareForCommit",
+  "appendNodeChild",
+  "resetAfterCommit",
+  "getPublicInstance",
+  "funtion  widget_child( widget, name ) :undefined, paint_vgcanvas",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_PAINT, function (e) {
+            var evt = src_1.TPaintEvent.cast(e);
+            var c = src_1.TCanvas.cast(evt.c);
+            var vg = c.getVgcanvas();
+            c.setFillColor(\\"#f0f0f0\\");
+            c.fillRect(0, 0, c.getWidth(), c.getHeight());
+            vg.setFillColor(\\"green\\");
+            vg.rect(10, 10, vg.w - 20, vg.h - 20);
+            vg.fill();
+            vg.save();
+            vg.setLineWidth(3);
+            vg.setStrokeColor(\\"blue\\");
+            vg.rect(30, 30, vg.w - 60, vg.h - 60);
+            vg.stroke();
+            vg.restore();
+        }, null",
+]
+`;
