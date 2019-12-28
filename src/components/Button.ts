@@ -22,7 +22,7 @@ class t_button_base extends TButton{
     const { repeat, enableLongPress, onClick, onLongClick, parent, ...widgetProps } = props;
     fixWidgetProps(this, widgetProps);
     const buttonProps = { repeat, enableLongPress, onClick, onLongClick };
-    fixOtherProps(buttonProps);
+    fixOtherProps(this, buttonProps);
     const parentChildProps = { parent };
     fixParentProps(this, parentChildProps);
   }

@@ -3,9 +3,9 @@ import { IntrinsicElementsTypes } from "../react_awtk_type"
 import { Node } from "../utils/nodeMixins"
 
 const SHOW_RECONCILER_CALLS = true;
-const log = (args:string) => {
+const log = (funName:string) => {
   if(SHOW_RECONCILER_CALLS){
-    __AwtkSnapshotArr[__AwtkSnapshotArrCount++] = args;
+    __AwtkSnapshot.push(`${funName}`);
   }
 }
 import { createInstance, createTextInstance, commitTextUpdate, commitUpdate } from "./instance"

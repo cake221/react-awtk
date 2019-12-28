@@ -10,8 +10,7 @@ declare global{
     }
   }
 
-  let __AwtkSnapshotArr
-  let __AwtkSnapshotArrCount
+  let __AwtkSnapshot
 }
 
 export type IntrinsicElementsTypes = "t_button" | "t_window"

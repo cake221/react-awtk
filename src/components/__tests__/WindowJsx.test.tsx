@@ -5,14 +5,13 @@ import {AwtkRender,setParentWidget} from "../.."
 describe("button jsx", ()=>{
 
   beforeEach(()=>{
-    __AwtkSnapshotArr = {}
-    __AwtkSnapshotArrCount = 0
+    __AwtkSnapshot = []
   })
 
   it("jsx test",()=>{
 
     AwtkRender(<t_window/>)
-    expect(__AwtkSnapshotArr).toMatchSnapshot()
+    expect(__AwtkSnapshot).toMatchSnapshot()
   })
 
   it("jsx test2", ()=>{
@@ -21,6 +20,6 @@ describe("button jsx", ()=>{
           (ref) => setParentWidget(ref, "win1")
         }
       />)
-    expect(__AwtkSnapshotArr).toMatchSnapshot()
+    expect(__AwtkSnapshot).toMatchSnapshot()
   })
 })

@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import { AwtkRender, setParentWidget } from "../src"
+import { Component } from 'react';
+import * as React from "react"
+import { AwtkRender, setParentWidget } from "../../src"
 
-export class App extends Component {
+class App extends Component {
   constructor(props){
     super(props);
   }
@@ -59,9 +60,13 @@ export class App extends Component {
   }
 }
 
+describe("test target1", ()=>{
 
-AwtkRender(<App />, () => {
-  console.log(' 渲染成功 AWTK ');
-});
-
+  it("toMatchSnapshot", ()=>{
+    AwtkRender(<App />, () => {
+      console.log(' 渲染成功 AWTK ');
+    });
+    expect(__AwtkSnapshot).toMatchSnapshot()
+  })
+})
 

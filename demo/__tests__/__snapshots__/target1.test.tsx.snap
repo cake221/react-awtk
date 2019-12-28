@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test target1 toMatchSnapshot 1`] = `
+Array [
+  "getRootHostContext",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  button_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, center, middle, 50%, 30",
+  "funtion  widget_set_children_layout( widget, params ) :undefined, ",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_CLICK, function (e) {
+                    console.log(\\"按钮1\\", e);
+                    return TRet.OK;
+                }, null",
+  "finalizeInitialChildren",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  button_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 10, 50%, 30",
+  "funtion  widget_set_children_layout( widget, params ) :undefined, ",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_CLICK, function (e) {
+                    console.log(\\"按钮2\\", e);
+                    return TRet.OK;
+                }, null",
+  "finalizeInitialChildren",
+  "createInstance",
+  "funtion  window_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "appendInitialChild",
+  "appendInitialChild",
+  "finalizeInitialChildren",
+  "prepareForCommit",
+  "appendNodeChild",
+  "resetAfterCommit",
+  "getPublicInstance",
+  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
+  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
+  "funtion  widget_layout( widget ) :undefined",
+]
+`;

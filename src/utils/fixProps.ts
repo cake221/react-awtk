@@ -67,17 +67,17 @@ export function fixWidgetProps(instance:TWidget, widgetProps:WidgetProps){
   const { style, ...other } = widgetProps;
   
   style && fixStyleProps(instance, style);
-  fixOtherProps(other);
+  fixOtherProps(instance, other);
 }
 
 export function fixParentProps(instance:TWidget, parentChildProps:ParentChildProps){
   
   const { parent, ...other } = parentChildProps;
   parent && setChildWidget(instance, parent);
-  fixOtherProps(other);
+  fixOtherProps(instance, other);
 }
 
-export function fixOtherProps(other: any) {
+export function fixOtherProps(instance:TWidget, other: any) {
   
   for(const item in other){
     if(other.hasOwnProperty(item)){
@@ -85,7 +85,7 @@ export function fixOtherProps(other: any) {
       if(isFunction(other[item])){
         // 处理事件
         if(eventFunName.hasOwnProperty(item)){
-          this.on(eventFunName[item], other[item], null);
+          instance.on(eventFunName[item], other[item], null);
         }
         // 其他传入的函数
       }else {

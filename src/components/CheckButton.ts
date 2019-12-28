@@ -25,7 +25,7 @@ class t_chect_button_base extends TCheckButton{
     }
     fixWidgetProps(this, widgetProps);
     const buttonProps = { value, onValueWillChange, onValueChanged,  };
-    fixOtherProps(buttonProps);
+    fixOtherProps(this, buttonProps);
     const parentChildProps = { parent };
     fixParentProps(this, parentChildProps);
   }

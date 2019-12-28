@@ -16,7 +16,7 @@ class t_window_base extends TWindow{
     
     fixWidgetProps(this, widgetProps);
     const windowProps = { fullscreen };
-    fixOtherProps(windowProps);
+    fixOtherProps(this, windowProps);
   }
 }
 
