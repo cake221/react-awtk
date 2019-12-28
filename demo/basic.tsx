@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import {  AwtkRender, TWindowManager, TWindow } from "../src"
+import * as React from 'react';
+import {  AwtkRender, t_window_base } from "../src"
 
-class App extends Component {
-  private winRef: React.RefObject<TWindow> = React.createRef();
+export class App extends React.Component {
+  private winRef: React.RefObject<t_window_base> = React.createRef();
   constructor(props){
     super(props);
   }
@@ -29,9 +29,8 @@ class App extends Component {
       console.log('bar2 value:' + bar2);
     }, null);
     
-    // todo 错误;需要检验
-    this.winRef.setShowFps(true);
-    // TWindowManager.cast( this.winRef.getWindowManager()).setShowFps(true);
+    // TODO: TWindowManager的函数 错误;需要检验
+    // this.winRef.setShowFps(true);
   }
   
   render() {
@@ -44,9 +43,6 @@ class App extends Component {
   }
 }
 
-
 AwtkRender(<App />, () => {
   console.log(' 渲染成功 AWTK ');
 });
-
-

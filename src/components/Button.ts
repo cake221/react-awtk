@@ -15,7 +15,7 @@ export interface ButtonProps extends WidgetProps, ParentChildProps {
   onLongClick?:eventFun;
 }
 
-class t_button_base extends TButton{
+export class t_button_base extends TButton{
   constructor(props:ButtonProps){
     super(button_create(null,0,0,0,0));
     // todo 处理 props

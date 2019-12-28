@@ -14,7 +14,7 @@ export interface CheckButtonProps extends WidgetProps, ParentChildProps {
   isRadio?:boolean;
 }
 
-class t_chect_button_base extends TCheckButton{
+export class t_check_button_base extends TCheckButton{
   constructor(props:CheckButtonProps){
     // todo 处理 props
     const { value, onValueWillChange, onValueChanged, isRadio, parent, ...widgetProps } = props;
@@ -31,4 +31,4 @@ class t_chect_button_base extends TCheckButton{
   }
 }
 
-export const t_check_button = nodeMixins( t_chect_button_base );
+export const t_check_button = nodeMixins( t_check_button_base );

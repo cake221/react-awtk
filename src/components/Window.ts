@@ -7,7 +7,7 @@ export interface WindowProps extends TWindowBaseProps{
   fullscreen? :boolean;
 }
 
-class t_window_base extends TWindow{
+export class t_window_base extends TWindow{
   constructor(props:WindowProps){
     // todo 处理 props
     const { fullscreen, name, ...widgetProps } = props;
