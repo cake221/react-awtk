@@ -1,7 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  entry: './demo/target1.tsx',
+  entry: {
+    basic: path.resolve('./demo/basicPatch.tsx'),
+  },
   devtool: 'inline-source-map',
   module: {
   rules: [
@@ -9,6 +11,10 @@ module.exports = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.node$/,
+        use: 'node-loader'
       }
     ]
   },

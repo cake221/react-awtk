@@ -90,7 +90,7 @@ export function fixOtherProps(instance:TWidget, other: any) {
         // 其他传入的函数
       }else {
         // 传入值
-        // todo 需要协商。希望统一可以用 setter 形式
+        // TODO: 需要协商。希望统一可以用 setter 形式
       }
     }
   }

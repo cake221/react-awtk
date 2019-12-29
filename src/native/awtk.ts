@@ -3774,7 +3774,7 @@ export class TWindowManager extends TWidget {
    return new TWindowManager(window_manager());
  }
 
- static cast(widget : TWidget) : TWidget  {
+ static cast(widget : TWidget) : TWindowManager  {
    return new TWindowManager(window_manager_cast(widget != null ? (widget.nativeObj || widget) : null));
  }
 

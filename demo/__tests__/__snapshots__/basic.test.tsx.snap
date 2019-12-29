@@ -29,5 +29,8 @@ Array [
             console.log('bar1 value:' + bar1);
             console.log('bar2 value:' + bar2);
         }, null",
+  "funtion  widget_get_window_manager( widget ) :undefined",
+  "funtion  window_manager_cast( widget ) :[object Object]",
+  "funtion  window_manager_set_show_fps( widget, show_fps ) :undefined, true",
 ]
 `;
