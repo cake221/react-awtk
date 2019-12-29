@@ -128,9 +128,18 @@ Array [
   "appendNodeChild",
   "resetAfterCommit",
   "getPublicInstance",
-  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
-  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
-  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
+  "funtion  widget_add_child( widget, child ) :undefined, function( parent, x, y, w, h ){
+  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
+  return undefined
+}",
+  "funtion  widget_add_child( widget, child ) :undefined, function( parent, x, y, w, h ){
+  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
+  return undefined
+}",
+  "funtion  widget_add_child( widget, child ) :undefined, function( parent, x, y, w, h ){
+  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
+  return undefined
+}",
   "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
   "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
   "funtion  widget_add_child( widget, child ) :undefined, [object Object]",

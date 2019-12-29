@@ -16,7 +16,7 @@ export const setParentWidget:setParentWidgetFun = function(parentInstance:TWidge
   
   if( __parentWidgets[parentId] ){
     for(const child of __parentWidgets[parentId]){
-      parentInstance.addWidgetChild(child);
+      parentInstance.addChild(child);
     }
     parentInstance.layout();
   }
