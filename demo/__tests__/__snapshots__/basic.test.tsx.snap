@@ -6,7 +6,8 @@ Array [
   "getChildHostContext",
   "shouldSetTextContent",
   "createInstance",
-  "funtion  window_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  window_open( name ) :basic",
+  "funtion  window_set_fullscreen( widget, fullscreen ) :undefined, undefined",
   "finalizeInitialChildren",
   "prepareForCommit",
   "appendNodeChild",
@@ -17,12 +18,12 @@ Array [
             _this.winRef.current.child(\\"bar1\\").addValue(10);
             _this.winRef.current.child(\\"bar2\\").addValue(10);
         }, null",
-  "funtion  widget_lookup( widget, name, recursive ) :undefined, inc_value, true",
+  "funtion  widget_lookup( widget, name, recursive ) :undefined, dec_value, true",
   "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_CLICK, function () {
             _this.winRef.current.child(\\"bar1\\").addValue(-10);
             _this.winRef.current.child(\\"bar2\\").addValue(-10);
         }, null",
-  "funtion  widget_lookup( widget, name, recursive ) :undefined, inc_value, true",
+  "funtion  widget_lookup( widget, name, recursive ) :undefined, close, true",
   "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_CLICK, function () {
             var bar1 = _this.winRef.current.child(\\"bar1\\").getValue();
             var bar2 = _this.winRef.current.child(\\"bar2\\").getValue();

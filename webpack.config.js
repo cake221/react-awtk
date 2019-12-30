@@ -2,7 +2,8 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    basic: path.resolve('./demo/basicPatch.tsx'),
+    // basic: path.resolve('./demo/basicPatch.tsx'),
+    button: path.resolve('./demo/buttonPatch.tsx')
   },
   devtool: 'inline-source-map',
   module: {

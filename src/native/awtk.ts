@@ -1113,6 +1113,15 @@ export class TWidget {
    return widget_t_get_prop_tr_text(this.nativeObj);
  }
 
+ // TODO:自己维护一份
+  get text(): string {
+    return widget_get_text(this.nativeObj);
+  }
+
+  set text(v: string) {
+    this.setText(v);
+  }
+
  get style() : string {
    return widget_t_get_prop_style(this.nativeObj);
  }

@@ -10,6 +10,12 @@ export interface ParentChildProps {
   parent?:string;
 }
 
+export function unpacParentChildProps(props:ParentChildProps) {
+  const parent_child_props:ParentChildProps = {};
+  ( { parent:parent_child_props.parent} = props);
+  return parent_child_props;
+}
+
 export interface StyleProps {
   selfLayout?:{
     x?:any;
@@ -43,6 +49,12 @@ export interface WidgetProps {
   // 控件名字
   name?:string;
   ref?:any;
+}
+
+export function unpackWidgetProps(props:WidgetProps) {
+  const widget_props:WidgetProps = {};
+  ( { style:widget_props.style, useStyle:widget_props.useStyle, useTheme:widget_props.useTheme, text:widget_props.text,name:widget_props.name, ref:widget_props.ref } = props);
+  return widget_props;
 }
 
 export interface TWindowBaseProps extends WidgetProps{
@@ -81,8 +93,8 @@ export function fixOtherProps(instance:TWidget, other: any) {
   
   for(const item in other){
     if(other.hasOwnProperty(item)){
-      // 传入函数
       if(isFunction(other[item])){
+        // 传入函数
         // 处理事件
         if(eventFunName.hasOwnProperty(item)){
           instance.on(eventFunName[item], other[item], null);
@@ -90,7 +102,7 @@ export function fixOtherProps(instance:TWidget, other: any) {
         // 其他传入的函数
       }else {
         // 传入值
-        // TODO: 需要协商。希望统一可以用 setter 形式
+        instance[item] = other[item]
       }
     }
   }

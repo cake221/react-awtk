@@ -5,15 +5,16 @@ import { nodeMixins } from "../utils/nodeMixins"
 export interface WindowProps extends TWindowBaseProps{
   // 是否全屏
   fullscreen? :boolean;
+  // 从资源文件中加载并创建window_base对象。本函数在ui_loader/ui_builder_default里实现。
+  sourceName? :string;
 }
 
 export class t_window_base extends TWindow{
   constructor(props:WindowProps){
     // TODO: 处理 props
-    const { fullscreen, name, ...widgetProps } = props;
-    // todo 有 name 得特殊处理
-    if(name){
-      super(window_open(name));
+    const { fullscreen, sourceName, ...widgetProps } = props;
+    if(sourceName){
+      super(window_open(sourceName));
     }else{
       super(window_create(null,0,0,0,0));
     }

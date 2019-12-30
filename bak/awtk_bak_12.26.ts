@@ -8452,7 +8452,6 @@ class TWidget {
     this.setTrText(v);
   }
 
-
   /**
    * style的名称。
    *
