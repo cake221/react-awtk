@@ -15,7 +15,9 @@ export interface setParentWidgetFun {
 export const setParentWidget:setParentWidgetFun = function(parentInstance:TWidget, parentId:string){
   
   if( __parentWidgets[parentId] ){
+    console.log("__parentWidgets",__parentWidgets[parentId].length)
     for(const child of __parentWidgets[parentId]){
+      
       parentInstance.addChild(child);
     }
     parentInstance.layout();

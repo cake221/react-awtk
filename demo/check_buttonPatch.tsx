@@ -10,6 +10,14 @@ class App extends React.Component {
   componentDidMount () {
     console.log('APP DID MOUNT!');
   }
+
+  onValueChanged(evt) {
+      // TODO: 需要检测是否正确
+      console.log("测试")
+      // const btn = TCheckButton.cast(evt.target);
+      // console.log(btn.name + ' changed. ' + (btn.value));
+      return TRetPatch.OK;
+  }
   
   render() {
     return (
@@ -20,158 +28,115 @@ class App extends React.Component {
       >
         <t_check_button
           parent = { "win1" }
-          text = { "Zzzzzz" }
-          name = { "Zzzzzz" }
+          text = { "1" }
+          name = { "1" }
+          isRadio = { true }
+          style = {{
+            selfLayout:{
+              x:10,
+              y:10+128,
+              w:128,
+              h:30
+            },
+          }}
+          //@ts-ignore
+          onValueChanged = {this.onValueChanged}
+        />
+        <t_check_button
+          parent = { "win1" }
+          text = { "2" }
+          name = { "2" }
           isRadio = { false }
           style = {{
             selfLayout:{
-              x:"10",
-              y:"10",
-              w:"128",
-              h:"30"
+              x:10,
+              y:50+128,
+              w:128,
+              h:30
             },
           }}
           //@ts-ignore
-          onValueChanged = {
-            (evt)=>{
-              // TODO: 需要检测是否正确
-              const btn = TCheckButton.cast(evt.target);
-              console.log(btn.name + ' changed. ' + (btn.value));
-              return TRetPatch.OK;
-            }
-          }
+          onValueChanged = {this.onValueChanged}
         />
         <t_check_button
           parent = { "win1" }
-          text = { "Lzzzzz" }
-          name = { "Lzzzzz" }
+          text = { "3" }
+          name = { "3" }
+          isRadio = { true }
+          style = {{
+            selfLayout:{
+              x:10,
+              y:90+129,
+              w:128,
+              h:30
+            },
+          }}
+          //@ts-ignore
+          onValueChanged = {this.onValueChanged}
+        />
+        <t_check_button
+          parent = { "win1" }
+          text = { "4" }
+          name = { "4" }
           isRadio = { false }
           style = {{
             selfLayout:{
-              x:"10",
-              y:"50",
-              w:"128",
-              h:"30"
+              x:10,
+              y:130+129,
+              w:128,
+              h:30
             },
           }}
           //@ts-ignore
-          onValueChanged = {
-            (evt)=>{
-              const btn = TCheckButton.cast(evt.target);
-              console.log(btn.name + ' changed. ' + (btn.value));
-              return TRetPatch.OK;
-            }
-          }
+          onValueChanged = {this.onValueChanged}
         />
         <t_check_button
           parent = { "win1" }
-          text = { "Zzzzzz" }
-          name = { "Zzzzzz" }
+          text = { "5" }
+          name = { "5" }
+          isRadio = { true }
+          style = {{
+            selfLayout:{
+              x:10,
+              y:10,
+              w:128,
+              h:30
+            },
+          }}
+          //@ts-ignore
+          onValueChanged = {this.onValueChanged}
+        />
+        <t_check_button
+          parent = { "win1" }
+          text = { "6" }
+          name = { "6" }
           isRadio = { false }
           style = {{
             selfLayout:{
-              x:"10",
-              y:"90",
-              w:"128",
-              h:"30"
+              x:10,
+              y:50,
+              w:128,
+              h:30
             },
           }}
           //@ts-ignore
-          onValueChanged = {
-            (evt)=>{
-              const btn = TCheckButton.cast(evt.target);
-              console.log(btn.name + ' changed. ' + (btn.value));
-              return TRetPatch.OK;
-            }
-          }
+          onValueChanged = {this.onValueChanged}
         />
         <t_check_button
           parent = { "win1" }
-          text = { "Aaaaaa" }
-          name = { "Aaaaaa" }
+          text = { "7" }
+          name = { "7" }
           isRadio = { true }
           style = {{
             selfLayout:{
-              x:"10",
-              y:"10+128",
-              w:"128",
-              h:"30"
+              x:10,
+              y:90,
+              w:128,
+              h:30
             },
           }}
           //@ts-ignore
-          onValueChanged = {
-            (evt)=>{
-              const btn = TCheckButton.cast(evt.target);
-              console.log(btn.name + ' changed. ' + (btn.value));
-              return TRetPatch.OK;
-            }
-          }
-        />
-        <t_check_button
-          parent = { "win1" }
-          text = { "Waaaaa" }
-          name = { "Waaaaa" }
-          isRadio = { true }
-          style = {{
-            selfLayout:{
-              x:"10",
-              y:"50+128",
-              w:"128",
-              h:"30"
-            },
-          }}
-          //@ts-ignore
-          onValueChanged = {
-            (evt)=>{
-              const btn = TCheckButton.cast(evt.target);
-              console.log(btn.name + ' changed. ' + (btn.value));
-              return TRetPatch.OK;
-            }
-          }
-        />
-        <t_check_button
-          parent = { "win1" }
-          text = { "Tttttt" }
-          name = { "Tttttt" }
-          isRadio = { true }
-          style = {{
-            selfLayout:{
-              x:"10",
-              y:"90+129",
-              w:"128",
-              h:"30"
-            },
-          }}
-          //@ts-ignore
-          onValueChanged = {
-            (evt)=>{
-              const btn = TCheckButton.cast(evt.target);
-              console.log(btn.name + ' changed. ' + (btn.value));
-              return TRetPatch.OK;
-            }
-          }
-        />
-        <t_check_button
-          parent = { "win1" }
-          text = { "Kkkkkk" }
-          name = { "Kkkkkk" }
-          isRadio = { true }
-          style = {{
-            selfLayout:{
-              x:"10",
-              y:"130+129",
-              w:"128",
-              h:"30"
-            },
-          }}
-          //@ts-ignore
-          onValueChanged = {
-            (evt)=>{
-              const btn = TCheckButton.cast(evt.target);
-              console.log(btn.name + ' changed. ' + (btn.value));
-              return TRetPatch.OK;
-            }
-          }
+          onValueChanged = {this.onValueChanged}
         />
       </t_window>
     )

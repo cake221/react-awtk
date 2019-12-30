@@ -6,7 +6,7 @@ module.exports = {
     // button: path.resolve('./demo/buttonPatch.tsx'),
     check_button: path.resolve('./demo/check_buttonPatch.tsx')
   },
-  devtool: 'inline-source-map',
+  // devtool: 'inline-source-map',
   module: {
   rules: [
       {

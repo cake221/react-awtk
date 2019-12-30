@@ -10,7 +10,7 @@ Array [
   "createInstance",
   "funtion  button_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
   "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, center, middle, 50%, 30",
-  "funtion  widget_set_children_layout( widget, params ) :undefined, ",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, 按钮1",
   "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_CLICK, function (e) {
                     console.log(\\"按钮1\\", e);
                     return TRet.OK;
@@ -21,7 +21,8 @@ Array [
   "createInstance",
   "funtion  button_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
   "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 10, 50%, 30",
-  "funtion  widget_set_children_layout( widget, params ) :undefined, ",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, 按钮2",
+  "funtion  widget_set_name( widget, name ) :undefined, open:dialog1",
   "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_CLICK, function (e) {
                     console.log(\\"按钮2\\", e);
                     return TRet.OK;
