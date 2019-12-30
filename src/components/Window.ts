@@ -1,5 +1,10 @@
 import {TWindow} from "../native/awtk"
-import {fixOtherProps, fixParentProps, fixWidgetProps, TWindowBaseProps} from "../utils/fixProps"
+import {fixOtherProps, 
+  fixWidgetProps, 
+  WidgetProps,
+  unpackWidgetProps,
+  TWindowBaseProps,
+} from "../utils/fixProps"
 import { nodeMixins } from "../utils/nodeMixins"
 
 export interface WindowProps extends TWindowBaseProps{
@@ -9,19 +14,26 @@ export interface WindowProps extends TWindowBaseProps{
   sourceName? :string;
 }
 
+export function unpackWindowProps(props:WindowProps) {
+  const window_props:WindowProps = {};
+  ( { fullscreen:window_props.fullscreen } = props);
+  return window_props;
+}
+
 export class t_window_base extends TWindow{
   constructor(props:WindowProps){
-    // TODO: 处理 props
-    const { fullscreen, sourceName, ...widgetProps } = props;
+    const { sourceName, ...otherWindowProps } = props;
     if(sourceName){
       super(window_open(sourceName));
     }else{
       super(window_create(null,0,0,0,0));
     }
     
-    fixWidgetProps(this, widgetProps);
-    const windowProps = { fullscreen };
-    fixOtherProps(this, windowProps);
+    const widget_props:WidgetProps = unpackWidgetProps(otherWindowProps);
+    const window_props:WindowProps = unpackWindowProps(otherWindowProps);
+   
+    fixWidgetProps(this, widget_props);
+    fixOtherProps(this, window_props);
   }
 }
 

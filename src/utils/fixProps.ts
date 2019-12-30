@@ -1,8 +1,7 @@
 import {TWidget, TWindow} from "../native/awtk"
 import {  eventFunName } from "../native/react_awtk"
-import { isFunction } from "lodash"
+import { isFunction, isUndefined } from "lodash"
 import { setChildWidget } from "./fixParentChildComponent"
-import React from "react";
 
 
 export interface ParentChildProps {
@@ -37,7 +36,11 @@ export interface StyleProps {
   }
 }
 
-export interface WidgetProps {
+interface ReactProps {
+  ref?:any;
+}
+
+export interface WidgetProps extends ReactProps{
   style?:StyleProps;
   // todo： 风格和主题有什么区别？主题是只有容器才能设置么？
   // 设置控件风格
@@ -48,7 +51,7 @@ export interface WidgetProps {
   text?:string;
   // 控件名字
   name?:string;
-  ref?:any;
+
 }
 
 export function unpackWidgetProps(props:WidgetProps) {
@@ -64,22 +67,27 @@ export interface TWindowBaseProps extends WidgetProps{
 function fixStyleProps(instance:TWidget, styleProps:StyleProps) {
   const { selfLayout, children_layout, ...other } = styleProps;
   
-  instance.setSelfLayoutParams(selfLayout.x, selfLayout.y, selfLayout.w, selfLayout.h);
-  // todo 这个函数的参数不知道如何设置
-  instance.setChildrenLayout("");
-  // todo 其他参数得修改 awtk.ts
-  for(const item in other){
-    // todo 在awtk.ts 中加入 getter函数
-    // if(other.hasOwnProperty(item)) instance[item] = other[item];
-  }
+  selfLayout && instance.setSelfLayoutParams(selfLayout.x, selfLayout.y, selfLayout.w, selfLayout.h);
+  // TODO: 这个函数的参数不知道如何设置
+  children_layout && instance.setChildrenLayout("");
+  
+  fixOtherProps(instance, other);
 }
 
-export function fixWidgetProps(instance:TWidget, widgetProps:WidgetProps){
-  
-  const { style, ...other } = widgetProps;
-  
-  style && fixStyleProps(instance, style);
-  fixOtherProps(instance, other);
+function fixReactProps(props:any) {
+  // TODO: 可能会做其他事
+  const {ref, ...other} = props;
+  return other
+}
+
+export function fixWidgetProps(instance:TWidget, props:WidgetProps){
+
+  const widgetProps = fixReactProps(props)
+  const {style, ...otherwidgetProps} = widgetProps;
+  if(!isUndefined(style)){
+    fixStyleProps(instance, style);
+  }
+  fixOtherProps(instance, otherwidgetProps);
 }
 
 export function fixParentProps(instance:TWidget, parentChildProps:ParentChildProps){
@@ -92,7 +100,7 @@ export function fixParentProps(instance:TWidget, parentChildProps:ParentChildPro
 export function fixOtherProps(instance:TWidget, other: any) {
   
   for(const item in other){
-    if(other.hasOwnProperty(item)){
+    if(other.hasOwnProperty(item) && !isUndefined(other[item])){
       if(isFunction(other[item])){
         // 传入函数
         // 处理事件
@@ -108,7 +116,4 @@ export function fixOtherProps(instance:TWidget, other: any) {
   }
 }
 
-// todo 目前不知道怎么解决
-export function separateProps(props) {
 
-}

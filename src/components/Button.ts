@@ -6,7 +6,7 @@ import { fixWidgetProps,
   WidgetProps, 
   unpackWidgetProps, 
   ParentChildProps,
-  unpacParentChildProps
+  unpacParentChildProps,
 } from "../utils/fixProps"
 import {eventFun} from "../native/react_awtk"
 
@@ -30,11 +30,11 @@ export function unpackButtonProps(props:ButtonProps) {
 
 export class t_button_base extends TButton{
   constructor(props:ButtonProps){
+    const { ...otherButtonProps } = props;
     super(button_create(null,0,0,0,0));
-    // TODO: 处理 props
-    let widget_props:WidgetProps = unpackWidgetProps(props);
-    const button_props:ButtonProps = unpackButtonProps(props);
-    let parent_child_props:ParentChildProps = unpacParentChildProps(props);
+    const widget_props:WidgetProps = unpackWidgetProps(otherButtonProps);
+    const button_props:ButtonProps = unpackButtonProps(otherButtonProps);
+    const parent_child_props:ParentChildProps = unpacParentChildProps(otherButtonProps);
    
     fixWidgetProps(this, widget_props);
     fixOtherProps(this, button_props);

@@ -7,7 +7,6 @@ Array [
   "shouldSetTextContent",
   "createInstance",
   "funtion  window_open( name ) :basic",
-  "funtion  window_set_fullscreen( widget, fullscreen ) :undefined, undefined",
   "finalizeInitialChildren",
   "prepareForCommit",
   "appendNodeChild",

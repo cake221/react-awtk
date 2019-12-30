@@ -8,30 +8,11 @@ Array [
   "getChildHostContext",
   "shouldSetTextContent",
   "createInstance",
-  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, 10, 10, 128, 30",
-  "funtion  widget_set_children_layout( widget, params ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, ",
-  "funtion  widget_set_text_utf8( widget, text ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, Zzzzzz",
-  "funtion  widget_set_name( widget, name ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, Zzzzzz",
-  "funtion  check_button_set_value( widget, value ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, undefined",
-  "funtion  widget_on( widget, type, on_event, ctx ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, EVT_VALUE_CHANGED, function (evt) {
+  "funtion  check_button_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 10, 128, 30",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, Zzzzzz",
+  "funtion  widget_set_name( widget, name ) :undefined, Zzzzzz",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
                     // TODO: 需要检测是否正确
                     var btn = src_1.TCheckButton.cast(evt.target);
                     console.log(btn.name + ' changed. ' + (btn.value));
@@ -41,30 +22,11 @@ Array [
   "getChildHostContext",
   "shouldSetTextContent",
   "createInstance",
-  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, 10, 50, 128, 30",
-  "funtion  widget_set_children_layout( widget, params ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, ",
-  "funtion  widget_set_text_utf8( widget, text ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, Lzzzzz",
-  "funtion  widget_set_name( widget, name ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, Lzzzzz",
-  "funtion  check_button_set_value( widget, value ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, undefined",
-  "funtion  widget_on( widget, type, on_event, ctx ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, EVT_VALUE_CHANGED, function (evt) {
+  "funtion  check_button_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 50, 128, 30",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, Lzzzzz",
+  "funtion  widget_set_name( widget, name ) :undefined, Lzzzzz",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
                     var btn = src_1.TCheckButton.cast(evt.target);
                     console.log(btn.name + ' changed. ' + (btn.value));
                     return TRet.OK;
@@ -73,30 +35,11 @@ Array [
   "getChildHostContext",
   "shouldSetTextContent",
   "createInstance",
-  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, 10, 90, 128, 30",
-  "funtion  widget_set_children_layout( widget, params ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, ",
-  "funtion  widget_set_text_utf8( widget, text ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, Zzzzzz",
-  "funtion  widget_set_name( widget, name ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, Zzzzzz",
-  "funtion  check_button_set_value( widget, value ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, undefined",
-  "funtion  widget_on( widget, type, on_event, ctx ) :function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}, EVT_VALUE_CHANGED, function (evt) {
+  "funtion  check_button_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 90, 128, 30",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, Zzzzzz",
+  "funtion  widget_set_name( widget, name ) :undefined, Zzzzzz",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
                     var btn = src_1.TCheckButton.cast(evt.target);
                     console.log(btn.name + ' changed. ' + (btn.value));
                     return TRet.OK;
@@ -107,10 +50,8 @@ Array [
   "createInstance",
   "funtion  check_button_create_radio( parent, x, y, w, h ) :null, 0, 0, 0, 0",
   "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 10+128, 128, 30",
-  "funtion  widget_set_children_layout( widget, params ) :undefined, ",
   "funtion  widget_set_text_utf8( widget, text ) :undefined, Aaaaaa",
   "funtion  widget_set_name( widget, name ) :undefined, Aaaaaa",
-  "funtion  check_button_set_value( widget, value ) :undefined, undefined",
   "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
                     var btn = src_1.TCheckButton.cast(evt.target);
                     console.log(btn.name + ' changed. ' + (btn.value));
@@ -122,10 +63,8 @@ Array [
   "createInstance",
   "funtion  check_button_create_radio( parent, x, y, w, h ) :null, 0, 0, 0, 0",
   "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 50+128, 128, 30",
-  "funtion  widget_set_children_layout( widget, params ) :undefined, ",
   "funtion  widget_set_text_utf8( widget, text ) :undefined, Waaaaa",
   "funtion  widget_set_name( widget, name ) :undefined, Waaaaa",
-  "funtion  check_button_set_value( widget, value ) :undefined, undefined",
   "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
                     var btn = src_1.TCheckButton.cast(evt.target);
                     console.log(btn.name + ' changed. ' + (btn.value));
@@ -137,10 +76,8 @@ Array [
   "createInstance",
   "funtion  check_button_create_radio( parent, x, y, w, h ) :null, 0, 0, 0, 0",
   "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 90+129, 128, 30",
-  "funtion  widget_set_children_layout( widget, params ) :undefined, ",
   "funtion  widget_set_text_utf8( widget, text ) :undefined, Tttttt",
   "funtion  widget_set_name( widget, name ) :undefined, Tttttt",
-  "funtion  check_button_set_value( widget, value ) :undefined, undefined",
   "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
                     var btn = src_1.TCheckButton.cast(evt.target);
                     console.log(btn.name + ' changed. ' + (btn.value));
@@ -152,10 +89,8 @@ Array [
   "createInstance",
   "funtion  check_button_create_radio( parent, x, y, w, h ) :null, 0, 0, 0, 0",
   "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 130+129, 128, 30",
-  "funtion  widget_set_children_layout( widget, params ) :undefined, ",
   "funtion  widget_set_text_utf8( widget, text ) :undefined, Kkkkkk",
   "funtion  widget_set_name( widget, name ) :undefined, Kkkkkk",
-  "funtion  check_button_set_value( widget, value ) :undefined, undefined",
   "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
                     var btn = src_1.TCheckButton.cast(evt.target);
                     console.log(btn.name + ' changed. ' + (btn.value));
@@ -164,7 +99,6 @@ Array [
   "finalizeInitialChildren",
   "createInstance",
   "funtion  window_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
-  "funtion  window_set_fullscreen( widget, fullscreen ) :undefined, undefined",
   "appendInitialChild",
   "appendInitialChild",
   "appendInitialChild",
@@ -177,18 +111,9 @@ Array [
   "appendNodeChild",
   "resetAfterCommit",
   "getPublicInstance",
-  "funtion  widget_add_child( widget, child ) :undefined, function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}",
-  "funtion  widget_add_child( widget, child ) :undefined, function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}",
-  "funtion  widget_add_child( widget, child ) :undefined, function( parent, x, y, w, h ){
-  global.__AwtkSnapshot.push(\`funtion  check_button_create( parent, x, y, w, h ) :\${parent}, \${x}, \${y}, \${w}, \${h}\`)
-  return undefined
-}",
+  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
+  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
+  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
   "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
   "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
   "funtion  widget_add_child( widget, child ) :undefined, [object Object]",

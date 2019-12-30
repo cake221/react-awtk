@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { AwtkRender, setParentWidget } from "../src"
 
-export class App extends Component {
+export class App extends React.Component {
   constructor(props){
     super(props);
   }

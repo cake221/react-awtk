@@ -10,11 +10,7 @@ Array [
   "createInstance",
   "funtion  button_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
   "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, center, middle, 50%, 30",
-  "funtion  widget_set_children_layout( widget, params ) :undefined, ",
   "funtion  widget_set_text_utf8( widget, text ) :undefined, ok",
-  "funtion  widget_set_name( widget, name ) :undefined, undefined",
-  "funtion  button_set_repeat( widget, repeat ) :undefined, undefined",
-  "funtion  button_set_enable_long_press( widget, enable_long_press ) :undefined, undefined",
   "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_CLICK, function (evt) {
                     var e = src_1.TPointerEvent.cast(evt);
                     var target = src_1.TButton.cast(e.target);
@@ -25,7 +21,6 @@ Array [
   "finalizeInitialChildren",
   "createInstance",
   "funtion  window_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
-  "funtion  window_set_fullscreen( widget, fullscreen ) :undefined, undefined",
   "appendInitialChild",
   "finalizeInitialChildren",
   "prepareForCommit",
