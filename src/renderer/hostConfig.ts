@@ -5,9 +5,10 @@ import { Node } from "../utils/nodeMixins"
 const SHOW_RECONCILER_CALLS = true;
 const log = (funName:string) => {
   if(SHOW_RECONCILER_CALLS){
-    // __AwtkSnapshot && __AwtkSnapshot.push(`${funName}`);
+    globalThis.__AwtkSnapshot && __AwtkSnapshot.push(`${funName}`);
   }
 }
+
 import { createInstance, createTextInstance, commitTextUpdate, commitUpdate } from "./instance"
 
 

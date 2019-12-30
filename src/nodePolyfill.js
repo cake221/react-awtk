@@ -8,3 +8,4 @@ function awtkStep() {
     awtkStepId = 0;
   }
 }
+global.globalThis = global
