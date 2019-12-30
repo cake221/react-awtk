@@ -39,7 +39,7 @@ export class App extends React.Component {
   render() {
     return (
       <t_window
-        name="basic"
+        sourceName="basic"
         ref = {this.winRef}
       />
     )

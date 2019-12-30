@@ -1,5 +1,4 @@
-// import './polyfill'
-import "./nodePolyfill"
+import "./nodejsPolyfill"
 export { AwtkRender } from "./renderer";
 export { setParentWidget } from "./utils/fixParentChildComponent";
 // todo 得区分什么可以传出去，什么不可以

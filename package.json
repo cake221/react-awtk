@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "基于 awtk 的 React 渲染器",
   "scripts": {
-    "build": "./node_modules/.bin/webpack --config webpack.config.js",
+    "build": "./node_modules/.bin/webpack -env=node --config webpack.config.js",
     "test": "jest"
   },
   "keywords": [],
@@ -14,8 +14,11 @@
     "@types/lodash": "^4.14.149",
     "@types/react": "^16.9.15",
     "@types/react-reconciler": "0.18.0",
+    "execa": "^4.0.0",
+    "fs-extra": "^8.1.0",
     "jest": "^24.9.0",
     "lodash": "^4.17.15",
+    "minimist": "^1.2.0",
     "react": "16.8.6",
     "react-reconciler": "0.20.4",
     "ts-jest": "^24.2.0",

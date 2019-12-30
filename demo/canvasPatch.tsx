@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { AwtkRender, t_window_base, TPaintEvent, TCanvas } from "../src"
-
+import { TRetPatch, TEventTypePatch } from "../src/native/awtkPatch"
 
 class App extends React.Component {
   private winRef: React.RefObject<t_window_base> = React.createRef();
@@ -10,8 +10,9 @@ class App extends React.Component {
   
   componentDidMount () {
     console.log('APP DID MOUNT!');
-    this.winRef.current.child("paint_vgcanvas").on(TEventType.PAINT, function(e) {
-      // TODO: 验证是否正确
+
+    //@ts-ignore
+    this.winRef.current.child("paint_vgcanvas").on(TEventTypePatch.PAINT, function(e) {
       const evt = TPaintEvent.cast(e);
       const c = TCanvas.cast(evt.c);
       const vg = c.getVgcanvas();
@@ -30,7 +31,7 @@ class App extends React.Component {
       vg.stroke();
       vg.restore();
 
-      return TRet.OK
+      return TRetPatch.OK
     },null);
   }
   
