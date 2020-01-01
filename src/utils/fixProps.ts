@@ -1,4 +1,4 @@
-import {TWidget, TWindow} from "../native/awtk"
+import {TWidget} from "../native/awtk"
 import {  eventFunName } from "../native/react_awtk"
 import { isFunction, isUndefined } from "lodash"
 import { setChildWidget } from "./fixParentChildComponent"

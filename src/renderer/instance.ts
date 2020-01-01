@@ -2,6 +2,7 @@ import {
   t_button,
   t_window,
   t_check_button,
+  t_edit
 } from '../components/';
 
 
@@ -11,6 +12,7 @@ function createInstance(type, newProps, rootContainerInstance, currentHostContex
     t_window: () => new t_window( newProps ),
     t_button: () => new t_button( newProps ) ,
     t_check_button:()=>new t_check_button( newProps),
+    t_edit: ()=> new t_edit( newProps ),
     default: undefined,
   };
   

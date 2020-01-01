@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import { Window, Button, AwtkRender, setParentWidget } from "../src"
+import * as React from 'react';
+import { AwtkRender, setParentWidget, TEvent, TEdit } from "../src";
 
-class App extends Component {
+
+class App extends React.Component {
   constructor(props){
     super(props);
   }
@@ -10,14 +11,28 @@ class App extends Component {
     console.log('APP DID MOUNT!');
   }
 
+  onValueChanged(evt){
+    const target = TEvent.cast(evt).target;
+    const instance = TEdit.cast(target)
+    console.log(instance.name + ' changed');
+    return TRet.OK;
+  }
+
+  onValueChanging(evt){
+    const target = TEvent.cast(evt).target;
+    const instance = TEdit.cast(target)
+    console.log(instance.name + ' changing');
+    return TRet.OK;
+  }
+
   render() {
     return (
-      <Window
+      <t_window
         ref = {
           (ref) => setParentWidget(ref, "win1")
         }
       >
-        <Edit
+        <t_edit
           parent = { "win1" }
           text = { "" }
           name = { 'text[3-8]' }
@@ -31,19 +46,11 @@ class App extends Component {
               h:"30"
             },
           }}
-          onValueChanged = {
-            (evt)=>{
-              // console.log(edit.name + ' changed');
-            }
-          }
-          onValueChanging = {
-            (evt)=>{
-              // console.log(edit.name + ' changed');
-            }
-          }
+          onValueChanged = {this.onValueChanged}
+          onValueChanging = { this.onValueChanging }
           textLimit = {[3, 8]}
         />
-        <Edit
+        <t_edit
           parent = { "win1" }
           text = { "" }
           name = { 'int auto fix[1-100]' }
@@ -57,20 +64,12 @@ class App extends Component {
               h:"30"
             },
           }}
-          onValueChanged = {
-            (evt)=>{
-              // console.log(edit.name + ' changed');
-            }
-          }
-          onValueChanging = {
-            (evt)=>{
-              // console.log(edit.name + ' changed');
-            }
-          }
+          onValueChanged = {this.onValueChanged}
+          onValueChanging = {this.onValueChanging}
           intLimit = {[1, 100, 1]}
           autoFix = { true }
         />
-        <Edit
+        <t_edit
           parent = { "win1" }
           text = { '1.23' }
           name = { "float[1-10]" }
@@ -84,19 +83,11 @@ class App extends Component {
               h:"30"
             },
           }}
-          onValueChanged = {
-            (evt)=>{
-              // console.log(edit.name + ' changed');
-            }
-          }
-          onValueChanging = {
-            (evt)=>{
-              // console.log(edit.name + ' changed');
-            }
-          }
+          onValueChanged = {this.onValueChanged}
+          onValueChanging = {this.onValueChanging}
           floatLimit = {[1, 10, 1]}
         />
-        <Edit
+        <t_edit
           parent = { "win1" }
           text = { "" }
           name = { 'password' }
@@ -110,19 +101,10 @@ class App extends Component {
               h:30
             },
           }}
-          onValueChanged = {
-            (evt)=>{
-              // console.log(edit.name + ' changed');
-            }
-          }
-          onValueChanging = {
-            (evt)=>{
-              // console.log(edit.name + ' changed');
-            }
-          }
-          TextLimit = {}
+          onValueChanged = {this.onValueChanged}
+          onValueChanging = {this.onValueChanging}
         />
-        <Edit
+        <t_edit
           parent = { "win1" }
           text = { "readonly" }
           name = { 'text' }
@@ -136,19 +118,11 @@ class App extends Component {
               h:30
             },
           }}
-          onValueChanged = {
-            (evt)=>{
-              // console.log(edit.name + ' changed');
-            }
-          }
-          onValueChanging = {
-            (evt)=>{
-              // console.log(edit.name + ' changed');
-            }
-          }
+          onValueChanged = {this.onValueChanged}
+          onValueChanging = {this.onValueChanging }
           readonly = {true}
         />
-        <Edit
+        <t_edit
           parent = { "win1" }
           text = { "" }
           name = { 'hex' }
@@ -162,18 +136,10 @@ class App extends Component {
               h:30
             },
           }}
-          onValueChanged = {
-            (evt)=>{
-              // console.log(edit.name + ' changed');
-            }
-          }
-          onValueChanging = {
-            (evt)=>{
-              // console.log(edit.name + ' changed');
-            }
-          }
+          onValueChanged = {this.onValueChanged}
+          onValueChanging = {this.onValueChanging }
         />
-        <Edit
+        <t_edit
           parent = { "win1" }
           text = { "" }
           name = { 'email' }
@@ -187,18 +153,10 @@ class App extends Component {
               h:30
             },
           }}
-          onValueChanged = {
-            (evt)=>{
-              // console.log(edit.name + ' changed');
-            }
-          }
-          onValueChanging = {
-            (evt)=>{
-              // console.log(edit.name + ' changed');
-            }
-          }
+          onValueChanged = {this.onValueChanged}
+          onValueChanging = {this.onValueChanging }
         />
-      </Window>
+      </t_window>
     )
   }
 }

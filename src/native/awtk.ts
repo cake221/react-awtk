@@ -3959,6 +3959,26 @@ export class TEdit extends TWidget {
    return edit_t_get_prop_auto_fix(this.nativeObj);
  }
 
+ // TODO: 添加 inputTips 
+ set inputTips(tips : string){
+   this.setInputTips(tips)
+ }
+
+ // TODO: 添加 textLimit 
+ set textLimit(text_limit: number[]){
+   this.setTextLimit(text_limit[0], text_limit[1])
+ }
+
+  // TODO: 添加 intLimit
+  set intLimit(int_limit: number[]){
+    this.setIntLimit(int_limit[0], int_limit[1], int_limit[2])
+  }
+
+  // TODO: 添加 floatLimit
+  set floatLimit(float_limit: number[]){
+    this.setFloatLimit(float_limit[0], float_limit[1], float_limit[2])
+  }
+
  set selectNoneWhenFocused(v : boolean) {
    this.setSelectNoneWhenFocused(v);
  }

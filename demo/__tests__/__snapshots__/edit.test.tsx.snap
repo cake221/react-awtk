@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test edit toMatchSnapshot 1`] = `
+Array [
+  "getRootHostContext",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  edit_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 10, 228, 30",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, ",
+  "funtion  widget_set_name( widget, name ) :undefined, text[3-8]",
+  "funtion  edit_set_input_type( widget, type ) :undefined, INPUT_TEXT",
+  "funtion  edit_set_input_tips( widget, tips ) :undefined, text[3-8]",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var instance = src_1.TEdit.cast(target);
+        console.log(instance.name + ' changed');
+        return TRet.OK;
+    }, null",
+  "funtion  edit_set_text_limit( widget, min, max ) :undefined, 3, 8",
+  "finalizeInitialChildren",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  edit_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 50, 228, 30",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, ",
+  "funtion  widget_set_name( widget, name ) :undefined, int auto fix[1-100]",
+  "funtion  edit_set_auto_fix( widget, auto_fix ) :undefined, true",
+  "funtion  edit_set_input_type( widget, type ) :undefined, INPUT_INT",
+  "funtion  edit_set_input_tips( widget, tips ) :undefined, int auto fix[1-100]",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var instance = src_1.TEdit.cast(target);
+        console.log(instance.name + ' changed');
+        return TRet.OK;
+    }, null",
+  "funtion  edit_set_int_limit( widget, min, max, step ) :undefined, 1, 100, 1",
+  "finalizeInitialChildren",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  edit_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 90, 228, 30",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, 1.23",
+  "funtion  widget_set_name( widget, name ) :undefined, float[1-10]",
+  "funtion  edit_set_input_type( widget, type ) :undefined, INPUT_FLOAT",
+  "funtion  edit_set_input_tips( widget, tips ) :undefined, float[1-10]",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var instance = src_1.TEdit.cast(target);
+        console.log(instance.name + ' changed');
+        return TRet.OK;
+    }, null",
+  "funtion  edit_set_float_limit( widget, min, max, step ) :undefined, 1, 10, 1",
+  "finalizeInitialChildren",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  edit_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 138, 228, 30",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, ",
+  "funtion  widget_set_name( widget, name ) :undefined, password",
+  "funtion  edit_set_input_type( widget, type ) :undefined, INPUT_PASSWORD",
+  "funtion  edit_set_input_tips( widget, tips ) :undefined, password",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var instance = src_1.TEdit.cast(target);
+        console.log(instance.name + ' changed');
+        return TRet.OK;
+    }, null",
+  "finalizeInitialChildren",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  edit_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 178, 228, 30",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, readonly",
+  "funtion  widget_set_name( widget, name ) :undefined, text",
+  "funtion  edit_set_readonly( widget, readonly ) :undefined, true",
+  "funtion  edit_set_input_type( widget, type ) :undefined, INPUT_TEXT",
+  "funtion  edit_set_input_tips( widget, tips ) :undefined, text",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var instance = src_1.TEdit.cast(target);
+        console.log(instance.name + ' changed');
+        return TRet.OK;
+    }, null",
+  "finalizeInitialChildren",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  edit_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 218, 228, 30",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, ",
+  "funtion  widget_set_name( widget, name ) :undefined, hex",
+  "funtion  edit_set_input_type( widget, type ) :undefined, INPUT_HEX",
+  "funtion  edit_set_input_tips( widget, tips ) :undefined, hex",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var instance = src_1.TEdit.cast(target);
+        console.log(instance.name + ' changed');
+        return TRet.OK;
+    }, null",
+  "finalizeInitialChildren",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  edit_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 258, 228, 30",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, ",
+  "funtion  widget_set_name( widget, name ) :undefined, email",
+  "funtion  edit_set_input_type( widget, type ) :undefined, INPUT_EMAIL",
+  "funtion  edit_set_input_tips( widget, tips ) :undefined, email",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var instance = src_1.TEdit.cast(target);
+        console.log(instance.name + ' changed');
+        return TRet.OK;
+    }, null",
+  "finalizeInitialChildren",
+  "createInstance",
+  "funtion  window_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "appendInitialChild",
+  "appendInitialChild",
+  "appendInitialChild",
+  "appendInitialChild",
+  "appendInitialChild",
+  "appendInitialChild",
+  "appendInitialChild",
+  "finalizeInitialChildren",
+  "prepareForCommit",
+  "appendNodeChild",
+  "resetAfterCommit",
+  "getPublicInstance",
+  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
+  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
+  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
+  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
+  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
+  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
+  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
+  "funtion  widget_layout( widget ) :undefined",
+]
+`;
