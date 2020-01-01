@@ -4984,11 +4984,11 @@ export class TSpinBox extends TEdit {
    super(nativeObj);
  }
 
- static create(parent : TWidget, x : number, y : number, w : number, h : number) : TWidget  {
+ static create(parent : TWidget, x : number, y : number, w : number, h : number) : TSpinBox  {
    return new TSpinBox(spin_box_create(parent != null ? (parent.nativeObj || parent) : null, x, y, w, h));
  }
 
- static cast(widget : TWidget) : TWidget  {
+ static cast(widget : TWidget) : TSpinBox  {
    return new TSpinBox(spin_box_cast(widget != null ? (widget.nativeObj || widget) : null));
  }
 

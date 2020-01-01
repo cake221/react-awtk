@@ -14,7 +14,8 @@ module.exports = {
     // label: path.resolve('./demo/labelPatch.tsx'),
     // rich_text: path.resolve('./demo/rich_textPatch.tsx'),
     // progress_bar: path.resolve('./demo/progress_barPatch.tsx'),
-    slider: path.resolve('./demo/sliderPatch.tsx'),
+    // slider: path.resolve('./demo/sliderPatch.tsx'),
+    spin_box: path.resolve('./demo/spin_boxPatch.tsx'),
   },
   // devtool: 'inline-source-map',
   module: {

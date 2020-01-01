@@ -9,6 +9,7 @@ import {
   t_rich_text,
   t_progress_bar,
   t_slider,
+  t_spin_box,
 } from '../components/';
 
 
@@ -25,6 +26,7 @@ function createInstance(type, newProps, rootContainerInstance, currentHostContex
     t_rich_text: ()=> new t_rich_text(newProps),
     t_progress_bar: ()=> new t_progress_bar(newProps),
     t_slider: ()=> new t_slider(newProps),
+    t_spin_box: ()=> new t_spin_box(newProps),
     default: undefined,
   };
   

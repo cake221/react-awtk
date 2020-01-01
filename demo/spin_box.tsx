@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Window, Button, AwtkRender, setParentWidget } from "../src"
+import { AwtkRender, setParentWidget, TGlobal,TEvent,TSpinBox } from "../src"
 
 class App extends Component {
   constructor(props){
@@ -11,17 +11,32 @@ class App extends Component {
     console.log("global: " + TGlobal.getPointerX() + " " + TGlobal.getPointerY() + " " + TGlobal.isPointerPressed());
   }
 
+  onValueChanged(evt){
+    const target = TEvent.cast(evt).target;
+    const instance = TSpinBox.cast(target);
+    console.log(instance.name + ' changing. ' );
+    return TRet.OK;
+  }
+
+  onValueChanging(evt){
+    const target = TEvent.cast(evt).target;
+    const instance = TSpinBox.cast(target);
+    console.log(instance.name + ' changed. ' );
+    return TRet.OK;
+  }
+
+
   render() {
     return (
-      <Window
+      <t_window
         ref = {
           (ref) => setParentWidget(ref, "win1")
         }
       >
-        <SpinBox
+        <t_spin_box
           parent = { "win1" }
           name = { "int" }
-          text = {  }
+          text = { "" }
           inputType = { TInputType.INT }
           inputTips = { "int" }
           style = {{
@@ -32,22 +47,14 @@ class App extends Component {
               h: 30
             },
           }}
-          onValueChanged = {
-            (evt)=>{
-              // console.log(spinBox.name + ' changed');
-            }
-          }
-          onValueChanging = {
-            (evt)=>{
-              // console.log(spinBox.name + ' changing.' + tostring(spinBox.getDouble()));
-            }
-          }
+          onValueChanged = {this.onValueChanged}
+          onValueChanging = {this.onValueChanging}
           intLimit = { [1, 100, 1] }
         />
-        <SpinBox
+        <t_spin_box
           parent = { "win1" }
           name = { "uint" }
-          text = {  }
+          text = { "" }
           inputType = { TInputType.UINT }
           inputTips = { "uint" }
           style = {{
@@ -58,19 +65,11 @@ class App extends Component {
               h: 30
             },
           }}
-          onValueChanged = {
-            (evt)=>{
-              // console.log(spinBox.name + ' changed');
-            }
-          }
-          onValueChanging = {
-            (evt)=>{
-              // console.log(spinBox.name + ' changing.' + tostring(spinBox.getDouble()));
-            }
-          }
+          onValueChanged = {this.onValueChanged}
+          onValueChanging = {this.onValueChanging}
           intLimit = { [1, 100, 1] }
         />
-        <SpinBox
+        <t_spin_box
           parent = { "win1" }
           name = { "float" }
           text = { '1.23' }
@@ -84,22 +83,14 @@ class App extends Component {
               h: 30
             },
           }}
-          onValueChanged = {
-            (evt)=>{
-              // console.log(spinBox.name + ' changed');
-            }
-          }
-          onValueChanging = {
-            (evt)=>{
-              // console.log(spinBox.name + ' changing.' + tostring(spinBox.getDouble()));
-            }
-          }
+          onValueChanged = {this.onValueChanged}
+          onValueChanging = {this.onValueChanging}
           intLimit = { [1, 10, 1] }
         />
-        <SpinBox
+        <t_spin_box
           parent = { "win1" }
           name = { "ufloat" }
-          text = {  }
+          text = { "" }
           inputType = { TInputType.UFLOAT }
           inputTips = { "ufloat" }
           style = {{
@@ -110,19 +101,11 @@ class App extends Component {
               h: 30
             },
           }}
-          onValueChanged = {
-            (evt)=>{
-              // console.log(spinBox.name + ' changed');
-            }
-          }
-          onValueChanging = {
-            (evt)=>{
-              // console.log(spinBox.name + ' changing.' + tostring(spinBox.getDouble()));
-            }
-          }
+          onValueChanged = {this.onValueChanged}
+          onValueChanging = {this.onValueChanging}
           intLimit = { [1, 10, 0.1] }
         />
-      </Window>
+      </t_window>
     )
   }
 }
