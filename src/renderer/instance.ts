@@ -6,6 +6,7 @@ import {
   t_combo_box,
   t_image,
   t_label,
+  t_rich_text,
 } from '../components/';
 
 
@@ -19,6 +20,7 @@ function createInstance(type, newProps, rootContainerInstance, currentHostContex
     t_combo_box: ()=> new t_combo_box(newProps),
     t_image: ()=> new t_image(newProps),
     t_label: ()=> new t_label(newProps),
+    t_rich_text: ()=> new t_rich_text(newProps),
     default: undefined,
   };
   

@@ -2678,6 +2678,11 @@ export class TRichText extends TWidget {
  get lineGap() : number {
    return rich_text_t_get_prop_line_gap(this.nativeObj);
  }
+ // TODO: 添加 text 
+ // 检测 widget 和 rich_text 的 text 的不同
+ set rich_text(text : string){
+  this.setText(text);
+ }
 
 }
 

@@ -5,6 +5,7 @@ import { ButtonProps,
   ComboBoxProps,
   ImageProps,
   LabelProps,
+  RichTextProps,
 }from "./components"
 
 
@@ -18,6 +19,7 @@ declare global{
       t_combo_box: ComboBoxProps;
       t_image: ImageProps;
       t_label: LabelProps;
+      t_rich_text: RichTextProps;
     }
   }
 
@@ -30,5 +32,6 @@ export type IntrinsicElementsTypes = "t_button" |
   "t_edit" | 
   "t_combo_box" | 
   "t_image" | 
-  "t_label"
+  "t_label" |
+  "t_rich_text"
 
