@@ -8,94 +8,100 @@ Array [
   "getChildHostContext",
   "shouldSetTextContent",
   "createInstance",
-  "funtion  check_button_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
-  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 10, 128, 30",
-  "funtion  widget_set_text_utf8( widget, text ) :undefined, Zzzzzz",
-  "funtion  widget_set_name( widget, name ) :undefined, Zzzzzz",
+  "funtion  check_button_create_radio( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 138, 128, 30",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, 1",
+  "funtion  widget_set_name( widget, name ) :undefined, 1",
   "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
-                    // TODO: 需要检测是否正确
-                    var btn = src_1.TCheckButton.cast(evt.target);
-                    console.log(btn.name + ' changed. ' + (btn.value));
-                    return TRet.OK;
-                }, null",
+        var target = src_1.TEvent.cast(evt).target;
+        var btn = src_1.TCheckButton.cast(target);
+        console.log(btn.name + ' changed. ' + (btn.value));
+        return TRet.OK;
+    }, null",
+  "finalizeInitialChildren",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  check_button_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 178, 128, 30",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, 2",
+  "funtion  widget_set_name( widget, name ) :undefined, 2",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var btn = src_1.TCheckButton.cast(target);
+        console.log(btn.name + ' changed. ' + (btn.value));
+        return TRet.OK;
+    }, null",
+  "finalizeInitialChildren",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  check_button_create_radio( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 219, 128, 30",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, 3",
+  "funtion  widget_set_name( widget, name ) :undefined, 3",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var btn = src_1.TCheckButton.cast(target);
+        console.log(btn.name + ' changed. ' + (btn.value));
+        return TRet.OK;
+    }, null",
+  "finalizeInitialChildren",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  check_button_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 259, 128, 30",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, 4",
+  "funtion  widget_set_name( widget, name ) :undefined, 4",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var btn = src_1.TCheckButton.cast(target);
+        console.log(btn.name + ' changed. ' + (btn.value));
+        return TRet.OK;
+    }, null",
+  "finalizeInitialChildren",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  check_button_create_radio( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 10, 128, 30",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, 5",
+  "funtion  widget_set_name( widget, name ) :undefined, 5",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var btn = src_1.TCheckButton.cast(target);
+        console.log(btn.name + ' changed. ' + (btn.value));
+        return TRet.OK;
+    }, null",
   "finalizeInitialChildren",
   "getChildHostContext",
   "shouldSetTextContent",
   "createInstance",
   "funtion  check_button_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
   "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 50, 128, 30",
-  "funtion  widget_set_text_utf8( widget, text ) :undefined, Lzzzzz",
-  "funtion  widget_set_name( widget, name ) :undefined, Lzzzzz",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, 6",
+  "funtion  widget_set_name( widget, name ) :undefined, 6",
   "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
-                    var btn = src_1.TCheckButton.cast(evt.target);
-                    console.log(btn.name + ' changed. ' + (btn.value));
-                    return TRet.OK;
-                }, null",
+        var target = src_1.TEvent.cast(evt).target;
+        var btn = src_1.TCheckButton.cast(target);
+        console.log(btn.name + ' changed. ' + (btn.value));
+        return TRet.OK;
+    }, null",
   "finalizeInitialChildren",
   "getChildHostContext",
   "shouldSetTextContent",
   "createInstance",
-  "funtion  check_button_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  check_button_create_radio( parent, x, y, w, h ) :null, 0, 0, 0, 0",
   "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 90, 128, 30",
-  "funtion  widget_set_text_utf8( widget, text ) :undefined, Zzzzzz",
-  "funtion  widget_set_name( widget, name ) :undefined, Zzzzzz",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, 7",
+  "funtion  widget_set_name( widget, name ) :undefined, 7",
   "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
-                    var btn = src_1.TCheckButton.cast(evt.target);
-                    console.log(btn.name + ' changed. ' + (btn.value));
-                    return TRet.OK;
-                }, null",
-  "finalizeInitialChildren",
-  "getChildHostContext",
-  "shouldSetTextContent",
-  "createInstance",
-  "funtion  check_button_create_radio( parent, x, y, w, h ) :null, 0, 0, 0, 0",
-  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 10+128, 128, 30",
-  "funtion  widget_set_text_utf8( widget, text ) :undefined, Aaaaaa",
-  "funtion  widget_set_name( widget, name ) :undefined, Aaaaaa",
-  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
-                    var btn = src_1.TCheckButton.cast(evt.target);
-                    console.log(btn.name + ' changed. ' + (btn.value));
-                    return TRet.OK;
-                }, null",
-  "finalizeInitialChildren",
-  "getChildHostContext",
-  "shouldSetTextContent",
-  "createInstance",
-  "funtion  check_button_create_radio( parent, x, y, w, h ) :null, 0, 0, 0, 0",
-  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 50+128, 128, 30",
-  "funtion  widget_set_text_utf8( widget, text ) :undefined, Waaaaa",
-  "funtion  widget_set_name( widget, name ) :undefined, Waaaaa",
-  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
-                    var btn = src_1.TCheckButton.cast(evt.target);
-                    console.log(btn.name + ' changed. ' + (btn.value));
-                    return TRet.OK;
-                }, null",
-  "finalizeInitialChildren",
-  "getChildHostContext",
-  "shouldSetTextContent",
-  "createInstance",
-  "funtion  check_button_create_radio( parent, x, y, w, h ) :null, 0, 0, 0, 0",
-  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 90+129, 128, 30",
-  "funtion  widget_set_text_utf8( widget, text ) :undefined, Tttttt",
-  "funtion  widget_set_name( widget, name ) :undefined, Tttttt",
-  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
-                    var btn = src_1.TCheckButton.cast(evt.target);
-                    console.log(btn.name + ' changed. ' + (btn.value));
-                    return TRet.OK;
-                }, null",
-  "finalizeInitialChildren",
-  "getChildHostContext",
-  "shouldSetTextContent",
-  "createInstance",
-  "funtion  check_button_create_radio( parent, x, y, w, h ) :null, 0, 0, 0, 0",
-  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 130+129, 128, 30",
-  "funtion  widget_set_text_utf8( widget, text ) :undefined, Kkkkkk",
-  "funtion  widget_set_name( widget, name ) :undefined, Kkkkkk",
-  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
-                    var btn = src_1.TCheckButton.cast(evt.target);
-                    console.log(btn.name + ' changed. ' + (btn.value));
-                    return TRet.OK;
-                }, null",
+        var target = src_1.TEvent.cast(evt).target;
+        var btn = src_1.TCheckButton.cast(target);
+        console.log(btn.name + ' changed. ' + (btn.value));
+        return TRet.OK;
+    }, null",
   "finalizeInitialChildren",
   "createInstance",
   "funtion  window_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",

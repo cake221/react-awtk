@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {AwtkRender, setParentWidget, TCheckButton} from "../src"
+import {AwtkRender, setParentWidget, TCheckButton, TEvent} from "../src"
 
 class App extends React.Component {
   constructor(props){
@@ -11,10 +11,9 @@ class App extends React.Component {
   }
 
   onValueChanged(evt) {
-      // TODO: 需要检测是否正确
-      console.log("测试")
-      // const btn = TCheckButton.cast(evt.target);
-      // console.log(btn.name + ' changed. ' + (btn.value));
+      const target = TEvent.cast(evt).target;
+      const btn = TCheckButton.cast(target)
+      console.log(btn.name + ' changed. ' + (btn.value));
       return TRet.OK;
   }
   

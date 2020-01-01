@@ -6,8 +6,7 @@ Array [
   "getChildHostContext",
   "shouldSetTextContent",
   "createInstance",
-  "funtion  window_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
-  "funtion  widget_set_name( widget, name ) :undefined, vgcanvas",
+  "funtion  window_open( name ) :vgcanvas",
   "finalizeInitialChildren",
   "prepareForCommit",
   "appendNodeChild",
@@ -15,6 +14,7 @@ Array [
   "getPublicInstance",
   "funtion  widget_child( widget, name ) :undefined, paint_vgcanvas",
   "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_PAINT, function (e) {
+            // TODO: 验证是否正确
             var evt = src_1.TPaintEvent.cast(e);
             var c = src_1.TCanvas.cast(evt.c);
             var vg = c.getVgcanvas();
@@ -29,6 +29,7 @@ Array [
             vg.rect(30, 30, vg.w - 60, vg.h - 60);
             vg.stroke();
             vg.restore();
+            return TRet.OK;
         }, null",
 ]
 `;
