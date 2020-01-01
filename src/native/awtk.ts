@@ -5056,15 +5056,15 @@ export class TDialog extends TWindowBase {
    super(nativeObj);
  }
 
- static create(parent : TWidget, x : number, y : number, w : number, h : number) : TWidget  {
+ static create(parent : TWidget, x : number, y : number, w : number, h : number) : TDialog  {
    return new TDialog(dialog_create(parent != null ? (parent.nativeObj || parent) : null, x, y, w, h));
  }
 
- static createSimple(parent : TWidget, x : number, y : number, w : number, h : number) : TWidget  {
+ static createSimple(parent : TWidget, x : number, y : number, w : number, h : number) : TDialog  {
    return new TDialog(dialog_create_simple(parent != null ? (parent.nativeObj || parent) : null, x, y, w, h));
  }
 
- static cast(widget : TWidget) : TWidget  {
+ static cast(widget : TWidget) : TDialog  {
    return new TDialog(dialog_cast(widget != null ? (widget.nativeObj || widget) : null));
  }
 
@@ -5104,7 +5104,9 @@ export class TDialog extends TWindowBase {
    return dialog_toast(text, duration);
  }
 
- static info(title : string, text : string) : TRet  {
+ // TODO: 某些参数不需要都输入
+
+ static info(title : string, text ?: string) : TRet  {
    return dialog_info(title, text);
  }
 

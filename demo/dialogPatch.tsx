@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Window, Button, AwtkRender, setParentWidget } from "../src"
+import { AwtkRender, setParentWidget, TGlobal, TDialog, TButton, TLabel } from "../src"
+import { TRetPatch } from "../src/native/awtkPatch"
 
 class App extends Component {
   constructor(props){
@@ -27,26 +28,28 @@ class App extends Component {
 
     ok.on(TEventType.CLICK, function(evt) {
       dlg.quit(1);
-      return TRet.OK;
-    })
+      return TRetPatch.OK;
+    }, null)
 
     cancel.on(TEventType.CLICK, function(evt) {
       dlg.quit(2);
-      return TRet.OK;
-    })
+      return TRetPatch.OK;
+    }, null)
 
     const code = dlg.modal();
     console.log('code=' + (code));
+
+    return TRetPatch.OK
   }
 
   render() {
     return (
-      <Window
+      <t_window
         ref = {
           (ref) => setParentWidget(ref, "win1")
         }
       >
-        <Button
+        <t_button
           parent = { "win1" }
           text = { "Show TDialog" }
           style = {{
@@ -57,9 +60,10 @@ class App extends Component {
               h:"30"
             },
           }}
+          //@ts-ignore
           onClick = { this.onClick }
         />
-        <Button
+        <t_button
           parent = { "win1" }
           text = { "Show Info" }
           style = {{
@@ -70,11 +74,13 @@ class App extends Component {
               h:"30"
             },
           }}
+          //@ts-ignore
           onClick = { ()=>{
             TDialog.info("Work is done!");
+            return TRetPatch.OK;
           }}
         />
-        <Button
+        <t_button
           parent = { "win1" }
           text = { "Show Confirm" }
           style = {{
@@ -85,11 +91,13 @@ class App extends Component {
               h:"30"
             },
           }}
+          //@ts-ignore
           onClick = { ()=>{
-            TDialog.info("Are you sure to quit?");
+            TDialog.info("Are you sure to quit?", "没有内容");
+            return TRetPatch.OK;
           }}
         />
-      </Window>
+      </t_window>
     )
   }
 }
