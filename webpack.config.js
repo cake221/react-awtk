@@ -9,7 +9,8 @@ module.exports = {
     // canvas: path.resolve('./demo/canvasPatch.tsx'),
     // edit: path.resolve('./demo/editPatch.tsx'),
     // cube: path.resolve('./demo/cubePatch.tsx'),
-    combo_box:  path.resolve('./demo/combo_boxPatch.tsx'),
+    // combo_box:  path.resolve('./demo/combo_boxPatch.tsx'),
+    image: path.resolve('./demo/imagePatch.tsx')
   },
   // devtool: 'inline-source-map',
   module: {

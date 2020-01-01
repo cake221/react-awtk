@@ -3,9 +3,12 @@ import {fixOtherProps,
   fixWidgetProps, 
   WidgetProps,
   unpackWidgetProps,
-  TWindowBaseProps,
 } from "../utils/fixProps"
 import { nodeMixins } from "../utils/nodeMixins"
+
+interface TWindowBaseProps extends WidgetProps{
+  children?:any[]|any;
+}
 
 export interface WindowProps extends TWindowBaseProps{
   // 是否全屏

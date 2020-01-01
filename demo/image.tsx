@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Window, Button, AwtkRender, setParentWidget } from "../src"
+import * as React from 'react';
+import { AwtkRender, setParentWidget, TGlobal } from "../src"
 
-class App extends Component {
+class App extends React.Component {
   constructor(props){
     super(props);
   }
@@ -13,69 +13,71 @@ class App extends Component {
 
   render() {
     return (
-      <Window
+      <t_window
         ref = {
           (ref) => setParentWidget(ref, "win1")
         }
-        childrenLayout = {"rows:3 cols:3 margin:2 spacing:2"}
+        style={{
+          children_layout : "rows:3 cols:3 margin:2 spacing:2"
+        }}
       >
-        <Image
+        <t_image
           parent = { "win1" }
           useStyle = { "border" }
           drawType = { TImageDrawType.ICON }
-          source = { "earth" } // 得区分不同的情况。直接字符串，表示加载入内存
+          image = { "earth" } // 得区分不同的情况。直接字符串，表示加载入内存
           rotation = {0.5}
           scale = {[1,2]}
         />
-        <Image
+        <t_image
           parent = { "win1" }
           useStyle = { "border" }
           drawType = { TImageDrawType.CENTER }
-          source = { "earth" } // 得区分不同的情况。直接字符串，表示加载入内存
+          image = { "earth" } // 得区分不同的情况。直接字符串，表示加载入内存
         />
-        <Image
+        <t_image
           parent = { "win1" }
           useStyle = { "border" }
           drawType = { TImageDrawType.SCALE_AUTO }
-          source = { "earth" } // 得区分不同的情况。直接字符串，表示加载入内存
+          image = { "earth" } // 得区分不同的情况。直接字符串，表示加载入内存
         />
-        <Image
+        <t_image
           parent = { "win1" }
           useStyle = { "border" }
           drawType = { TImageDrawType.SCALE }
-          source = { "1" } // 得区分不同的情况。直接字符串，表示加载入内存
+          image = { "1" } // 得区分不同的情况。直接字符串，表示加载入内存
         />
-        <Image
+        <t_image
           parent = { "win1" }
           useStyle = { "border" }
           drawType = { TImageDrawType.SCALE_W }
-          source = { "1" } // 得区分不同的情况。直接字符串，表示加载入内存
+          image = { "1" } // 得区分不同的情况。直接字符串，表示加载入内存
         />
-        <Image
+        <t_image
           parent = { "win1" }
           useStyle = { "border" }
           drawType = { TImageDrawType.SCALE_H }
-          source = { "1" } // 得区分不同的情况。直接字符串，表示加载入内存
+          image = { "1" } // 得区分不同的情况。直接字符串，表示加载入内存
         />
-        <Image
+        <t_image
           parent = { "win1" }
           useStyle = { "border" }
           drawType = { TImageDrawType.REPEAT }
-          source = { "bricks" } // 得区分不同的情况。直接字符串，表示加载入内存
+          image = { "bricks" } // 得区分不同的情况。直接字符串，表示加载入内存
         />
-        <Image
+        <t_image
           parent = { "win1" }
           useStyle = { "border" }
           drawType = { TImageDrawType.REPEAT_X }
-          source = { "bricks" } // 得区分不同的情况。直接字符串，表示加载入内存
+          image = { "bricks" } // 得区分不同的情况。直接字符串，表示加载入内存
         />
-        <Image
+        <t_image
           parent = { "win1" }
           useStyle = { "border" }
           drawType = { TImageDrawType.REPEAT_Y }
-          source = { "bricks" } // 得区分不同的情况。直接字符串，表示加载入内存
+          image = { "bricks" } // 得区分不同的情况。直接字符串，表示加载入内存
         />
-      </Window>
+      </t_window>
     )
   }
 }

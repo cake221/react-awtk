@@ -3,6 +3,7 @@ import { ButtonProps,
   CheckButtonProps,
   EditProps,
   ComboBoxProps,
+  ImageProps,
 }from "./components"
 
 
@@ -14,11 +15,12 @@ declare global{
       t_check_button:CheckButtonProps;
       t_edit: EditProps;
       t_combo_box: ComboBoxProps;
+      t_image: ImageProps;
     }
   }
 
   var __AwtkSnapshot
 }
 
-export type IntrinsicElementsTypes = "t_button" | "t_window" | "t_check_button" | "t_edit" | "t_combo_box"
+export type IntrinsicElementsTypes = "t_button" | "t_window" | "t_check_button" | "t_edit" | "t_combo_box" | "t_image"
 

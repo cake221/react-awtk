@@ -4127,6 +4127,10 @@ export class TImageBase extends TWidget {
    return new TImageBase(image_base_cast(widget != null ? (widget.nativeObj || widget) : null));
  }
 
+ // TODO: 设置scale
+ set scale(scale: number[]){
+  this.setScale(scale[0], scale[1])
+ }
  set image(v : string) {
    this.setImage(v);
  }

@@ -1,6 +1,6 @@
 import {TWidget} from "../native/awtk"
 import {  eventFunName } from "../native/react_awtk"
-import { isFunction, isUndefined } from "lodash"
+import { isFunction, isUndefined, isString } from "lodash"
 import { setChildWidget } from "./fixParentChildComponent"
 
 
@@ -22,7 +22,7 @@ export interface StyleProps {
     w?:any;
     h?:any;
     floating?:boolean;
-  },
+  } | string,
   children_layout?:{
     rows?:any;
     cols?:any;
@@ -33,7 +33,7 @@ export interface StyleProps {
     spacing?:any;
     keep_invisible?:any;
     keep_disable?:any;
-  }
+  } | string
 }
 
 interface ReactProps {
@@ -60,16 +60,24 @@ export function unpackWidgetProps(props:WidgetProps) {
   return widget_props;
 }
 
-export interface TWindowBaseProps extends WidgetProps{
-  children?:any[]|any;
-}
-
 function fixStyleProps(instance:TWidget, styleProps:StyleProps) {
   const { selfLayout, children_layout, ...other } = styleProps;
   
-  selfLayout && instance.setSelfLayoutParams(selfLayout.x, selfLayout.y, selfLayout.w, selfLayout.h);
-  // TODO: 这个函数的参数不知道如何设置
-  children_layout && instance.setChildrenLayout("");
+  if(selfLayout){
+    if(isString(selfLayout)){
+      instance.setSelfLayout(selfLayout);
+    }else{
+      instance.setSelfLayoutParams(selfLayout.x, selfLayout.y, selfLayout.w, selfLayout.h);
+    }
+  }
+
+  if(children_layout){
+    if(isString(children_layout)){
+      instance.setChildrenLayout(children_layout);
+    }else{
+      // TODO: 这个函数的参数不知道如何设置
+    }
+  }
   
   fixOtherProps(instance, other);
 }
