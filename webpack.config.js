@@ -13,7 +13,8 @@ module.exports = {
     // image: path.resolve('./demo/imagePatch.tsx'),
     // label: path.resolve('./demo/labelPatch.tsx'),
     // rich_text: path.resolve('./demo/rich_textPatch.tsx'),
-    progress_bar: path.resolve('./demo/progress_barPatch.tsx')
+    // progress_bar: path.resolve('./demo/progress_barPatch.tsx'),
+    slider: path.resolve('./demo/sliderPatch.tsx'),
   },
   // devtool: 'inline-source-map',
   module: {

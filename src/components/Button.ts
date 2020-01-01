@@ -24,7 +24,11 @@ export interface ButtonProps extends WidgetProps, ParentChildProps {
 
 export function unpackButtonProps(props:ButtonProps) {
   const button_props:ButtonProps = {};
-  ( { repeat:button_props.repeat, enableLongPress:button_props.enableLongPress, onClick:button_props.onClick, onLongClick:button_props.onLongClick } = props);
+  ( { repeat:button_props.repeat, 
+    enableLongPress:button_props.enableLongPress, 
+    onClick:button_props.onClick, 
+    onLongClick:button_props.onLongClick 
+  } = props);
   return button_props;
 }
 

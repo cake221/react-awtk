@@ -7,6 +7,7 @@ import { ButtonProps,
   LabelProps,
   RichTextProps,
   ProgressBarProps,
+  SliderProps,
 }from "./components"
 
 
@@ -22,6 +23,7 @@ declare global{
       t_label: LabelProps;
       t_rich_text: RichTextProps;
       t_progress_bar: ProgressBarProps;
+      t_slider: SliderProps;
     }
   }
 
@@ -36,5 +38,6 @@ export type IntrinsicElementsTypes = "t_button" |
   "t_image" | 
   "t_label" |
   "t_rich_text" |
-  "t_progress_bar"
+  "t_progress_bar" |
+  "t_slider"
 

@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Window, Button, AwtkRender, setParentWidget } from "../src"
+import * as React from 'react';
+import {  AwtkRender, setParentWidget,TEvent,TSlider } from "../src"
 
-class App extends Component {
+class App extends React.Component {
   constructor(props){
     super(props);
   }
@@ -10,14 +10,28 @@ class App extends Component {
     console.log('APP DID MOUNT!');
   }
 
+  onValueChanged(evt){
+    const target = TEvent.cast(evt).target;
+    const instance = TSlider.cast(target);
+    console.log(instance.name + ' changing. ' + instance.value);
+    return TRet.OK;
+  }
+
+  onValueChanging(evt){
+    const target = TEvent.cast(evt).target;
+    const instance = TSlider.cast(target);
+    console.log(instance.name + ' changed. ' + instance.value);
+    return TRet.OK;
+  }
+
   render() {
     return (
-      <Window
+      <t_window
         ref = {
           (ref) => setParentWidget(ref, "win1")
         }
       >
-        <TSlider
+        <t_slider
           parent = { "win1" }
           name = {"slider1"}
           value = { 10 }
@@ -31,18 +45,10 @@ class App extends Component {
               h:"20"
             },
           }}
-          onValueChanged = {
-            (evt)=>{
-              // console.log(slider.name + ' changed. ' + slider.value);
-            }
-          }
-          onValueChanging = {
-            (evt)=>{
-              // console.log(slider.name + ' changing. ' + slider.value);
-            }
-          }
+          onValueChanged = {this.onValueChanged}
+          onValueChanging = { this.onValueChanging }
         />
-        <TSlider
+        <t_slider
           parent = { "win1" }
           name = {"slider2"}
           value = { 10 }
@@ -56,13 +62,10 @@ class App extends Component {
               h:"80%"
             },
           }}
-          onValueChanged = {
-            (evt)=>{
-              // console.log(bar.name + ' changed. ' + bar.value);
-            }
-          }
+          onValueChanged = {this.onValueChanged}
+          onValueChanging = { this.onValueChanging }
         />
-      </Window>
+      </t_window>
     )
   }
 }

@@ -8,6 +8,7 @@ import {
   t_label,
   t_rich_text,
   t_progress_bar,
+  t_slider,
 } from '../components/';
 
 
@@ -23,6 +24,7 @@ function createInstance(type, newProps, rootContainerInstance, currentHostContex
     t_label: ()=> new t_label(newProps),
     t_rich_text: ()=> new t_rich_text(newProps),
     t_progress_bar: ()=> new t_progress_bar(newProps),
+    t_slider: ()=> new t_slider(newProps),
     default: undefined,
   };
   

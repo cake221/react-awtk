@@ -2792,11 +2792,11 @@ export class TSlider extends TWidget {
    super(nativeObj);
  }
 
- static create(parent : TWidget, x : number, y : number, w : number, h : number) : TWidget  {
+ static create(parent : TWidget, x : number, y : number, w : number, h : number) : TSlider  {
    return new TSlider(slider_create(parent != null ? (parent.nativeObj || parent) : null, x, y, w, h));
  }
 
- static cast(widget : TWidget) : TWidget  {
+ static cast(widget : TWidget) : TSlider  {
    return new TSlider(slider_cast(widget != null ? (widget.nativeObj || widget) : null));
  }
 

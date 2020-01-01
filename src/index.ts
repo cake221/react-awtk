@@ -10,6 +10,7 @@ export { t_button_base,
   t_combo_box_base, 
   t_edit_base,
   t_progress_bar_base,
-  t_label_base
+  t_label_base,
+  t_slider_base
 } from "./components"
 
