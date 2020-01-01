@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test edit toMatchSnapshot 1`] = `
+Array [
+  "getRootHostContext",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  window_open( name ) :vgcanvas",
+  "finalizeInitialChildren",
+  "prepareForCommit",
+  "appendNodeChild",
+  "resetAfterCommit",
+  "getPublicInstance",
+  "funtion  widget_child( widget, name ) :undefined, paint_vgcanvas",
+  "funtion  timer_add( on_timer, ctx, duration ) :function (info) {
+            canvas.invalidateForce(null);
+            return TRet.REPEAT;
+        }, null, 20",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_PAINT, function (e) {
+        var evt = src_1.TPaintEvent.cast(e);
+        var c = src_1.TCanvas.cast(evt.c);
+        var ctx = c.getVgcanvas();
+        console.log(\\"TEventType.PAINT:\\" + count++);
+        ctx.setFillColor(\\"#000000\\");
+        ctx.rect(0, 0, 400, 250);
+        ctx.fill();
+        t.length = 0;
+        for (var i = 0; i < vertices.length; i++) {
+            var v = vertices[i];
+            var r = v.rotateX(angle).rotateY(angle);
+            var p = r.project(400, 250, 200, 4);
+            t.push(p);
+        }
+        avg_z.length = 0;
+        for (var i = 0; i < faces.length; i++) {
+            var f = faces[i];
+            avg_z[i] = { \\"index\\": i, \\"z\\": (t[f[0]].z + t[f[1]].z + t[f[2]].z + t[f[3]].z) / 4.0 };
+        }
+        avg_z.sort(cmp_z);
+        for (var i = 0; i < faces.length; i++) {
+            var f = faces[avg_z[i].index];
+            ctx.setFillColor(arrayToRGB(colors[avg_z[i].index]));
+            ctx.beginPath();
+            ctx.moveTo(t[f[0]].x, t[f[0]].y);
+            ctx.lineTo(t[f[1]].x, t[f[1]].y);
+            ctx.lineTo(t[f[2]].x, t[f[2]].y);
+            ctx.lineTo(t[f[3]].x, t[f[3]].y);
+            ctx.closePath();
+            ctx.fill();
+        }
+        angle += 2;
+        return TRet.OK;
+    }, null",
+]
+`;

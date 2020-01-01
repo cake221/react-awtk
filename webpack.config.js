@@ -7,7 +7,8 @@ module.exports = {
     // check_button: path.resolve('./demo/check_buttonPatch.tsx'),
     // target1: path.resolve('./demo/target1Patch.tsx'),
     // canvas: path.resolve('./demo/canvasPatch.tsx'),
-    edit: path.resolve('./demo/editPatch.tsx')
+    // edit: path.resolve('./demo/editPatch.tsx'),
+    cube: path.resolve('./demo/cubePatch.tsx')
   },
   // devtool: 'inline-source-map',
   module: {
