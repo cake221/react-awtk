@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test edit toMatchSnapshot 1`] = `
+Array [
+  "getRootHostContext",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  combo_box_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 10, 168, 30",
+  "funtion  widget_set_name( widget, name ) :undefined, color",
+  "funtion  combo_box_set_options( widget, options ) :undefined, Red;Green;Blue",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var instance = src_1.TComboBox.cast(target);
+        console.log(instance.name + ' changed: ' + (instance.value));
+        return TRet.OK;
+    }, null",
+  "finalizeInitialChildren",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  combo_box_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 50, 50, 168, 30",
+  "funtion  widget_set_name( widget, name ) :undefined, zlg",
+  "funtion  combo_box_set_options( widget, options ) :undefined, 0.Zzzzzzzz;1.Lzzzzzzz;2.Gzzzzzzz",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var instance = src_1.TComboBox.cast(target);
+        console.log(instance.name + ' changed: ' + (instance.value));
+        return TRet.OK;
+    }, null",
+  "finalizeInitialChildren",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  combo_box_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, 10, 90, 168, 30",
+  "funtion  widget_set_name( widget, name ) :undefined, awtk",
+  "funtion  combo_box_set_options( widget, options ) :undefined, ",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGED, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var instance = src_1.TComboBox.cast(target);
+        console.log(instance.name + ' changed: ' + (instance.value));
+        return TRet.OK;
+    }, null",
+  "finalizeInitialChildren",
+  "createInstance",
+  "funtion  window_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "appendInitialChild",
+  "appendInitialChild",
+  "appendInitialChild",
+  "finalizeInitialChildren",
+  "prepareForCommit",
+  "appendNodeChild",
+  "resetAfterCommit",
+  "getPublicInstance",
+  "getPublicInstance",
+  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
+  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
+  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
+  "funtion  widget_layout( widget ) :undefined",
+  "funtion  combo_box_append_option( widget, value, text ) :undefined, 10, Aaaaaaa",
+  "funtion  combo_box_append_option( widget, value, text ) :undefined, 20, Waaaaaa",
+  "funtion  combo_box_append_option( widget, value, text ) :undefined, 30, Taaaaaa",
+  "funtion  combo_box_append_option( widget, value, text ) :undefined, 40, Kaaaaaa",
+  "funtion  combo_box_set_selected_index( widget, index ) :undefined, 3",
+]
+`;

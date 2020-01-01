@@ -4599,11 +4599,11 @@ export class TComboBox extends TWidget {
    super(nativeObj);
  }
 
- static create(parent : TWidget, x : number, y : number, w : number, h : number) : TWidget  {
+ static create(parent : TWidget, x : number, y : number, w : number, h : number) : TComboBox  {
    return new TComboBox(combo_box_create(parent != null ? (parent.nativeObj || parent) : null, x, y, w, h));
  }
 
- static cast(widget : TWidget) : TWidget  {
+ static cast(widget : TWidget) : TComboBox  {
    return new TComboBox(combo_box_cast(widget != null ? (widget.nativeObj || widget) : null));
  }
 
@@ -4831,7 +4831,7 @@ export class TComboBoxEx extends TComboBox {
    super(nativeObj);
  }
 
- static create(parent : TWidget, x : number, y : number, w : number, h : number) : TWidget  {
+ static create(parent : TWidget, x : number, y : number, w : number, h : number) : TComboBoxEx  {
    return new TComboBoxEx(combo_box_ex_create(parent != null ? (parent.nativeObj || parent) : null, x, y, w, h));
  }
 

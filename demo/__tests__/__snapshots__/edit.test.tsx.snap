@@ -20,6 +20,12 @@ Array [
         console.log(instance.name + ' changed');
         return TRet.OK;
     }, null",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGING, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var instance = src_1.TEdit.cast(target);
+        console.log(instance.name + ' changing');
+        return TRet.OK;
+    }, null",
   "funtion  edit_set_text_limit( widget, min, max ) :undefined, 3, 8",
   "finalizeInitialChildren",
   "getChildHostContext",
@@ -36,6 +42,12 @@ Array [
         var target = src_1.TEvent.cast(evt).target;
         var instance = src_1.TEdit.cast(target);
         console.log(instance.name + ' changed');
+        return TRet.OK;
+    }, null",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGING, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var instance = src_1.TEdit.cast(target);
+        console.log(instance.name + ' changing');
         return TRet.OK;
     }, null",
   "funtion  edit_set_int_limit( widget, min, max, step ) :undefined, 1, 100, 1",
@@ -55,6 +67,12 @@ Array [
         console.log(instance.name + ' changed');
         return TRet.OK;
     }, null",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGING, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var instance = src_1.TEdit.cast(target);
+        console.log(instance.name + ' changing');
+        return TRet.OK;
+    }, null",
   "funtion  edit_set_float_limit( widget, min, max, step ) :undefined, 1, 10, 1",
   "finalizeInitialChildren",
   "getChildHostContext",
@@ -70,6 +88,12 @@ Array [
         var target = src_1.TEvent.cast(evt).target;
         var instance = src_1.TEdit.cast(target);
         console.log(instance.name + ' changed');
+        return TRet.OK;
+    }, null",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGING, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var instance = src_1.TEdit.cast(target);
+        console.log(instance.name + ' changing');
         return TRet.OK;
     }, null",
   "finalizeInitialChildren",
@@ -89,6 +113,12 @@ Array [
         console.log(instance.name + ' changed');
         return TRet.OK;
     }, null",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGING, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var instance = src_1.TEdit.cast(target);
+        console.log(instance.name + ' changing');
+        return TRet.OK;
+    }, null",
   "finalizeInitialChildren",
   "getChildHostContext",
   "shouldSetTextContent",
@@ -105,6 +135,12 @@ Array [
         console.log(instance.name + ' changed');
         return TRet.OK;
     }, null",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGING, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var instance = src_1.TEdit.cast(target);
+        console.log(instance.name + ' changing');
+        return TRet.OK;
+    }, null",
   "finalizeInitialChildren",
   "getChildHostContext",
   "shouldSetTextContent",
@@ -119,6 +155,12 @@ Array [
         var target = src_1.TEvent.cast(evt).target;
         var instance = src_1.TEdit.cast(target);
         console.log(instance.name + ' changed');
+        return TRet.OK;
+    }, null",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_VALUE_CHANGING, function (evt) {
+        var target = src_1.TEvent.cast(evt).target;
+        var instance = src_1.TEdit.cast(target);
+        console.log(instance.name + ' changing');
         return TRet.OK;
     }, null",
   "finalizeInitialChildren",

@@ -2,7 +2,8 @@ import {
   t_button,
   t_window,
   t_check_button,
-  t_edit
+  t_edit,
+  t_combo_box
 } from '../components/';
 
 
@@ -13,6 +14,7 @@ function createInstance(type, newProps, rootContainerInstance, currentHostContex
     t_button: () => new t_button( newProps ) ,
     t_check_button:()=>new t_check_button( newProps),
     t_edit: ()=> new t_edit( newProps ),
+    t_combo_box: ()=> new t_combo_box(newProps),
     default: undefined,
   };
   

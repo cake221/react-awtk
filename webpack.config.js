@@ -8,7 +8,8 @@ module.exports = {
     // target1: path.resolve('./demo/target1Patch.tsx'),
     // canvas: path.resolve('./demo/canvasPatch.tsx'),
     // edit: path.resolve('./demo/editPatch.tsx'),
-    cube: path.resolve('./demo/cubePatch.tsx')
+    // cube: path.resolve('./demo/cubePatch.tsx'),
+    combo_box:  path.resolve('./demo/combo_boxPatch.tsx'),
   },
   // devtool: 'inline-source-map',
   module: {
