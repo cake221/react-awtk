@@ -7,6 +7,7 @@ import {
   t_image,
   t_label,
   t_rich_text,
+  t_progress_bar,
 } from '../components/';
 
 
@@ -21,6 +22,7 @@ function createInstance(type, newProps, rootContainerInstance, currentHostContex
     t_image: ()=> new t_image(newProps),
     t_label: ()=> new t_label(newProps),
     t_rich_text: ()=> new t_rich_text(newProps),
+    t_progress_bar: ()=> new t_progress_bar(newProps),
     default: undefined,
   };
   

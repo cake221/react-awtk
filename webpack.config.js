@@ -12,7 +12,8 @@ module.exports = {
     // combo_box:  path.resolve('./demo/combo_boxPatch.tsx'),
     // image: path.resolve('./demo/imagePatch.tsx'),
     // label: path.resolve('./demo/labelPatch.tsx'),
-    rich_text: path.resolve('./demo/rich_textPatch.tsx')
+    // rich_text: path.resolve('./demo/rich_textPatch.tsx'),
+    progress_bar: path.resolve('./demo/progress_barPatch.tsx')
   },
   // devtool: 'inline-source-map',
   module: {

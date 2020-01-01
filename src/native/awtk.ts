@@ -2976,11 +2976,11 @@ export class TProgressBar extends TWidget {
    super(nativeObj);
  }
 
- static create(parent : TWidget, x : number, y : number, w : number, h : number) : TWidget  {
+ static create(parent : TWidget, x : number, y : number, w : number, h : number) : TProgressBar  {
    return new TProgressBar(progress_bar_create(parent != null ? (parent.nativeObj || parent) : null, x, y, w, h));
  }
 
- static cast(widget : TWidget) : TWidget  {
+ static cast(widget : TWidget) : TProgressBar  {
    return new TProgressBar(progress_bar_cast(widget != null ? (widget.nativeObj || widget) : null));
  }
 

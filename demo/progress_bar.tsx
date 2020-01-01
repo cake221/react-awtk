@@ -1,40 +1,53 @@
-import React, { Component } from 'react';
-import { Window, Button, AwtkRender, setParentWidget } from "../src"
+import * as React from 'react';
+import { AwtkRender, setParentWidget, t_progress_bar_base, TEvent, TTimer } from "../src"
 
-class App extends Component {
+
+class App extends React.Component {
+
+  private bar1:React.RefObject<t_progress_bar_base> = React.createRef()
+  private bar2:React.RefObject<t_progress_bar_base> = React.createRef()
+
   constructor(props){
     super(props);
-    this.bar1 = React.createRef()
-    this.bar2 = React.createRef()
+  }
+
+  onValueChanged(evt){
+    const e = TEvent.cast(evt);
+    const instance = t_progress_bar_base.cast(e.target);
+    console.log(instance.name + ' changed. ' + instance.value);
+
+    return TRet.OK;
   }
 
   componentDidMount () {
     console.log('APP DID MOUNT!');
-    TTimer.add(function(info) {
-      this.bar1.setValue(bar1.value+5);
-      this.bar2.setValue(bar2.value+5);
 
-      if(this.bar1.value < 100) {
+    TTimer.add((info) => {
+      this.bar1.current.setValue(this.bar1.current.value+5);
+      this.bar2.current.setValue(this.bar2.current.value+5);
+
+      if(this.bar1.current.value < 100) {
         return TRet.REPEAT;
       } else {
         return TRet.REMOVE;
       }
-    }, 500);
+    }, null, 500);
   }
 
   render() {
     return (
-      <Window
+      <t_window
         ref = {
           (ref) => setParentWidget(ref, "win1")
         }
       >
-        <ProgressBar
+        <t_progress_bar
           ref = {this.bar1}
           parent = { "win1" }
-          name = {"bar1"}
+          name = {"wenyufei"}
           value = { 10 }
           vertical = { false }
+          showText = { true }
           text = { "ok" }
           style = {{
             selfLayout:{
@@ -44,18 +57,15 @@ class App extends Component {
               h:"30"
             },
           }}
-          onValueChanged = {
-            (evt)=>{
-              // console.log(bar.name + ' changed. ' + bar.value);
-            }
-          }
+          onValueChanged = {this.onValueChanged}
         />
-        <ProgressBar
+        <t_progress_bar
           ref = {this.bar2}
           parent = { "win1" }
           name = {"bar2"}
           value = { 10 }
           vertical = { true }
+          showText = { true }
           text = { "ok" }
           style = {{
             selfLayout:{
@@ -65,13 +75,9 @@ class App extends Component {
               h:"80%"
             },
           }}
-          onValueChanged = {
-            (evt)=>{
-              // console.log(bar.name + ' changed. ' + bar.value);
-            }
-          }
+          onValueChanged = {this.onValueChanged}
         />
-      </Window>
+      </t_window>
     )
   }
 }
