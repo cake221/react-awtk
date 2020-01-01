@@ -1122,17 +1122,17 @@ export class TWidget {
     this.setText(v);
   }
 
- get style() : string {
-   return widget_t_get_prop_style(this.nativeObj);
- }
+  get style() : string {
+    return widget_t_get_prop_style(this.nativeObj);
+  }
 
- set animation(v : string) {
-   this.setAnimation(v);
- }
+  set animation(v : string) {
+    this.setAnimation(v);
+  }
 
- get animation() : string {
-   return widget_t_get_prop_animation(this.nativeObj);
- }
+  get animation() : string {
+    return widget_t_get_prop_animation(this.nativeObj);
+  }
 
  set enable(v : boolean) {
    this.setEnable(v);

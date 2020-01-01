@@ -5,6 +5,7 @@ import {
   t_edit,
   t_combo_box,
   t_image,
+  t_label,
 } from '../components/';
 
 
@@ -17,6 +18,7 @@ function createInstance(type, newProps, rootContainerInstance, currentHostContex
     t_edit: ()=> new t_edit( newProps ),
     t_combo_box: ()=> new t_combo_box(newProps),
     t_image: ()=> new t_image(newProps),
+    t_label: ()=> new t_label(newProps),
     default: undefined,
   };
   

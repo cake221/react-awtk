@@ -42,11 +42,11 @@ interface ReactProps {
 
 export interface WidgetProps extends ReactProps{
   style?:StyleProps;
-  // todo： 风格和主题有什么区别？主题是只有容器才能设置么？
+  // 风格和主题有什么区别？主题是只有容器才能设置么？
   // 设置控件风格
   useStyle?:string;
-  // 设置窗口主题
-  useTheme?:string;
+  // TODO: 设置窗口主题
+  // useTheme?:string;
   // 文本。用途视具体情况而定
   text?:string;
   // 控件名字
@@ -56,7 +56,12 @@ export interface WidgetProps extends ReactProps{
 
 export function unpackWidgetProps(props:WidgetProps) {
   const widget_props:WidgetProps = {};
-  ( { style:widget_props.style, useStyle:widget_props.useStyle, useTheme:widget_props.useTheme, text:widget_props.text,name:widget_props.name, ref:widget_props.ref } = props);
+  ( { style:widget_props.style, 
+    useStyle:widget_props.useStyle, 
+    // useTheme:widget_props.useTheme, 
+    text:widget_props.text,name:widget_props.name, 
+    ref:widget_props.ref 
+  } = props);
   return widget_props;
 }
 
@@ -91,10 +96,12 @@ function fixReactProps(props:any) {
 export function fixWidgetProps(instance:TWidget, props:WidgetProps){
 
   const widgetProps = fixReactProps(props)
-  const {style, ...otherwidgetProps} = widgetProps;
+  const {style, useStyle,  ...otherwidgetProps} = widgetProps;
   if(!isUndefined(style)){
     fixStyleProps(instance, style);
   }
+
+  useStyle && instance.useStyle(useStyle);
   fixOtherProps(instance, otherwidgetProps);
 }
 
