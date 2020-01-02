@@ -1,19 +1,6 @@
 import {TWidget} from "../native/awtk"
 import {  eventFunName } from "../native/react_awtk"
 import { isFunction, isUndefined, isString } from "lodash"
-import { setChildWidget } from "./fixParentChildComponent"
-
-
-export interface ParentChildProps {
-  // 声明自己的父控件
-  parent?:string;
-}
-
-export function unpacParentChildProps(props:ParentChildProps) {
-  const parent_child_props:ParentChildProps = {};
-  ( { parent:parent_child_props.parent} = props);
-  return parent_child_props;
-}
 
 export interface StyleProps {
   selfLayout?:{
@@ -103,13 +90,6 @@ export function fixWidgetProps(instance:TWidget, props:WidgetProps){
 
   useStyle && instance.useStyle(useStyle);
   fixOtherProps(instance, otherwidgetProps);
-}
-
-export function fixParentProps(instance:TWidget, parentChildProps:ParentChildProps){
-  
-  const { parent, ...other } = parentChildProps;
-  parent && setChildWidget(instance, parent);
-  fixOtherProps(instance, other);
 }
 
 export function fixOtherProps(instance:TWidget, other: any) {

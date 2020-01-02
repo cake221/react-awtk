@@ -62,6 +62,7 @@ Array [
   "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
   "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
   "funtion  widget_layout( widget ) :undefined",
+  "win1 子控件 数量: 3",
   "funtion  combo_box_append_option( widget, value, text ) :undefined, 10, Aaaaaaa",
   "funtion  combo_box_append_option( widget, value, text ) :undefined, 20, Waaaaaa",
   "funtion  combo_box_append_option( widget, value, text ) :undefined, 30, Taaaaaa",

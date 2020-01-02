@@ -1,13 +1,16 @@
 import { TComboBox } from "../native/awtk"
 import { nodeMixins } from "../utils/nodeMixins"
-import { fixWidgetProps, 
-  fixParentProps, 
+import { 
+  fixWidgetProps, 
   fixOtherProps, 
   WidgetProps, 
   unpackWidgetProps, 
+} from "../utils/fixProps"
+import {
   ParentChildProps,
   unpacParentChildProps,
-} from "../utils/fixProps"
+  fixParentProps,
+} from "../utils/fixParentChildComponent"
 import {eventFun} from "../native/react_awtk"
 
 

@@ -186,5 +186,6 @@ Array [
   "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
   "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
   "funtion  widget_layout( widget ) :undefined",
+  "win1 子控件 数量: 7",
 ]
 `;

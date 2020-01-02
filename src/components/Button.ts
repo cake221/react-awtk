@@ -1,13 +1,16 @@
 import { TButton } from "../native/awtk"
 import { nodeMixins } from "../utils/nodeMixins"
-import { fixWidgetProps, 
-  fixParentProps, 
+import { 
+  fixWidgetProps, 
   fixOtherProps, 
   WidgetProps, 
   unpackWidgetProps, 
+} from "../utils/fixProps"
+import {
+  fixParentProps,
   ParentChildProps,
   unpacParentChildProps,
-} from "../utils/fixProps"
+} from "../utils/fixParentChildComponent"
 import {eventFun} from "../native/react_awtk"
 
 

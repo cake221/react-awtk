@@ -57,7 +57,6 @@ export const hostConfig :Created =  {
    */
   createInstance (type, newProps, rootContainerInstance, currentHostContext, workInProgress) {
     log('createInstance');
-    // todo
     // 都是建立了一个树结点。 各有各的不同。
     return createInstance(type, newProps, rootContainerInstance, currentHostContext, workInProgress)
   },
@@ -119,7 +118,7 @@ export const hostConfig :Created =  {
   
   insertBefore(parentInstance, child, beforeChild){
     log('insertBefore');
-    // todo
+
     parentInstance.insertBefore(child, beforeChild);
   },
   

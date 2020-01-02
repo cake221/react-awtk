@@ -1,13 +1,15 @@
 import { TSlider } from "../native/awtk"
 import { nodeMixins } from "../utils/nodeMixins"
 import { fixWidgetProps, 
-  fixParentProps, 
   fixOtherProps, 
   WidgetProps, 
   unpackWidgetProps, 
-  ParentChildProps,
-  unpacParentChildProps,
 } from "../utils/fixProps"
+import {
+  fixParentProps,
+  unpacParentChildProps,
+  ParentChildProps,
+} from "../utils/fixParentChildComponent"
 import {eventFun} from "../native/react_awtk"
 
 

@@ -11,10 +11,12 @@ import {
   t_slider,
   t_spin_box,
 } from '../components/';
+import {TWidget} from "../native/awtk"
+import { Node } from "../utils/nodeMixins"
 
+export type InstanceType = TWidget & Node
 
-// Creates an element with an element type, props and a root instance
-function createInstance(type, newProps, rootContainerInstance, currentHostContext, workInProgress) {
+export function createInstance(type, newProps, rootContainerInstance, currentHostContext, workInProgress):InstanceType {
   const COMPONENTS = {
     t_window: () => new t_window( newProps ),
     t_button: () => new t_button( newProps ) ,
@@ -33,18 +35,19 @@ function createInstance(type, newProps, rootContainerInstance, currentHostContex
   return COMPONENTS[type]() || COMPONENTS.default;
 }
 
-function createTextInstance(text, newProps, rootContainerInstance, currentHostContext) {
+export function createTextInstance(text, newProps, rootContainerInstance, currentHostContext) {
   // 暂时不支持。
   // type：是 文字的内容。
   // return new Text( text );
 }
 
-function commitUpdate(instance, updatePayload, type, oldProps, newProps, internalInstanceHandle) {
+export function commitUpdate(instance, updatePayload, type, oldProps, newProps, internalInstanceHandle) {
 
 }
 
-function commitTextUpdate(textInstance, oldText, newText) {
+export function commitTextUpdate(textInstance, oldText, newText) {
 
 }
 
-export { createInstance, createTextInstance, commitTextUpdate, commitUpdate };
+
+

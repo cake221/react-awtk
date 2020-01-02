@@ -1,13 +1,16 @@
 import { TRichText } from "../native/awtk"
 import { nodeMixins } from "../utils/nodeMixins"
 import { fixWidgetProps, 
-  fixParentProps, 
   fixOtherProps, 
   WidgetProps, 
   unpackWidgetProps, 
+} from "../utils/fixProps"
+import {
   ParentChildProps,
   unpacParentChildProps,
-} from "../utils/fixProps"
+  fixParentProps,
+} from "../utils/fixParentChildComponent"
+
 
 
 

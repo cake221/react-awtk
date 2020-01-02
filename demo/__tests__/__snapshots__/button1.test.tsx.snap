@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test button toMatchSnapshot 1`] = `
+Array [
+  "getRootHostContext",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  button_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, center, middle, 50%, 30",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, lalal",
+  "funtion  widget_on( widget, type, on_event, ctx ) :undefined, EVT_CLICK, function (evt) {
+            _this.setState(function (preState) {
+                btnState: !preState.btnState;
+            });
+            var e = src_1.TPointerEvent.cast(evt);
+            var target = src_1.TButton.cast(e.target);
+            console.log(\\"click at \\" + e.x + \\" \\" + e.y + \\" on \\" + target.name);
+            return TRet.OK;
+        }, null",
+  "finalizeInitialChildren",
+  "createInstance",
+  "funtion  window_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "appendInitialChild",
+  "finalizeInitialChildren",
+  "prepareForCommit",
+  "appendNodeChild",
+  "resetAfterCommit",
+  "getPublicInstance",
+  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
+  "funtion  widget_layout( widget ) :undefined",
+  "win1 子控件 数量: 1",
+  "funtion  tk_get_pointer_x(  ) :",
+  "funtion  tk_get_pointer_y(  ) :",
+  "funtion  tk_is_pointer_pressed(  ) :",
+  "getRootHostContext",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "shouldSetTextContent",
+  "getChildHostContext",
+  "shouldSetTextContent",
+  "createInstance",
+  "funtion  label_create( parent, x, y, w, h ) :null, 0, 0, 0, 0",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, center, middle, 50%, 30",
+  "funtion  widget_set_text_utf8( widget, text ) :undefined, wenyufei",
+  "finalizeInitialChildren",
+  "prepareUpdate",
+  "prepareForCommit",
+  "removeNodeChild",
+  "funtion  widget_destroy_children( widget ) :undefined",
+  "funtion  widget_destroy( widget ) :undefined",
+  "appendNodeChild",
+  "win1 子控件 数量: 1",
+  "commitUpdate",
+  "resetAfterCommit",
+  "getPublicInstance",
+  "funtion  widget_add_child( widget, child ) :undefined, [object Object]",
+  "funtion  widget_layout( widget ) :undefined",
+  "win1 子控件 数量: 1",
+]
+`;

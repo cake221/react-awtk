@@ -27,6 +27,7 @@ Array [
   "appendNodeChild",
   "resetAfterCommit",
   "getPublicInstance",
+  "win1 子控件 数量: 0",
   "getPublicInstance",
 ]
 `;

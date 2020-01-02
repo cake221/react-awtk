@@ -1,4 +1,6 @@
 import { TWidget } from "../native/awtk"
+import { InstanceType } from "../renderer/instance"
+import { deleteParentWidget, deleteChildWidget } from "./fixParentChildComponent"
 
 export function applyMixins(derivedCtor: any, baseCtors: any[]) {
   baseCtors.forEach(baseCtor => {
@@ -7,6 +9,7 @@ export function applyMixins(derivedCtor: any, baseCtors: any[]) {
     });
   });
 }
+
 
 
 export class Node{
@@ -29,15 +32,23 @@ export class Node{
     }
   }
 
-  removeNodeChild(child) {
+  removeNodeChild(child:InstanceType) {
     const index = this.tk_children.indexOf(child);
 
     if (index !== -1) {
       child.tk_parent = null;
       this.tk_children.splice(index, 1);
     }
-
+    // 移除所有子节点
     child.removeAllChilds();
+    // 在 awtk 中 销毁所有子控件
+    child.destroyChildren();
+    // 在awtk中销毁child控件
+    child.destroy();
+    // 删除所有子组件
+    deleteChildWidget(child);
+    // 删除所有本组件
+    deleteParentWidget(child);
   }
   
   isEmpty() {
@@ -45,7 +56,7 @@ export class Node{
   }
   
   removeAllChilds() {
-    this.tk_children.forEach(c => this.removeNodeChild(c));
+    this.tk_children.forEach((item:InstanceType) => this.removeNodeChild(item));
   }
 
 }
