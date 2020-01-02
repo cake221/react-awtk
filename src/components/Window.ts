@@ -38,6 +38,10 @@ export class t_window_base extends TWindow{
     fixWidgetProps(this, widget_props);
     fixOtherProps(this, window_props);
   }
+
+  Update(oldProps, newProps){
+    
+  }
 }
 
 export const t_window = nodeMixins( t_window_base );

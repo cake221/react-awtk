@@ -82,8 +82,6 @@ export const hostConfig :Created =  {
   
   createTextInstance(text, rootContainerInstance, hostContext, internalInstanceHandle){
     log('createTextInstance');
-    // todo
-    // 大部分 建立了文本节点
     return createTextInstance(text, rootContainerInstance, hostContext, internalInstanceHandle);
   },
   
@@ -104,15 +102,11 @@ export const hostConfig :Created =  {
   
   commitTextUpdate (textInstance, oldText, newText) {
     log('commitTextUpdate');
-    // todo
-    // 利用节点更新
     commitTextUpdate(textInstance, oldText, newText);
   },
   
   commitUpdate (instance, updatePayload, type, oldProps, newProps, internalInstanceHandle) {
     log('commitUpdate');
-    // todo
-    // 利用节点更新
     commitUpdate(instance, updatePayload, type, oldProps, newProps, internalInstanceHandle);
   },
   

@@ -23,6 +23,8 @@ export interface ButtonProps extends WidgetProps, ParentChildProps {
   onClick?:eventFun;
   // 长按事件
   onLongClick?:eventFun;
+  // 文本
+  children?:string;
 }
 
 export function unpackButtonProps(props:ButtonProps) {
@@ -37,7 +39,7 @@ export function unpackButtonProps(props:ButtonProps) {
 
 export class t_button_base extends TButton{
   constructor(props:ButtonProps){
-    const { ...otherButtonProps } = props;
+    const { children, ...otherButtonProps } = props;
     super(button_create(null,0,0,0,0));
     const widget_props:WidgetProps = unpackWidgetProps(otherButtonProps);
     const button_props:ButtonProps = unpackButtonProps(otherButtonProps);
@@ -47,6 +49,14 @@ export class t_button_base extends TButton{
     fixOtherProps(this, button_props);
     fixParentProps(this, parent_child_props);
   }
+
+  Update(oldProps:ButtonProps, newProps:ButtonProps){
+    if(oldProps.text !== newProps.text){
+      this.text = newProps.text
+    }
+  }
+
+
 }
 
 export const t_button = nodeMixins( t_button_base );
