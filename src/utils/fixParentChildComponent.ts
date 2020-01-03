@@ -1,17 +1,22 @@
 import { TWidget }from "../native/awtk"
 import { fixOtherProps } from "./fixProps"
 
+// __parentWidgets 外部不可以更改
+const __parentWidgets:IParentWidgets = {};
+
 interface IParentWidgets {
   [propName: string]: TWidget[] & ParentChildProps[];
 }
-
-// __parentWidgets 外部不可以更改
-const __parentWidgets:IParentWidgets = {};
 
 export interface ParentChildProps {
   // 声明自己的父控件
   parent?:string;
 }
+
+export const parentChildProps = [
+  "parent"
+]
+
 
 export function fixParentProps(instance:TWidget, parentChildProps:ParentChildProps){
   

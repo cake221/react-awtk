@@ -46,6 +46,7 @@ Array [
   "prepareUpdate",
   "prepareForCommit",
   "commitUpdate",
+  "funtion  widget_set_self_layout_params( widget, x, y, w, h ) :undefined, center, middle, 50%, 20",
   "funtion  widget_set_text_utf8( widget, text ) :undefined, wenyufei",
   "win1 子控件 数量: 1",
   "commitUpdate",

@@ -43,7 +43,7 @@ class App extends React.Component<{}, {btnState:boolean}> {
           },
         }}
         onClick = {this.onClick}
-      >{"温宇飞"}</t_button>
+      />
       )
     }else{
       return(
@@ -55,7 +55,7 @@ class App extends React.Component<{}, {btnState:boolean}> {
               x:"center",
               y:"middle",
               w:"50%",
-              h:"30"
+              h:"20"
             },
           }}
         />

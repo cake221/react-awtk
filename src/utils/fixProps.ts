@@ -1,8 +1,8 @@
 import {TWidget} from "../native/awtk"
 import {  eventFunName } from "../native/react_awtk"
-import { isFunction, isUndefined, isString } from "lodash"
+import { isFunction, isUndefined, isString, isEqual, isObject, keys } from "lodash"
 
-export interface StyleProps {
+interface StyleProps {
   selfLayout?:{
     x?:any;
     y?:any;
@@ -27,19 +27,27 @@ interface ReactProps {
   ref?:any;
 }
 
-export interface WidgetProps extends ReactProps{
+interface WidgetBaseProps{
   style?:StyleProps;
   // 风格和主题有什么区别？主题是只有容器才能设置么？
   // 设置控件风格
   useStyle?:string;
-  // TODO: 设置窗口主题
-  // useTheme?:string;
   // 文本。用途视具体情况而定
   text?:string;
   // 控件名字
   name?:string;
 
 }
+
+export const widgetBaseProps:string[] = [
+  "style", 
+  "useStyle", 
+  "text", 
+  "name", 
+]
+
+export type WidgetProps = WidgetBaseProps & ReactProps
+
 
 export function unpackWidgetProps(props:WidgetProps) {
   const widget_props:WidgetProps = {};
@@ -51,6 +59,7 @@ export function unpackWidgetProps(props:WidgetProps) {
   } = props);
   return widget_props;
 }
+
 
 function fixStyleProps(instance:TWidget, styleProps:StyleProps) {
   const { selfLayout, children_layout, ...other } = styleProps;
@@ -74,9 +83,9 @@ function fixStyleProps(instance:TWidget, styleProps:StyleProps) {
   fixOtherProps(instance, other);
 }
 
-function fixReactProps(props:any) {
+function fixReactProps(props:WidgetProps) {
   // TODO: 可能会做其他事
-  const {ref, ...other} = props;
+  const {ref:ReactProps, ...other} = props;
   return other
 }
 
@@ -111,4 +120,27 @@ export function fixOtherProps(instance:TWidget, other: any) {
   }
 }
 
+interface propsType {
+  [key:string]:any
+}
+
+export function unpackUpdateProps(oldProps:propsType, newProps:propsType, allProps:string[]) {
+  const update_props:propsType = {};
+  for(const item of allProps){
+    if(!isEqual(oldProps[item] ,newProps[item]) ){
+      if(isObject(oldProps[item]) && isObject(newProps[item])){
+        // TODO: 目前专门处理 widget.style 的情况。只向下遍历一层
+        const newObj = {}
+        const allKeys = keys({...oldProps[item], ...newProps[item]})
+        for(const key of allKeys){
+          newObj[key] = newProps[item][key]
+        }
+        update_props[item] = newObj
+      }else{
+        update_props[item] = newProps[item]
+      }
+    }
+  }
+  return update_props;
+}
 
