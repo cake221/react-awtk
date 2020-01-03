@@ -1,6 +1,7 @@
 import {TWidget} from "../native/awtk"
 import {  eventFunName } from "../native/react_awtk"
-import { isFunction, isUndefined, isString, isEqual, isObject, keys } from "lodash"
+import { isFunction, isString, isEqual, isObject, keys, isEmpty } from "lodash"
+import { log } from "./common"
 
 interface StyleProps {
   selfLayout?:{
@@ -49,42 +50,41 @@ export const widgetBaseProps:string[] = [
 export type WidgetProps = WidgetBaseProps & ReactProps
 
 
-export function unpackWidgetProps(props:WidgetProps) {
-  const widget_props:WidgetProps = {};
-  ( { style:widget_props.style, 
-    useStyle:widget_props.useStyle, 
-    // useTheme:widget_props.useTheme, 
-    text:widget_props.text,name:widget_props.name, 
-    ref:widget_props.ref 
-  } = props);
-  return widget_props;
-}
-
-
 function fixStyleProps(instance:TWidget, styleProps:StyleProps) {
   const { selfLayout, children_layout, ...other } = styleProps;
   
-  if(selfLayout){
-    if(isString(selfLayout)){
-      instance.setSelfLayout(selfLayout);
+  if(styleProps.hasOwnProperty("selfLayout")){
+    if(selfLayout){
+      if(isString(selfLayout)){
+        instance.setSelfLayout(selfLayout);
+      }else{
+        instance.setSelfLayoutParams(selfLayout.x, selfLayout.y, selfLayout.w, selfLayout.h);
+      }
     }else{
-      instance.setSelfLayoutParams(selfLayout.x, selfLayout.y, selfLayout.w, selfLayout.h);
-    }
-  }
-
-  if(children_layout){
-    if(isString(children_layout)){
-      instance.setChildrenLayout(children_layout);
-    }else{
-      // TODO: 这个函数的参数不知道如何设置
+      // TODO: 清除 selfLayout
+      log("清除 selfLayout")
     }
   }
   
+  if(styleProps.hasOwnProperty("children_layout")){
+    if(children_layout){
+      if(isString(children_layout)){
+        instance.setChildrenLayout(children_layout);
+      }else{
+        // TODO: 这个函数的参数不知道如何设置
+        log("这个函数的参数不知道如何设置")
+      }
+    }else{
+      // TODO: 清除 children_layout
+      log("清除 children_layout")
+    }
+  }
+
   fixOtherProps(instance, other);
 }
 
 function fixReactProps(props:WidgetProps) {
-  // TODO: 可能会做其他事
+  // 可能会做其他事
   const {ref:ReactProps, ...other} = props;
   return other
 }
@@ -93,28 +93,46 @@ export function fixWidgetProps(instance:TWidget, props:WidgetProps){
 
   const widgetProps = fixReactProps(props)
   const {style, useStyle,  ...otherwidgetProps} = widgetProps;
-  if(!isUndefined(style)){
-    fixStyleProps(instance, style);
+  if(props.hasOwnProperty("style")){
+    if(style && !isEmpty(style)){
+      fixStyleProps(instance, style);
+    }else{
+      //TODO: 清除样式
+      log("清除样式 style")
+    }
   }
-
-  useStyle && instance.useStyle(useStyle);
+  
+  if(props.hasOwnProperty("useStyle")){
+    if(useStyle){
+      instance.useStyle(useStyle);
+    }else{
+      //TODO: 清除样式
+      log("清除样式 useStyle")
+    }
+  }
+  
   fixOtherProps(instance, otherwidgetProps);
 }
 
 export function fixOtherProps(instance:TWidget, other: any) {
   
   for(const item in other){
-    if(other.hasOwnProperty(item) && !isUndefined(other[item])){
-      if(isFunction(other[item])){
-        // 传入函数
-        // 处理事件
-        if(eventFunName.hasOwnProperty(item)){
-          instance.on(eventFunName[item], other[item], null);
+    if(other.hasOwnProperty(item)){
+      if(other[item]){   
+        if(isFunction(other[item])){
+          // 传入函数
+          // 处理事件
+          if(eventFunName.hasOwnProperty(item)){
+            instance.on(eventFunName[item], other[item], null);
+          }
+          // 其他传入的函数
+        }else {
+          // 传入值
+          instance[item] = other[item]
         }
-        // 其他传入的函数
-      }else {
-        // 传入值
-        instance[item] = other[item]
+      }else{
+        // TODO: 更新的时候，属性为 undefined，应该将属性相关操作取消
+        log("更新的时候，属性为 undefined，应该将属性相关操作取消")
       }
     }
   }
@@ -130,6 +148,7 @@ export function unpackUpdateProps(oldProps:propsType, newProps:propsType, allPro
     if(!isEqual(oldProps[item] ,newProps[item]) ){
       if(isObject(oldProps[item]) && isObject(newProps[item])){
         // TODO: 目前专门处理 widget.style 的情况。只向下遍历一层
+        log("目前专门处理 widget.style 的情况。只向下遍历一层")
         const newObj = {}
         const allKeys = keys({...oldProps[item], ...newProps[item]})
         for(const key of allKeys){
@@ -144,3 +163,10 @@ export function unpackUpdateProps(oldProps:propsType, newProps:propsType, allPro
   return update_props;
 }
 
+export function unpackCreateProps(props:propsType, allProps:string[]) {
+  const create_props:propsType = {};
+  for(const item of allProps){
+    if(props[item]) create_props[item] = props[item]
+  }
+  return create_props;
+}

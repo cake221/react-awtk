@@ -1,5 +1,6 @@
 import { TWidget }from "../native/awtk"
 import { fixOtherProps } from "./fixProps"
+import { log } from "./common"
 
 // __parentWidgets 外部不可以更改
 const __parentWidgets:IParentWidgets = {};
@@ -17,18 +18,35 @@ export const parentChildProps = [
   "parent"
 ]
 
-
-export function fixParentProps(instance:TWidget, parentChildProps:ParentChildProps){
+/**
+ * @description:用于新建和更新操作
+ * @author 温宇飞
+ * @date 2020-01-03
+ * @export
+ * @param {*} instance
+ * @param {ParentChildProps} parentChildProps
+ */
+export function fixParentProps(instance:any, parentChildProps:ParentChildProps){
   
   const { parent, ...other } = parentChildProps;
-  parent && setChildWidget(instance, parent);
-  fixOtherProps(instance, other);
-}
+  if(parentChildProps.hasOwnProperty("parent")){
+    if(parent){
+      setChildWidget(instance, parent);
+    }else{
+      // 清除 parent
+      if(!!instance.parentId){
+        const parentArr = __parentWidgets[instance.parentId]
+        const index = parentArr.indexOf(instance);
+    
+        if (index !== -1) {
+          parentArr.splice(index, 1);
+        }    
 
-export function unpacParentChildProps(props:ParentChildProps) {
-  const parent_child_props:ParentChildProps = {};
-  ( { parent:parent_child_props.parent} = props);
-  return parent_child_props;
+        delete instance.parentId
+      }
+    }
+  }
+  fixOtherProps(instance, other);
 }
 
 export interface setParentWidgetFun {
@@ -49,7 +67,7 @@ export const setParentWidget:setParentWidgetFun = function(parentInstance:any, p
     }
   }
   console.log("__parentWidgets",__parentWidgets[parentId].length)
-  __AwtkSnapshot.push(`${parentId} 子控件 数量: ${__parentWidgets[parentId] ? __parentWidgets[parentId].length:"没有"}` )
+  log(`${parentId} 子控件 数量: ${__parentWidgets[parentId] ? __parentWidgets[parentId].length:"没有"}`)
 };
 
 export interface setChildWidgetFun {
@@ -62,13 +80,21 @@ const setChildWidget:setChildWidgetFun = function(childInstance:any, parentId:st
   childInstance.parentId = parentId;
   __parentWidgets[parentId].push(childInstance);
 };
-
+/**
+ * @description 用于删除父控件组件
+ * @param {*} parentInstance
+ */
 export const deleteParentWidget = (parentInstance:any) => {
   // 删除 parent 和 子孙
-  const parentSelfId = parentInstance.parentSelfId;
-  delete __AwtkSnapshot[parentSelfId];
+  if(!!parentInstance.parentSelfId){
+    const parentSelfId = parentInstance.parentSelfId;
+    delete __parentWidgets[parentSelfId];
+  }
 }
-
+/**
+ * @description 用于删除子控件组件
+ * @param {*} childInstance
+ */
 export const deleteChildWidget = (childInstance:any) => {
   if(!!childInstance.parentId){
     const parentArr = __parentWidgets[childInstance.parentId]

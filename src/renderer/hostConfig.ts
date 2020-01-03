@@ -1,13 +1,7 @@
 import ReactReconciler from "react-reconciler";
 import { IntrinsicElementsTypes } from "../react_awtk_type"
 import { Node } from "../utils/nodeMixins"
-
-const SHOW_RECONCILER_CALLS = true;
-const log = (funName:string) => {
-  if(SHOW_RECONCILER_CALLS){
-    globalThis.__AwtkSnapshot && __AwtkSnapshot.push(`${funName}`);
-  }
-}
+import { log } from "../utils/common"
 
 import { createInstance, createTextInstance, commitTextUpdate, commitUpdate } from "./instance"
 

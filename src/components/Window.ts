@@ -1,8 +1,11 @@
 import {TWindow} from "../native/awtk"
-import {fixOtherProps, 
+import {
+  fixOtherProps, 
   fixWidgetProps, 
   WidgetProps,
-  unpackWidgetProps,
+  widgetBaseProps,
+  unpackUpdateProps,
+  unpackCreateProps
 } from "../utils/fixProps"
 import { nodeMixins } from "../utils/nodeMixins"
 
@@ -10,18 +13,19 @@ interface TWindowBaseProps extends WidgetProps{
   children?:any[]|any;
 }
 
-export interface WindowProps extends TWindowBaseProps{
+interface WindowBaseProps{
   // 是否全屏
   fullscreen? :boolean;
   // 从资源文件中加载并创建window_base对象。本函数在ui_loader/ui_builder_default里实现。
   sourceName? :string;
 }
 
-export function unpackWindowProps(props:WindowProps) {
-  const window_props:WindowProps = {};
-  ( { fullscreen:window_props.fullscreen } = props);
-  return window_props;
-}
+const windowBaseProps:string[] = [
+  "fullscreen", 
+  "sourceName", 
+]
+
+export type WindowProps = WindowBaseProps & TWindowBaseProps
 
 export class t_window_base extends TWindow{
   constructor(props:WindowProps){
@@ -32,15 +36,19 @@ export class t_window_base extends TWindow{
       super(window_create(null,0,0,0,0));
     }
     
-    const widget_props:WidgetProps = unpackWidgetProps(otherWindowProps);
-    const window_props:WindowProps = unpackWindowProps(otherWindowProps);
+    const widget_props:WidgetProps = unpackCreateProps(otherWindowProps, windowBaseProps);
+    const window_props:WindowProps = unpackCreateProps(otherWindowProps, widgetBaseProps);
    
     fixWidgetProps(this, widget_props);
     fixOtherProps(this, window_props);
   }
 
-  Update(oldProps, newProps){
+  Update(oldProps:WindowProps, newProps:WindowProps){
     
+    const button_update_props:WindowProps = unpackUpdateProps(oldProps, newProps, windowBaseProps);
+    const widget_update_props:WidgetProps = unpackUpdateProps(oldProps, newProps, widgetBaseProps);
+    fixOtherProps(this, button_update_props);
+    fixWidgetProps(this, widget_update_props);
   }
 }
 
