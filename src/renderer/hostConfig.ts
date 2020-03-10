@@ -119,11 +119,5 @@ export const hostConfig :Created =  {
     log('removeNodeChildFromContainer');
     container.removeNodeChild(child);
   }
-  
-  // todo :
-  // resetTextContent : proton-native react-pdf
-  // commitMount : proton-native
-  // insertInContainerBefore : remax
-  // schedulePassiveEffects, cancelPassiveEffects , shouldYield,scheduleDeferredCallbackcancelDeferredCallback,useSyncScheduling
-  
+
 }
